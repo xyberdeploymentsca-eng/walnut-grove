@@ -32,11 +32,13 @@ const HomeContainer = ({ testimonials }: { testimonials: any }) => {
           view our services
         </CtaButton>
       </div>
-      <Welcome />
-      <Service />
-      <Team />
-      <Gallery />
-      <Testimonials testimonials={testimonials} />
+      <div className="relative z-1">
+        <Welcome />
+        <Service />
+        <Team />
+        <Gallery />
+        <Testimonials testimonials={testimonials} />
+      </div>
     </div>
   );
 };

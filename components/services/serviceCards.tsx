@@ -60,21 +60,21 @@ export const ServiceCards = () => {
 
   return (
     <>
-      <Image
-        src="/assets/leftPaws.svg"
-        alt="left"
-        className="absolute top-[25%] h-[1485px] -left-[10%] z-0"
-        width={392}
-        height={1484}
-      />
-      <Image
-        src="/assets/rightPaws.svg"
-        alt="right"
-        className="absolute top-40 h-[1485px] -right-[10%] z-0"
-        width={392}
-        height={1484}
-      />
       <div className="max-w-[1296px] mx-auto mt-32 relative">
+        <Image
+          src="/assets/leftPaws.svg"
+          alt="left"
+          className="absolute -top-40 h-[1485px] -left-[10%] z-0"
+          width={392}
+          height={1484}
+        />
+        <Image
+          src="/assets/rightPaws.svg"
+          alt="right"
+          className="absolute top-120 h-[1485px] -right-[10%] z-0"
+          width={392}
+          height={1484}
+        />
         {/* Background Decor */}
         <div className="absolute top-0 left-[-100px] opacity-10 -rotate-12 pointer-events-none">
           <Image
