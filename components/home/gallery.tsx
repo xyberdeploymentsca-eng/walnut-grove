@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { CtaButton } from "../ui/ctaButton";
+import Link from "next/link";
 
 export const Gallery = () => {
   const images = [
@@ -105,7 +106,9 @@ export const Gallery = () => {
       </div>
 
       <div className="flex justify-center mt-10">
-        <CtaButton icon="/icons/gallery.svg">View Our Gallery</CtaButton>
+        <Link href="/about#gallery">
+          <CtaButton icon="/icons/gallery.svg">View Our Gallery</CtaButton>
+        </Link>
       </div>
     </div>
   );

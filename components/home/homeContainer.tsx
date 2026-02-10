@@ -7,6 +7,7 @@ import { Service } from "./service";
 import { Team } from "./team";
 import { Gallery } from "./gallery";
 import { Testimonials } from "./testimonials";
+import Link from "next/link";
 
 const HomeContainer = ({ testimonials }: { testimonials: any }) => {
   return (
@@ -28,9 +29,11 @@ const HomeContainer = ({ testimonials }: { testimonials: any }) => {
           <br />
           focused on comfort, trust, and your pet’s well-being.
         </h2>
-        <CtaButton className="mt-4 z-1" icon="/icons/paw.svg">
-          view our services
-        </CtaButton>
+        <Link href="/services">
+          <CtaButton className="mt-6 capitalize" icon="/icons/paw.svg">
+            View Our Services
+          </CtaButton>
+        </Link>
       </div>
       <div className="relative z-1">
         <Welcome />

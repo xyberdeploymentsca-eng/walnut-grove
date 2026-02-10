@@ -64,14 +64,14 @@ export const ServiceCards = () => {
         <Image
           src="/assets/leftPaws.svg"
           alt="left"
-          className="absolute -top-40 h-[1485px] -left-[10%] z-0"
+          className="absolute -top-40 h-[1485px] -left-[30%] z-0"
           width={392}
           height={1484}
         />
         <Image
           src="/assets/rightPaws.svg"
           alt="right"
-          className="absolute top-120 h-[1485px] -right-[10%] z-0"
+          className="absolute top-120 h-[1485px] -right-[30%] z-0"
           width={392}
           height={1484}
         />
