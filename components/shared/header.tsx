@@ -133,7 +133,7 @@ export const Header = () => {
   };
 
   return (
-    <div className="max-w-[1880px] font-nunito rounded-[40px] mx-auto h-[92px] bg-primary-white sticky top-0 z-[50] shadow-[0px_0px_20px_0px_#57575614]">
+    <div className="max-w-[1880px] font-nunito rounded-[40px] mx-auto h-[92px] bg-primary-white sticky top-5 z-[50] shadow-[0px_0px_20px_0px_#57575614]">
       <div className="flex items-center justify-between h-full w-full mx-auto px-[90px] py-5">
         <Link href="/">
           <Image src="/assets/logo.png" alt="logo" height={52} width={251} />
@@ -193,7 +193,7 @@ export const Header = () => {
                             className="group"
                             onClick={() => setActiveDropdown(null)}
                           >
-                            <h3 className="text-[12px] font-light text-primary-black mb-1 pb-1 border-b border-primary-purple group-hover:text-primary-green transition-all w-fit">
+                            <h3 className="text-[16px] leading-[18px] font-light text-primary-black mb-1 border-b-2 border-primary-purple group-hover:text-primary-green transition-all w-fit">
                               {section.title}
                             </h3>
                             {section.description && (
@@ -204,7 +204,7 @@ export const Header = () => {
                           </Link>
                         ) : (
                           <>
-                            <h3 className="text-[12px] font-light text-primary-black mb-2 pb-1 border-b border-primary-purple w-fit">
+                            <h3 className="text-[16px] leading-[18px] font-light text-primary-black mb-2 border-b-2 border-primary-purple w-fit">
                               {section.title}
                             </h3>
                             {section.items && (
@@ -241,7 +241,7 @@ export const Header = () => {
                         className="group"
                         onClick={() => setActiveDropdown(null)}
                       >
-                        <h3 className="text-[12px] font-light text-primary-black mb-1 pb-1 border-b border-primary-purple group-hover:text-primary-green transition-all w-fit">
+                        <h3 className="text-[16px] leading-[18px] font-light text-primary-black mb-1 border-b-2 border-primary-purple group-hover:text-primary-green transition-all w-fit">
                           {section.title}
                         </h3>
                         <p className="text-[12px] font-light text-primary-black leading-[13px] group-hover:text-primary-green transition-all">

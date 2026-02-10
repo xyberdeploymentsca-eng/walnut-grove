@@ -103,10 +103,10 @@ export const Screening = () => {
                 className="flex justify-between items-center group cursor-pointer"
                 onClick={() => setIsModalOpen(true)}
               >
-                <span className="text-[22px] capitalize font-nunito font-bold text-primary-black group-hover:text-primary-green transition-colors">
+                <span className="text-[20px] capitalize font-nunito font-medium text-primary-black group-hover:text-primary-green transition-colors">
                   view true age chart
                 </span>
-                <div className="p-2 rounded-full group-hover:bg-primary-green/10 transition-all">
+                <div className="p-2 transition-all">
                   <ArrowRight
                     className="text-primary-black group-hover:text-primary-green transition-transform group-hover:translate-x-1"
                     size={24}
@@ -135,7 +135,7 @@ export const Screening = () => {
               identifying changes early and supporting your pet's wellbeing
               through every life stage.
             </p>
-            <h4 className="text-[24px] mt-6 text-primary-black leading-[28px] font-semibold text-left relative z-1 w-full border-b border-primary-green broder-2 pb-2">
+            <h4 className="text-[24px] mt-6 text-primary-black leading-[28px] font-semibold text-left relative z-1 border-b-2 border-primary-purple w-fit border-b-2 pb-2">
               Benefits of Regular Health Screenings
             </h4>
             <ul className="space-y-2 mt-6 mb-8 text-left inline-block">

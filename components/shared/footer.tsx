@@ -5,7 +5,7 @@
 import Image from "next/image";
 import { CtaButton } from "../ui/ctaButton";
 import Link from "next/link";
-import { Mail, MapPin, Phone, Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook } from "lucide-react";
 
 const Footer = () => {
   const footerLinks = [
@@ -52,7 +52,7 @@ const Footer = () => {
         className="absolute top-0 left-0 z-0 object-cover"
       />
 
-      <div className="relative z-10 max-w-[1296px] mx-auto pt-38 px-4">
+      <div className="relative z-10 max-w-[964px] mx-auto pt-38 px-4">
         {/* Top Section: Map and Working Hours */}
         <div className="flex flex-row justify-between items-start gap-10">
           {/* Map Area */}
@@ -91,27 +91,29 @@ const Footer = () => {
           <div className="flex flex-row items-start gap-12">
             {/* Address */}
             <div className="flex items-start gap-3">
-              <MapPin
-                size={24}
-                fill="text-primary-black"
-                className="text-primary-black"
+              <Image
+                src="/icons/location.svg"
+                alt="location"
+                width={21}
+                height={24}
               />
 
-              <div className="text-[16px] font-nunito text-primary-black">
-                <p className="font-bold">101A-20995 88 Ave</p>
+              <div className="text-[14px] font-nunito text-primary-black">
+                <p className="font-medium">101A-20995 88 Ave</p>
                 <p>Langley, BC V1M2C9, Canada</p>
               </div>
             </div>
 
             {/* Phone */}
             <div className="flex items-center gap-3">
-              <Phone
-                size={24}
-                fill="text-primary-black"
-                className="text-primary-black"
+              <Image
+                src="/icons/phone.svg"
+                alt="phone"
+                width={21}
+                height={24}
               />
 
-              <p className="text-[20px] font-bold font-nunito text-primary-black">
+              <p className="text-[14px] font-medium font-nunito text-primary-black">
                 (604) 888-2628
               </p>
             </div>
@@ -136,15 +138,15 @@ const Footer = () => {
           <div className="grid grid-cols-4 gap-12 flex-1 px-10">
             {footerLinks.map((category, catIdx) => (
               <div key={catIdx}>
-                <h4 className="font-bold text-[18px] mb-4 text-primary-black">
+                <h4 className="font-bold text-[14px] mb-4 text-primary-black whitespace-nowrap">
                   {category.title}
                 </h4>
-                <ul className="space-y-2 text-[16px] text-primary-black/80">
+                <ul className="space-y-2 text-[12px] text-primary-black/80">
                   {category.links.map((link, linkIdx) => (
                     <li key={linkIdx}>
                       <Link
                         href={link.href}
-                        className="cursor-pointer hover:text-primary-green transition-colors"
+                        className="cursor-pointer hover:text-primary-green transition-colors whitespace-nowrap"
                       >
                         {link.name}
                       </Link>
@@ -157,7 +159,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="text-right">
-            <h4 className="font-bold text-[18px] mb-4 text-primary-black">
+            <h4 className="font-bold text-[14px] mb-4 text-primary-black">
               Find Us On Social Media!
             </h4>
             <div className="flex gap-4 justify-end">

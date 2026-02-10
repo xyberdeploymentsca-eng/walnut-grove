@@ -15,7 +15,7 @@ export const LaboratoryContainer = () => {
   ];
 
   return (
-    <div className="max-w-[1920px] mx-auto relative overflow-hidden pb-40 bg-primary-white">
+    <div className="max-w-[1920px] mx-auto overflow-hidden bg-primary-white">
       <Image
         src={"/assets/commonBanner.svg"}
         alt="services-banner"
@@ -32,21 +32,21 @@ export const LaboratoryContainer = () => {
         height={1484}
       />
 
-      <div className="absolute top-[597px] right-30 pointer-events-none">
+      <div className="absolute top-[497px] right-30 pointer-events-none">
         <Image
           src="/assets/catAndDog.webp"
           alt="dog-and-cat"
           width={650}
-          height={550}
+          height={350}
           className="object-contain"
         />
       </div>
 
-      <div className="flex flex-row justify-between items-start max-w-[1296px] mx-auto pt-[297px] px-4 relative z-1">
+      <div className="flex flex-row justify-between items-start max-w-[1296px] mx-auto pt-[197px] px-4 relative z-1">
         <div className="flex flex-col max-w-[1026px] rounded-[16px] p-16 relative shrink-0">
           <div className="flex flex-row items-center justify-start gap-6 mb-6">
             <Image
-              src="/icons/card1.svg"
+              src="/icons/card2.svg"
               alt="lab-icon"
               height={87}
               width={87}
@@ -71,7 +71,7 @@ export const LaboratoryContainer = () => {
             </p>
 
             <div className="mt-6">
-              <h4 className="text-[24px] leading-[28px] border-b border-primary-purple font-bold font-nunito text-primary-black mb-4 w-fit">
+              <h4 className="text-[24px] leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-4 w-fit">
                 Key Laboratory Services Include
               </h4>
               <ul className="space-y-2">

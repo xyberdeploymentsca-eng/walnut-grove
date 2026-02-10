@@ -8,7 +8,7 @@ export const ServiceCards = () => {
   const services = [
     {
       title: "Health Screenings",
-      icon: "/icons/card1.svg",
+      icon: "/icons/card2.svg",
       points: [
         "Designed to be calm, gentle, and minimally stressful",
         "Helps detect health concerns at early, recoverable stages.",
@@ -24,7 +24,7 @@ export const ServiceCards = () => {
     },
     {
       title: "Surgical Care",
-      icon: "/icons/card2.svg",
+      icon: "/icons/card3.svg",
       points: [
         "State-of-the-art surgical suite facilitates",
         "Carefully monitored before, during, and after procedures",
@@ -99,7 +99,7 @@ export const ServiceCards = () => {
               key={index}
               className={`bg-[#FFFCF7] rounded-[32px] p-10 pt-20 relative ${service.border} shadow-[0px_0px_30px_0px_#57575614] flex flex-col items-center `}
             >
-              <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[124px] h-[124px] bg-white rounded-full flex items-center justify-center z-10">
+              <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[124px] h-[124px] bg-[#FFFCF7] rounded-full flex items-center justify-center z-10">
                 <Image
                   src={service.icon}
                   alt={service.title}
@@ -132,9 +132,9 @@ export const ServiceCards = () => {
                   <Link
                     href={link.href}
                     key={lIdx}
-                    className="flex justify-between items-center group cursor-pointer border-b border-primary-purple pb-6 last:border-0 last:pb-0"
+                    className="flex justify-between items-center group cursor-pointer border-b-2 border-primary-purple pb-6 last:border-0 last:pb-0"
                   >
-                    <span className="text-[22px] font-nunito font-bold text-primary-black group-hover:text-primary-green transition-colors">
+                    <span className="text-[20px] font-nunito font-medium text-primary-black group-hover:text-primary-green transition-colors">
                       {link.name}
                     </span>
                     <div className="p-2 rounded-full transition-all">
@@ -154,7 +154,7 @@ export const ServiceCards = () => {
           <div className="bg-[#FFFCF7] rounded-[32px] p-10 pt-20 relative shadow-[0px_0px_30px_0px_#57575614] max-w-[981px] w-full flex flex-col items-center">
             <div className="absolute -top-16 left-1/2 -translate-x-1/2 w-[140px] h-[140px] bg-white rounded-full flex items-center justify-center z-10">
               <Image
-                src={services[2].icon}
+                src={"/icons/card4.svg"}
                 alt={services[2].title}
                 width={100}
                 height={100}
@@ -187,7 +187,7 @@ export const ServiceCards = () => {
                   key={lIdx}
                   className="flex justify-between items-center group cursor-pointer max-w-[550px] mx-auto"
                 >
-                  <span className="text-[22px] font-nunito font-bold text-primary-black group-hover:text-primary-green transition-colors">
+                  <span className="text-[20px] font-nunito font-medium text-primary-black group-hover:text-primary-green transition-colors">
                     {link.name}
                   </span>
                   <div className="p-2 rounded-full  transition-all">

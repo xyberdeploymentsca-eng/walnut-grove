@@ -16,18 +16,24 @@ export const Welcome = () => {
       <Image
         src="/assets/leftPaws.svg"
         alt="left"
-        className="absolute top-[85%] h-[1485px] left-10 z-0"
+        className="absolute top-[100%] h-[1485px] left-0 z-0"
         width={392}
         height={1484}
       />
       <Image
         src="/assets/rightPaws.svg"
         alt="right"
-        className="absolute top-[185%] h-[1485px] right-10 z-0"
+        className="absolute top-[185%] h-[1485px] right-0 z-0"
         width={392}
         height={1484}
       />
-      <Image src="/assets/dog.png" alt="welcome" height={472} width={301} />
+      <Image
+        src="/assets/dog.png"
+        alt="welcome"
+        height={472}
+        width={301}
+        className="z-1"
+      />
       <div className="flex flex-col justify-center items-left">
         <div className="flex flex-row items-center justify-start gap-6">
           <Image
