@@ -1,3 +1,5 @@
+/** @format */
+
 import { client } from "../sanity/lib/client";
 import { urlFor } from "../sanity/lib/image";
 
@@ -23,23 +25,23 @@ export const getProductMetaData = async (slug) => {
 export function getMetadata(data, currentUrl = null) {
   const seo = data?.metaData;
   // Use provided URL or default to homepage
-  const canonicalUrl = currentUrl || "https://www.zapdtf.com/";
+  const canonicalUrl = currentUrl || "https://walnutgroveanimalclinic.com/";
 
   const metadata = {
-    title: "Print Sign",
+    title: "Walnut Grove Animal Hospital",
     description:
-      "Your trusted partner for quality printing and signage solutions.",
-    openGraph: { images: "/logo_print_sign.svg" },
+      "Your trusted partner for quality veterinary care, surgeries, and pet boarding in Langley, BC.",
+    openGraph: { images: "/assets/logo.png" },
     twitter: {
       card: "summary_large_image",
-      title: "Print Sign",
+      title: "Walnut Grove Animal Hospital",
       description:
-        "Your trusted partner for quality printing and signage solutions.",
-      image: "/logo_print_sign.svg",
+        "Your trusted partner for quality veterinary care, surgeries, and pet boarding in Langley, BC.",
+      image: "/assets/logo.png",
     },
     alternates: {
       languages: {
-        "en-US": "https://www.zapdtf.com/",
+        "en-US": "https://walnutgroveanimalclinic.com/",
       },
       canonical: canonicalUrl,
     },
@@ -60,7 +62,7 @@ export function getMetadata(data, currentUrl = null) {
     metadata.twitter.description = seo.metaDescription;
   }
   if (seo.metaImage) {
-    const imageUrl = urlFor(seo.metaImage).url() ?? "/logo_SSB_wings.svg";
+    const imageUrl = urlFor(seo.metaImage).url() ?? "/assets/logo.png";
     metadata.openGraph = { images: imageUrl };
     metadata.twitter.image = seo.metaImage?.data?.attributes?.url;
   }
