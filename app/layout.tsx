@@ -1,15 +1,21 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+/** @format */
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import type { Metadata } from "next";
+import { Nunito } from "next/font/google";
+import "./globals.css";
+import { Header } from "@/components/shared/header";
+import localFont from "next/font/local";
+import Footer from "@/components/shared/footer";
+
+const nunito = Nunito({
+  variable: "--font-nunito",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const otomanopeeOne = localFont({
+  src: "../public/fonts/OtomanopeeOne-Regular.ttf",
+  variable: "--font-otomanopee-one",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        style={{ backgroundColor: "#FFF9EF" }}
+        className={`${nunito.variable} ${otomanopeeOne.variable} font-nunito antialiased bg-primary-white`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

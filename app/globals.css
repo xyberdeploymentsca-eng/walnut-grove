@@ -8,8 +8,14 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-nunito: var(--font-nunito);
+  --font-otomanopee-one: var(--font-otomanopee-one);
+   --color-primary-white: #FFF9EF;
+   --color-primary-black: #3C3C3B;
+   --color-primary-green: #83BF78;
+   --color-primary-blue: #AEDEFF;
+   --color-primary-purple: #E7D2FF;
+   --color-text-white: #FFF9EF;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +26,31 @@
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-primary-white text-foreground font-nunito;
+}
+
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF9EF;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E7D2FF;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E7D2FF;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #E7D2FF #FFF9EF;
 }
