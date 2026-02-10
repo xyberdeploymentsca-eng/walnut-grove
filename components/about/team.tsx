@@ -31,7 +31,10 @@ const teamMembers = [
 
 export const Team = () => {
   return (
-    <div className="max-w-[1055px] mx-auto flex flex-col items-center justify-center relative mb-40">
+    <div
+      id="team"
+      className="scroll-mt-[200px] max-w-[1055px] mx-auto flex flex-col items-center justify-center relative mb-40"
+    >
       <div className="flex flex-row items-center justify-start gap-6 w-full">
         <Image src="/icons/pinkPaw.svg" alt="pink-paw" height={87} width={87} />
         <h1 className="text-[32px] max-w-[720px] text-left font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">

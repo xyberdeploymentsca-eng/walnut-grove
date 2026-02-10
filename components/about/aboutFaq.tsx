@@ -111,7 +111,10 @@ export const AboutFaq = ({ faqs }: { faqs?: Faq[] }) => {
   const displayFaqs = faqs && faqs.length > 0 ? faqs : defaultFaqs;
 
   return (
-    <div className="max-w-[1296px] mx-auto px-4 mt-20 mb-20">
+    <div
+      id="faqs"
+      className="scroll-mt-[200px] max-w-[1296px] mx-auto px-4 mt-20 mb-20"
+    >
       <div className="flex flex-row items-center justify-center gap-6 relative z-1 mb-16">
         <Image src="/icons/pinkBow.svg" alt="pink-bow" height={87} width={87} />
         <h2 className="text-[32px] text-center font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">

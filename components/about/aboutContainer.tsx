@@ -5,10 +5,11 @@ import { Care } from "./care";
 import { Team } from "./team";
 import { Heart } from "./heart";
 import { AboutFaq } from "./aboutFaq";
+import { Gallery } from "./gallery";
 
 export const AboutContainer = ({ faqs }: { faqs?: any[] }) => {
   return (
-    <div className="max-w-[1920px] mx-auto relative bg-primary-white mb-[100vh]">
+    <div className="max-w-[1920px] overflow-x-hidden mx-auto relative bg-primary-white">
       <Image
         src={"/assets/aboutBanner.svg"}
         alt="services-banner"
@@ -31,6 +32,7 @@ export const AboutContainer = ({ faqs }: { faqs?: any[] }) => {
       <Care />
       <Team />
       <Heart />
+      <Gallery />
       <AboutFaq faqs={faqs as any} />
     </div>
   );

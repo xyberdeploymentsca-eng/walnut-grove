@@ -12,7 +12,10 @@ const points = [
 
 export const Heart = () => {
   return (
-    <div className="mb-50 max-w-[1185px] mx-auto flex items-center gap-6 font-nunito">
+    <div
+      id="care-philosophy"
+      className="scroll-mt-[200px] mb-50 max-w-[1185px] mx-auto flex items-center gap-6 font-nunito"
+    >
       <div className="flex flex-col justify-center items-left">
         <div className="flex flex-row items-center justify-start gap-6">
           <Image

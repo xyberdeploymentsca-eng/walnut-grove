@@ -96,22 +96,16 @@ export const Header = () => {
         href: "/about#story",
       },
       {
-        title: "Basic Fees",
+        title: "How We Care",
         description:
-          "A simple overview of our pricing and commonly requested services.",
-        href: "/about#fees",
+          "Discover our philosophy and commitment to providing compassionate care.",
+        href: "/about#care-philosophy",
       },
       {
         title: "Meet The Team",
         description:
           "Get to know the caring professionals behind your pet's treatment.",
         href: "/about#team",
-      },
-      {
-        title: "Testimonials",
-        description:
-          "Hear real experiences from pet parents who trust us with their pets.",
-        href: "/about#testimonials",
       },
       {
         title: "View Our Gallery",
