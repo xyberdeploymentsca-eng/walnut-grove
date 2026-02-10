@@ -3,16 +3,18 @@
 "use client";
 
 import { useModalStore } from "@/utils/store";
-import { X } from "lucide-react";
+import { X, Loader2 } from "lucide-react";
 import Script from "next/script";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export const CalendlyModal = () => {
   const { isOpen, closeModal } = useModalStore();
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
+      setIsLoading(true);
     } else {
       document.body.style.overflow = "unset";
     }
@@ -42,7 +44,15 @@ export const CalendlyModal = () => {
           </p>
         </div>
 
-        <div className="h-[700px] w-full bg-[#FFFCF7]">
+        <div className="h-[700px] w-full bg-[#FFFCF7] relative">
+          {isLoading && (
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center bg-[#FFFCF7]">
+              <Loader2 className="w-12 h-12 text-primary-green animate-spin mb-4" />
+              <p className="font-nunito text-[18px] text-primary-black/60 animate-pulse">
+                Loading schedule...
+              </p>
+            </div>
+          )}
           <div
             className="calendly-inline-widget"
             data-url="https://calendly.com/d/cxrd-664-p3f?background_color=fffcf7&text_color=3c3c3b&primary_color=83bf78"
@@ -51,7 +61,10 @@ export const CalendlyModal = () => {
           <Script
             type="text/javascript"
             src="https://assets.calendly.com/assets/external/widget.js"
-            async
+            onLoad={() => {
+              // Give it a small delay to ensure the iframe starts rendering
+              setTimeout(() => setIsLoading(false), 1000);
+            }}
           />
         </div>
       </div>
