@@ -49,7 +49,7 @@ export const Service = () => {
                 height={85}
                 className="object-contain"
               />
-              <h3 className="text-[18px] font-bold text-primary-black text-center w-full">
+              <h3 className="text-[18px] font-otomanopee-one font-bold text-primary-black text-center w-full">
                 {service.title}
               </h3>
             </div>

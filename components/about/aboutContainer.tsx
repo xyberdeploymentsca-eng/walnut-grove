@@ -9,7 +9,7 @@ import { Gallery } from "./gallery";
 
 export const AboutContainer = ({ faqs }: { faqs?: any[] }) => {
   return (
-    <div className="max-w-[1920px] overflow-x-hidden mx-auto relative bg-primary-white">
+    <div className="max-w-[1920px] overflow-x-hidden mx-auto bg-primary-white">
       <Image
         src={"/assets/aboutBanner.svg"}
         alt="services-banner"

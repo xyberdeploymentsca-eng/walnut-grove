@@ -19,7 +19,7 @@ export const ServicesContainer = ({
         width={1920}
         className="absolute top-0 left-0 z-0"
       />
-      <div className="flex flex-row justify-between items-center max-w-[1296px] mx-auto pt-[160px] px-4 relative z-1">
+      <div className="flex flex-row justify-between items-center max-w-[1296px] mx-auto pt-[12%] px-4 relative z-1">
         <div className="flex flex-col">
           <div className="flex flex-row items-center justify-left gap-6 relative z-1">
             <Image

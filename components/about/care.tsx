@@ -20,14 +20,14 @@ export const Care = () => {
       <Image
         src="/assets/leftPaws.svg"
         alt="left"
-        className="absolute top-[30%] h-[1485px] -left-[20%] z-0"
+        className="absolute top-[30%] h-[1485px] -left-[30%] z-0"
         width={392}
         height={1484}
       />
       <Image
         src="/assets/rightPaws.svg"
         alt="right"
-        className="absolute top-[185%] h-[1485px] -right-[20%] z-0"
+        className="absolute top-[185%] h-[1485px] -right-[30%] z-0"
         width={392}
         height={1484}
       />
