@@ -193,18 +193,18 @@ export const Header = () => {
                             className="group"
                             onClick={() => setActiveDropdown(null)}
                           >
-                            <h3 className="text-[12px] font-light text-primary-blackt mb-1 pb-1 border-b border-primary-purple group-hover:text-primary-green transition-all w-fit">
+                            <h3 className="text-[12px] font-light text-primary-black mb-1 pb-1 border-b border-primary-purple group-hover:text-primary-green transition-all w-fit">
                               {section.title}
                             </h3>
                             {section.description && (
-                              <p className="text-[12px] font-light text-primary-blackt leading-[13px] group-hover:text-primary-green transition-all">
+                              <p className="text-[12px] font-light text-primary-black leading-[13px] group-hover:text-primary-green transition-all">
                                 {section.description}
                               </p>
                             )}
                           </Link>
                         ) : (
                           <>
-                            <h3 className="text-[12px] font-light text-primary-blackt mb-2 pb-1 border-b border-primary-purple w-fit">
+                            <h3 className="text-[12px] font-light text-primary-black mb-2 pb-1 border-b border-primary-purple w-fit">
                               {section.title}
                             </h3>
                             {section.items && (
@@ -214,7 +214,7 @@ export const Header = () => {
                                     <Link
                                       href={item.href}
                                       onClick={() => setActiveDropdown(null)}
-                                      className="text-[12px] font-light text-primary-blackt hover:text-primary-green transition-all w-fit block"
+                                      className="text-[12px] font-light text-primary-black hover:text-primary-green transition-all w-fit block"
                                     >
                                       • {item.label}
                                     </Link>
@@ -241,10 +241,10 @@ export const Header = () => {
                         className="group"
                         onClick={() => setActiveDropdown(null)}
                       >
-                        <h3 className="text-[12px] font-light text-primary-blackt mb-1 pb-1 border-b border-primary-purple group-hover:text-primary-green transition-all w-fit">
+                        <h3 className="text-[12px] font-light text-primary-black mb-1 pb-1 border-b border-primary-purple group-hover:text-primary-green transition-all w-fit">
                           {section.title}
                         </h3>
-                        <p className="text-[12px] font-light text-primary-blackt leading-[13px] group-hover:text-primary-green transition-all">
+                        <p className="text-[12px] font-light text-primary-black leading-[13px] group-hover:text-primary-green transition-all">
                           {section.description}
                         </p>
                       </Link>
