@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { Care } from "./care";
 import { Team } from "./team";
+import { Heart } from "./heart";
+import { AboutFaq } from "./aboutFaq";
 
-export const AboutContainer = () => {
+export const AboutContainer = ({ faqs }: { faqs?: any[] }) => {
   return (
     <div className="max-w-[1920px] mx-auto relative bg-primary-white mb-[100vh]">
       <Image
@@ -28,6 +30,8 @@ export const AboutContainer = () => {
       </div>
       <Care />
       <Team />
+      <Heart />
+      <AboutFaq faqs={faqs as any} />
     </div>
   );
 };

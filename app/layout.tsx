@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/shared/header";
 import localFont from "next/font/local";
 import Footer from "@/components/shared/footer";
+import { CalendlyModal } from "@/components/ui/calendlyModal";
 
 const nunito = Nunito({
   variable: "--font-nunito",
@@ -29,6 +30,7 @@ export default function RootLayout({
         className={`${nunito.variable} ${otomanopeeOne.variable} font-nunito antialiased bg-primary-white`}
       >
         <Header />
+        <CalendlyModal />
         {children}
         <Footer />
       </body>

@@ -1,19 +1,54 @@
 /** @format */
 
+"use client";
+
 import { cn } from "@/utils/helpers";
+import { useModalStore } from "@/utils/store";
 import Image from "next/image";
+import React from "react";
+
+// Helper to recursively extract text from React children
+const getTextFromChildren = (children: React.ReactNode): string => {
+  if (typeof children === "string" || typeof children === "number") {
+    return children.toString();
+  }
+  if (Array.isArray(children)) {
+    return children.map(getTextFromChildren).join("");
+  }
+  if (React.isValidElement(children)) {
+    return getTextFromChildren((children.props as any).children);
+  }
+  return "";
+};
 
 export const CtaButton = ({
   icon,
   children,
   className,
+  onClick,
 }: {
   icon: string;
   children: React.ReactNode;
   className?: string;
+  onClick?: () => void;
 }) => {
+  const { openModal } = useModalStore();
+
+  const handleClick = (e: React.MouseEvent) => {
+    const textContent = getTextFromChildren(children).toLowerCase();
+    console.log(textContent);
+
+    if (textContent.includes("schedule")) {
+      e.preventDefault();
+      openModal();
+    } else if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <div
+      onClick={handleClick}
       className={cn(
         `flex items-center justify-center cursor-pointer group`,
         className,
