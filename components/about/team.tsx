@@ -4,14 +4,9 @@ import Image from "next/image";
 
 export const Team = () => {
   return (
-    <div className="max-w-[1055px] mx-auto">
+    <div className="max-w-[1055px] mx-auto flex flex-col items-center justify-center">
       <div className="flex flex-row items-center justify-start gap-6">
-        <Image
-          src="/assets/pinkPaw.svg"
-          alt="pink-paw"
-          height={87}
-          width={87}
-        />
+        <Image src="/icons/pinkPaw.svg" alt="pink-paw" height={87} width={87} />
         <h1 className="text-[32px] max-w-[720px] text-left font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">
           Meet Our Team,
           <br />

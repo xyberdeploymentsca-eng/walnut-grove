@@ -12,18 +12,18 @@ const points = [
 
 export const Welcome = () => {
   return (
-    <div className="mb-50 max-w-[1185px] mx-auto flex items-center gap-6 mt-[38%] font-nunito">
+    <div className="mb-50 max-w-[1185px] relative mx-auto flex items-center gap-6 mt-[38%] font-nunito">
       <Image
         src="/assets/leftPaws.svg"
         alt="left"
-        className="absolute top-[100%] h-[1485px] left-0 z-0"
+        className="absolute top-[80%] h-[1485px] -left-[30%] z-0"
         width={392}
         height={1484}
       />
       <Image
         src="/assets/rightPaws.svg"
         alt="right"
-        className="absolute top-[185%] h-[1485px] right-0 z-0"
+        className="absolute top-[200%] h-[1485px] -right-[20%] z-0"
         width={392}
         height={1484}
       />
