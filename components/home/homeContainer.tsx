@@ -19,9 +19,9 @@ const HomeContainer = ({ testimonials }: { testimonials: any }) => {
         width={1920}
       />
       <div className="flex flex-col items-center justify-center z-1 pt-[10.5%]">
-        <h1 className="text-[32px] font-otomanopee-one text-center font-nunito font-normal z-1 leading-[38px] text-primary-black">
+        <h1 className="text-[32px] uppercase font-otomanopee-one text-center font-nunito font-normal z-1 leading-[38px] text-primary-black">
           Compassionate care,
-          <br /> for the paws you love THE most!
+          <br /> for the paws you love the most!
         </h1>
         <h2 className="text-[20px] text-center mt-4 font-nunito font-normal z-1 leading-[24px] text-primary-black">
           Expert veterinary care, delivered with warmth and compassion,

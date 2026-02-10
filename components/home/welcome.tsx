@@ -23,7 +23,7 @@ export const Welcome = () => {
       <Image
         src="/assets/rightPaws.svg"
         alt="right"
-        className="absolute top-[200%] h-[1485px] -right-[20%] z-0"
+        className="absolute top-[200%] h-[1485px] -right-[30%] z-0"
         width={392}
         height={1484}
       />
