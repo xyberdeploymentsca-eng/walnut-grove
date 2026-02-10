@@ -5,18 +5,32 @@
 import { useModalStore } from "@/utils/store";
 import { X, Loader2 } from "lucide-react";
 import Script from "next/script";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export const CalendlyModal = () => {
   const { isOpen, closeModal } = useModalStore();
   const [isLoading, setIsLoading] = useState(true);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
-      setIsLoading(true);
+      // Check if Calendly is already loaded
+      if ((window as any).Calendly) {
+        setIsLoading(false);
+        // Small timeout to ensure the DOM is ready for initialization
+        setTimeout(() => {
+          if (containerRef.current) {
+            (window as any).Calendly.initInlineWidget({
+              url: "https://calendly.com/d/cxrd-664-p3f?background_color=fffcf7&text_color=3c3c3b&primary_color=83bf78",
+              parentElement: containerRef.current,
+            });
+          }
+        }, 100);
+      }
     } else {
       document.body.style.overflow = "unset";
+      setIsLoading(true);
     }
     return () => {
       document.body.style.overflow = "unset";
@@ -54,16 +68,20 @@ export const CalendlyModal = () => {
             </div>
           )}
           <div
-            className="calendly-inline-widget"
-            data-url="https://calendly.com/d/cxrd-664-p3f?background_color=fffcf7&text_color=3c3c3b&primary_color=83bf78"
+            ref={containerRef}
             style={{ minWidth: "320px", height: "100%" }}
           ></div>
           <Script
             type="text/javascript"
             src="https://assets.calendly.com/assets/external/widget.js"
-            onLoad={() => {
-              // Give it a small delay to ensure the iframe starts rendering
-              setTimeout(() => setIsLoading(false), 1000);
+            onReady={() => {
+              setIsLoading(false);
+              if (containerRef.current) {
+                (window as any).Calendly.initInlineWidget({
+                  url: "https://calendly.com/d/cxrd-664-p3f?background_color=fffcf7&text_color=3c3c3b&primary_color=83bf78",
+                  parentElement: containerRef.current,
+                });
+              }
             }}
           />
         </div>
