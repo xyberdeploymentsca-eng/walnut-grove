@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { CtaButton } from "../ui/ctaButton";
+import { AllServicesList } from "./allServicesList";
 
 export const LaboratoryContainer = () => {
   const points = [
@@ -21,88 +22,85 @@ export const LaboratoryContainer = () => {
         alt="services-banner"
         height={466}
         width={1920}
-        className="absolute top-0 left-0 z-0"
+        className="absolute top-0 left-0 z-0 w-full h-[250px] lg:h-auto object-cover"
       />
 
       <Image
         src="/assets/rightPaws.svg"
         alt="right"
-        className="absolute top-50 h-[1485px] -right-10 z-0"
+        className="absolute top-50 h-[1485px] -right-10 z-0 hidden lg:block"
         width={392}
         height={1484}
       />
 
-      <div className="absolute top-[497px] right-30 pointer-events-none">
-        <Image
-          src="/assets/catAndDog.webp"
-          alt="dog-and-cat"
-          width={650}
-          height={350}
-          className="object-contain"
-        />
-      </div>
-
-      <div className="flex flex-row justify-between items-start max-w-[1296px] mx-auto pt-[197px] px-4 relative z-1">
-        <div className="flex flex-col max-w-[1026px] rounded-[16px] p-16 relative shrink-0">
-          <div className="flex flex-row items-center justify-start gap-6 mb-6">
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+        <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
+          <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
-              src="/icons/card2.svg"
+              src="/icons/card4.svg"
               alt="lab-icon"
               height={87}
               width={87}
+              className="w-[54px] lg:w-[87px] h-auto"
             />
-            <h2 className="text-[48px] text-left font-otomanopee-one leading-[120%] text-primary-black uppercase">
-              LABORATORY SERVICES
+            <h2 className="text-[28px] lg:text-[48px] text-center lg:text-left font-otomanopee-one leading-tight lg:leading-[120%] text-primary-black uppercase">
+              LAB SERVICES
             </h2>
           </div>
 
           <div className="space-y-4">
-            <p className="text-[20px] text-primary-black font-nunito font-medium leading-[140%]">
-              Our in-house laboratory allows us to quickly evaluate your pet’s
-              health and make informed medical decisions with minimal delay.
-              Many essential tests are performed on-site, providing same-day
-              results whenever possible and reducing stress for both pets and
-              their families.
+            <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
+              Detailed lab testing is essential for accurate diagnosis and
+              effective treatment. Our comprehensive in-house laboratory
+              services allow us to perform a variety of tests quickly and
+              accurately, providing prompt answers for your pet&apos;s care.
             </p>
-            <p className="text-[20px] text-primary-black font-nunito font-medium leading-[140%]">
-              These diagnostics help us assess internal organ function, detect
-              early signs of illness, and ensure safe planning for medical and
-              surgical care.
+            <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
+              From routine screenings to urgent diagnostic evaluations, our lab
+              capabilities support every aspect of veterinary medicine.
             </p>
 
-            <div className="mt-6">
-              <h4 className="text-[24px] leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-4 w-fit">
-                Key Laboratory Services Include
-              </h4>
-              <ul className="space-y-2">
-                {points.map((point, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-3 text-[20px] font-nunito font-medium text-primary-black"
-                  >
-                    <span className="mt-2 w-2 h-2 rounded-full bg-primary-black flex-shrink-0" />
-                    {point}
-                  </li>
-                ))}
-              </ul>
+            <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
+              <div className="flex-1 bg-[#FFFCF7] rounded-[16px] py-6 px-6 lg:py-5 lg:px-8 shadow-[0px_4px_30px_0px_rgba(87,87,87,0.06)] border border-[#F0EAF8] lg:border-none">
+                <h4 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
+                  Our Lab Capabilities Include
+                </h4>
+                <ul className="space-y-3 lg:space-y-2">
+                  {points.map((point, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-3 text-[16px] lg:text-[18px] font-nunito font-medium text-primary-black"
+                    >
+                      <span className="mt-2 w-2 h-2 rounded-full bg-primary-black flex-shrink-0" />
+                      {point}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="flex-1 relative rounded-[16px] overflow-hidden min-h-[250px] lg:min-h-0">
+                <Image
+                  src="/assets/labServices.png"
+                  alt="lab"
+                  fill
+                  className="object-cover"
+                />
+              </div>
             </div>
 
-            <p className="text-[20px] text-primary-black font-nunito font-medium leading-[140%] mt-4">
-              For advanced or specialized testing, we collaborate with trusted
-              external laboratories for services such as hormone testing,
-              bacterial culture and sensitivity, cytology, histopathology, and
-              extended blood panels.
+            <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
+              Fast and accurate lab results allow us to begin appropriate
+              treatments sooner, promoting better health outcomes for your pet.
             </p>
 
-            <CtaButton
-              className="justify-start mt-6"
-              icon="/icons/calender.svg"
-            >
-              Schedule A Test
-            </CtaButton>
+            <div className="flex justify-center lg:justify-start">
+              <CtaButton className="mt-6 capitalize" icon="/icons/calender.svg">
+                Schedule A Test
+              </CtaButton>
+            </div>
           </div>
         </div>
       </div>
+      <AllServicesList />
     </div>
   );
 };

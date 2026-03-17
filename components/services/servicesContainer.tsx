@@ -12,43 +12,42 @@ export const ServicesContainer = ({
 }) => {
   return (
     <div className="max-w-[1920px] mx-auto bg-primary-white">
-      <Image
-        src={"/assets/commonBanner.svg"}
-        alt="services-banner"
-        height={466}
-        width={1920}
-        className="absolute top-0 left-0 z-0"
-      />
-      <div className="flex flex-row justify-between items-center max-w-[1296px] mx-auto pt-[12%] px-4 relative z-1">
-        <div className="flex flex-col">
-          <div className="flex flex-row items-center justify-left gap-6 relative z-1">
-            <Image
-              src="/icons/pinkPaw.svg"
-              alt="pink-bow"
-              height={87}
-              width={87}
-            />
-            <h2 className="text-[32px] text-left font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">
-              Why Health Screenings Matter <br /> at Every Stage of your pet’s
-              Life
-            </h2>
-          </div>
-          <p className="text-[22px] mt-6 text-primary-black leading-[32px] font-medium text-left relative z-1 max-w-[800px]">
-            Pets can’t tell us when something feels wrong, and instinctively,
-            they often hide signs of illness until problems become advanced.
-            Regular health screenings allow us to look beneath the surface,
-            identifying changes early and supporting your pet’s wellbeing
-            through every life stage.
-          </p>
-        </div>
+      {/* New Hero Banner */}
+      <section className="relative max-w-[1880px] mx-auto lg:-mt-6 rounded-[30px] lg:rounded-[40px] overflow-hidden min-h-[500px] lg:h-[643px]">
         <Image
-          src="/assets/goldenDog.webp"
-          alt="golden-dog"
-          height={326}
-          width={344}
-          className="object-contain"
+          src="/assets/serviceBanner.webp"
+          alt="services-banner"
+          fill
+          priority
+          className="object-cover"
         />
-      </div>
+
+        {/* Content Overlay */}
+        <div className="absolute inset-0 flex flex-col justify-center items-center lg:items-start lg:pl-[15%] px-6 pointer-events-none bg-black/20 lg:bg-transparent">
+          <div className="flex flex-col lg:flex-row items-center gap-4 lg:gap-6 mb-4 lg:mb-2">
+            <div className="bg-[#EBE2F9]/20 lg:bg-transparent rounded-full p-3 lg:p-4 flex items-center justify-center">
+              <Image
+                src="/icons/pinkPaw.svg"
+                alt="paw-icon"
+                height={87}
+                width={87}
+                className="hidden lg:block w-[48px] lg:w-[87px] h-auto"
+              />
+            </div>
+            <h1 className="text-[24px] lg:text-[40px] font-otomanopee-one leading-tight lg:leading-[38px] text-text-white uppercase tracking-[0.02em] max-w-[700px] text-center lg:text-left">
+              Compassionate Veterinary Services for Lifelong Pet Care
+            </h1>
+          </div>
+          <div className="max-w-[550px] lg:ml-4">
+            <p className="text-[16px] lg:text-[20px] text-text-white font-nunito font-medium leading-relaxed lg:leading-[22px] opacity-90 text-center lg:text-left">
+              From preventive screenings to surgical care and boarding,
+              we&apos;re here to help your pet feel safe, comfortable, and well
+              cared for. Contact us for a free consultation on how we can become
+              your pet&apos;s best choice of vet!
+            </p>
+          </div>
+        </div>
+      </section>
 
       <ServiceCards />
       <Screening />

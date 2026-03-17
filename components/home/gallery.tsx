@@ -17,90 +17,97 @@ export const Gallery = () => {
   ];
 
   return (
-    <div className="mt-[176px] max-w-[1092px] mx-auto mb-20 px-4">
-      <div className="flex flex-row items-center justify-start gap-6">
-        <Image src="/icons/pinkBow.svg" alt="pink-bow" height={87} width={87} />
-        <h2 className="text-[32px] text-center font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">
+    <div className="mt-20 lg:mt-[176px] max-w-[1092px] mx-auto mb-20 px-4">
+      <div className="flex flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 text-left">
+        <Image
+          src="/icons/pinkBow.svg"
+          alt="pink-bow"
+          height={87}
+          width={87}
+          className="w-[48px] lg:w-[87px] h-auto"
+        />
+        <h2 className="text-[22px] lg:text-[32px] font-nunito font-normal z-1 leading-tight lg:leading-[38px] text-primary-black uppercase font-otomanopee-one">
           A Little Look Into Life at Walnut Grove,
-          <br /> Where Your Pets Are Cared for Like Family!
+          <br className="hidden lg:block" /> Where Your Pets Are Cared for Like
+          Family!
         </h2>
       </div>
-      <p className="mt-4 text-primary-black text-[22px] leading-[28px] font-medium text-center">
+      <p className="mt-4 text-primary-black text-[18px] lg:text-[22px] leading-snug lg:leading-[28px] font-medium text-left">
         From first hellos to follow-up care, our team is here to make every
         visit
-        <br /> calm, comfortable, and filled with compassion.
+        <br className="hidden lg:block" /> calm, comfortable, and filled with
+        compassion.
       </p>
 
       {/* Gallery Grid */}
-      <div className="grid grid-cols-4 grid-rows-3 gap-5 mt-8 h-[857px]">
+      <div className="grid grid-cols-2 lg:grid-cols-4 grid-rows-none lg:grid-rows-3 gap-4 lg:gap-10 mt-8 auto-rows-[150px] lg:auto-rows-auto lg:h-[857px]">
         {/* Top 4 Small Images */}
-        <div className="relative overflow-hidden rounded-[18px]">
+        <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
           <Image
             src={images[0]}
             alt="gallery-1"
-            height={260}
-            width={250}
-            className="object-cover"
+            fill
+            className="object-cover lg:object-none"
           />
         </div>
-        <div className="relative overflow-hidden rounded-[18px]">
+        <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
           <Image
             src={images[1]}
             alt="gallery-2"
             fill
-            className="object-cover"
+            className="object-cover lg:object-none"
           />
         </div>
-        <div className="relative overflow-hidden rounded-[18px]">
+        <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
           <Image
             src={images[4]}
             alt="gallery-3"
             fill
-            className="object-cover"
+            className="object-cover lg:object-none"
           />
         </div>
-        <div className="relative overflow-hidden rounded-[18px]">
+        <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
           <Image
             src={images[3]}
             alt="gallery-4"
             fill
-            className="object-cover"
+            className="object-cover lg:object-none"
           />
         </div>
 
         {/* Large Vertical Image spanning 2 cols and 2 rows */}
-        <div className="relative overflow-hidden rounded-[18px] col-span-2 row-span-2 col-start-3 row-start-1">
+        <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px] col-span-2 row-span-2 lg:col-start-3 lg:row-start-1">
           <Image
             src={images[2]}
             alt="gallery-5"
             fill
-            className="object-cover"
+            className="object-cover lg:object-none"
           />
         </div>
 
-        {/* Bottom Row of 4 Images */}
-        <div className="relative overflow-hidden rounded-[18px]">
+        {/* Bottom Row of Images */}
+        <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
           <Image
             src={images[5]}
             alt="gallery-6"
             fill
-            className="object-cover"
+            className="object-cover lg:object-none"
           />
         </div>
-        <div className="relative overflow-hidden rounded-[18px] col-span-2">
+        <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px] col-span-1 lg:col-span-2">
           <Image
             src={images[6]}
             alt="gallery-7"
             fill
-            className="object-cover"
+            className="object-cover lg:object-none"
           />
         </div>
-        <div className="relative overflow-hidden rounded-[18px]">
+        <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
           <Image
             src={images[7]}
             alt="gallery-8"
             fill
-            className="object-cover"
+            className="object-cover lg:object-none"
           />
         </div>
       </div>

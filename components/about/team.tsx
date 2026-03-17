@@ -33,18 +33,24 @@ export const Team = () => {
   return (
     <div
       id="team"
-      className="scroll-mt-[200px] max-w-[1055px] mx-auto flex flex-col items-center justify-center relative mb-40"
+      className="scroll-mt-[200px] max-w-[1055px] mx-auto flex flex-col items-center justify-center relative mb-20 lg:mb-40 px-6 lg:px-0"
     >
-      <div className="flex flex-row items-center justify-start gap-6 w-full">
-        <Image src="/icons/pinkPaw.svg" alt="pink-paw" height={87} width={87} />
-        <h1 className="text-[32px] max-w-[720px] text-left font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 w-full">
+        <Image
+          src="/icons/pinkPaw.svg"
+          alt="pink-paw"
+          height={87}
+          width={87}
+          className="hidden lg:block w-[56px] lg:w-[87px] h-auto"
+        />
+        <h1 className="text-[24px] lg:text-[32px] max-w-[720px] text-center lg:text-left font-nunito font-normal z-1 leading-tight lg:leading-[38px] text-primary-black uppercase font-otomanopee-one">
           Meet Our Team,
-          <br />
+          <br className="hidden lg:block" />
           Experienced, Passionate & Dedicated!
         </h1>
       </div>
-      <div className="mt-4 w-full">
-        <p className="text-primary-black max-w-[730px] text-[22px] leading-[28px] font-medium">
+      <div className="mt-4 w-full text-center lg:text-left">
+        <p className="text-primary-black max-w-full lg:max-w-[730px] text-[16px] lg:text-[22px] leading-relaxed lg:leading-[28px] font-medium">
           From first hellos to follow-up care, our team is here to make every
           visit calm, comfortable, and filled with compassion.
         </p>
@@ -55,14 +61,19 @@ export const Team = () => {
           <div
             key={member.name}
             className={cn(
-              "sticky flex flex-col md:flex-row items-center bg-[#FFFCF7] rounded-[40px] p-5 gap-8 shadow-[0px_0px_30px_0px_#57575614] max-w-[1055px] mx-auto",
+              "sticky flex flex-col md:flex-row items-center bg-[#FFFCF7] rounded-[40px] p-6 lg:p-5 gap-8 shadow-[0px_0px_30px_0px_#57575614] max-w-[1055px] mx-auto",
               index % 2 === 1 ? "md:flex-row-reverse" : "",
             )}
-            style={{ top: `${200 + index * 60}px` }}
+            style={{
+              top:
+                typeof window !== "undefined" && window.innerWidth < 768
+                  ? `${100 + index * 20}px`
+                  : `${200 + index * 60}px`,
+            }}
           >
-            <div className="flex-shrink-0">
+            <div className="flex-shrink-0 w-full md:w-auto flex justify-center">
               <div
-                className={`relative w-[243px] flex flex-col justify-end h-[298px] rounded-[30px] overflow-hidden ${
+                className={`relative w-[200px] lg:w-[243px] flex flex-col justify-end h-[240px] lg:h-[298px] rounded-[30px] overflow-hidden ${
                   !member.image ? "bg-[#E7D2FF]" : ""
                 }`}
               >
@@ -91,16 +102,16 @@ export const Team = () => {
                 )}
               </div>
             </div>
-            <div className="flex flex-col gap-4">
-              <div className="flex flex-col">
-                <h3 className="text-[28px] mb-1 font-nunito font-semibold text-primary-black border-b-2 border-primary-purple w-fit">
+            <div className="flex flex-col gap-4 text-center lg:text-left items-center lg:items-start">
+              <div className="flex flex-col items-center lg:items-start">
+                <h3 className="text-[22px] lg:text-[28px] mb-1 font-nunito font-semibold text-primary-black border-b-2 border-primary-purple w-fit">
                   {member.name}
                 </h3>
-                <p className="text-[20px] leading-[20px] font-nunito font-semibold text-primary-green">
+                <p className="text-[18px] lg:text-[20px] leading-tight font-nunito font-semibold text-primary-green">
                   {member.role}
                 </p>
               </div>
-              <p className="text-[18px] leading-[22px] font-nunito font-normal text-primary-black whitespace-pre-line">
+              <p className="text-[15px] lg:text-[18px] leading-relaxed lg:leading-[22px] font-nunito font-normal text-primary-black whitespace-pre-line">
                 {member.bio}
               </p>
             </div>

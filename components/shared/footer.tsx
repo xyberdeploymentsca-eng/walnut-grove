@@ -52,11 +52,11 @@ const Footer = () => {
         className="absolute top-0 left-0 z-0 object-cover"
       />
 
-      <div className="relative z-10 max-w-[964px] mx-auto pt-38 px-4">
+      <div className="relative z-10 max-w-[964px] mx-auto pt-24 lg:pt-38 px-4">
         {/* Top Section: Map and Working Hours */}
-        <div className="flex flex-row justify-between items-start gap-10">
+        <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-start gap-6 lg:gap-10">
           {/* Map Area */}
-          <div className="flex-1 h-[131px] bg-white rounded-[18px] overflow-hidden shadow-sm relative border border-gray-100">
+          <div className="flex-1 min-h-[131px] bg-white rounded-[18px] overflow-hidden shadow-sm relative border border-gray-100">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10435.947027458502!2d-122.65553799218746!3d49.16285959999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d22c82a4bc57%3A0x6a99a60503a6347e!2sWalnut%20Grove%20Animal%20Hospital%20Langley!5e0!3m2!1sen!2sus!4v1729006985870!5m2!1sen!2sus"
               width="100%"
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
 
           {/* Working Hours Card */}
-          <div className="w-[380px] bg-primary-blue rounded-[18px] p-8 shadow-sm h-[112px] p-[18px]">
+          <div className="w-full lg:w-[380px] bg-primary-blue rounded-[18px] p-8 shadow-sm h-auto lg:h-[112px] p-[18px]">
             <h3 className="text-[16px] font-otomanopee-one text-primary-black mb-2 uppercase">
               Working Hours
             </h3>
@@ -87,8 +87,8 @@ const Footer = () => {
         </div>
 
         {/* Middle Section: Contact Info and Schedule Button */}
-        <div className="flex flex-row items-center justify-between mt-3">
-          <div className="flex flex-row items-start gap-12">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between mt-6 lg:mt-3 gap-6 lg:gap-0">
+          <div className="flex flex-col sm:flex-row items-start gap-6 lg:gap-12">
             {/* Address */}
             <div className="flex items-start gap-3">
               <Image
@@ -120,22 +120,25 @@ const Footer = () => {
           </div>
 
           {/* Schedule Button */}
-          <div className="flex items-center gap-4 -mt-5">
-            <CtaButton icon="/icons/calender.svg">
+          <div className="flex w-full lg:w-auto mt-4 lg:mt-0 lg:-mt-5">
+            <CtaButton
+              icon="/icons/calender.svg"
+              className="w-full justify-center lg:w-auto"
+            >
               Schedule Appointment
             </CtaButton>
           </div>
         </div>
 
         {/* Bottom Section: Logo, Links and Socials */}
-        <div className="flex flex-row justify-between items-start mt-12 pb-20">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start mt-12 pb-24 gap-10 lg:gap-0 text-center lg:text-left">
           {/* Logo Brand */}
           <div className="flex items-center gap-4 max-w-[300px]">
             <Image src="/assets/logo.png" alt="logo" width={251} height={52} />
           </div>
 
           {/* Navigation Links Grid */}
-          <div className="grid grid-cols-4 gap-12 flex-1 px-10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-12 flex-1 lg:px-10 w-full lg:w-auto">
             {footerLinks.map((category, catIdx) => (
               <div key={catIdx}>
                 <h4 className="font-bold text-[14px] mb-4 text-primary-black whitespace-nowrap">
@@ -158,11 +161,11 @@ const Footer = () => {
           </div>
 
           {/* Social Media */}
-          <div className="text-right">
+          <div className="text-center lg:text-right mt-6 lg:mt-0 w-full lg:w-auto bg-primary-white lg:bg-transparent -mx-4 lg:mx-0 px-4 py-8 lg:p-0">
             <h4 className="font-bold text-[14px] mb-4 text-primary-black">
               Find Us On Social Media!
             </h4>
-            <div className="flex gap-4 justify-end">
+            <div className="flex gap-4 justify-center lg:justify-end">
               <Link
                 href="https://instagram.com"
                 target="_blank"
@@ -183,7 +186,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="absolute bottom-[11%] text-primary-blue text-[14px] font-medium right-[20%]">
+      <p className="absolute bottom-[2%] lg:bottom-[11%] w-full text-center lg:text-right text-primary-blue text-[14px] font-medium lg:right-[20%]">
         © Copyright 2026, All Rights Reserved
       </p>
     </footer>

@@ -12,64 +12,65 @@ const points = [
 
 export const Welcome = () => {
   return (
-    <div className="mb-50 max-w-[1185px] relative mx-auto flex items-center gap-6 mt-[38%] font-nunito">
+    <div className="mb-20 lg:mb-50 max-w-[1296px] relative mx-auto flex flex-col lg:flex-row items-center gap-10 mt-10 lg:mt-[140px] font-nunito px-4 lg:px-0">
       <Image
         src="/assets/leftPaws.svg"
         alt="left"
-        className="absolute top-[80%] h-[1485px] -left-[30%] z-0"
+        className="hidden lg:block absolute top-[80%] h-[1485px] -left-[30%] z-0"
         width={392}
         height={1484}
       />
       <Image
         src="/assets/rightPaws.svg"
         alt="right"
-        className="absolute top-[200%] h-[1485px] -right-[30%] z-0"
+        className="hidden lg:block absolute top-[200%] h-[1485px] -right-[30%] z-0"
         width={392}
         height={1484}
       />
       <Image
-        src="/assets/dog.png"
+        src="/assets/welcome.webp"
         alt="welcome"
-        height={472}
-        width={301}
-        className="z-1"
+        height={481}
+        width={522}
+        className="z-1 md:h-[481px] w-[522px] h-[373px]"
       />
-      <div className="flex flex-col justify-center items-left">
-        <div className="flex flex-row items-center justify-start gap-6">
+      <div className="flex flex-col justify-center items-start">
+        <div className="flex flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 mt-6 lg:mt-0">
           <Image
             src="/assets/heartPaw.svg"
             alt="heart-paw"
             height={87}
             width={87}
+            className="w-[48px] lg:w-[87px] h-auto"
           />
-          <h1 className="text-[32px] text-left font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">
-            Welcome to walnut grove <br />
+          <h1 className="text-[22px] lg:text-[32px] text-left font-nunito font-normal z-1 leading-tight lg:leading-[38px] text-primary-black uppercase font-otomanopee-one">
+            Welcome to walnut grove <br className="hidden lg:block" />
             Animal Hospital!
           </h1>
         </div>
-        <div className="mt-4">
-          <p className="text-primary-black text-[22px] leading-[28px] font-medium">
+        <div className="mt-4 text-left">
+          <p className="text-primary-black text-[18px] lg:text-[22px] leading-snug lg:leading-[28px] font-medium">
             At Walnut Grove Animal Hospital, we believe every pet deserves{" "}
-            <br />
+            <br className="hidden lg:block" />
             compassionate care, clear communication, and a stress-free
             experience.{" "}
           </p>
         </div>
-        <div className="flex flex-col mt-4 gap-2">
+        <div className="flex flex-col mt-4 gap-2 lg:gap-4 items-start text-left">
           {points.map((point) => (
             <div key={point}>
-              <p className="text-primary-black text-[20px] leading-[28px] font-normal">
+              <p className="text-primary-black text-[16px] lg:text-[20px] leading-snug lg:leading-[28px] font-normal">
                 {" "}
                 &#9679; {point}
               </p>
             </div>
           ))}
-          <p className="text-primary-black text-[22px] leading-[28px] font-medium">
+          <p className="text-primary-black text-[18px] lg:text-[22px] leading-snug lg:leading-[28px] font-medium mt-4 lg:mt-0">
             From routine screenings to advanced procedures and comfortable
             boarding, our dedicated team is here to support your pet’s health,
             and give you peace of mind.
           </p>
-          <div className="w-fit">
+          <div className="w-full lg:w-fit flex justify-center lg:justify-start">
             <CtaButton className="mt-6" icon="/icons/vet.svg">
               know more about us
             </CtaButton>

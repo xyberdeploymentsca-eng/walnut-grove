@@ -20,7 +20,7 @@ const FaqItem = ({ question, answer }: Faq) => {
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex justify-between items-center gap-4">
-        <h3 className="text-[20px] font-nunito font-medium text-primary-black leading-[28px]">
+        <h3 className="text-[18px] lg:text-[20px] font-nunito font-medium text-primary-black leading-tight lg:leading-[28px]">
           {question}
         </h3>
         <div className="flex-shrink-0">
@@ -36,7 +36,7 @@ const FaqItem = ({ question, answer }: Faq) => {
           isOpen ? "max-h-[500px] mt-4 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <p className="text-[18px] font-nunito font-normal text-primary-black/80 leading-[26px]">
+        <p className="text-[16px] lg:text-[18px] font-nunito font-normal text-primary-black/80 leading-snug lg:leading-[26px]">
           {answer}
         </p>
       </div>
@@ -111,11 +111,17 @@ export const ServiceFaq = ({ faqs }: { faqs?: Faq[] }) => {
   const displayFaqs = faqs && faqs.length > 0 ? faqs : defaultFaqs;
 
   return (
-    <div className="max-w-[1296px] mx-auto px-4">
-      <div className="flex flex-row items-center justify-center gap-6 relative z-1 mb-16">
-        <Image src="/icons/pinkBow.svg" alt="pink-bow" height={87} width={87} />
-        <h2 className="text-[32px] text-left font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">
-          Answers to the Most Common <br />
+    <div className="max-w-[1296px] mx-auto px-4 mt-16 lg:mt-32">
+      <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 relative z-1 mb-10 lg:mb-16">
+        <Image
+          src="/icons/pinkBow.svg"
+          alt="pink-bow"
+          height={87}
+          width={87}
+          className="w-[48px] lg:w-[87px] h-auto"
+        />
+        <h2 className="text-[22px] lg:text-[32px] text-center lg:text-left font-nunito font-normal z-1 leading-tight lg:leading-[38px] text-primary-black uppercase font-otomanopee-one">
+          Answers to the Most Common <br className="hidden lg:block" />
           Questions that pet parent’s ask us!
         </h2>
       </div>

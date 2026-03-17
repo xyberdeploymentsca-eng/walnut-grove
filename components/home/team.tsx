@@ -27,31 +27,35 @@ export const Team = () => {
   ];
 
   return (
-    <div className="flex flex-col max-w-[1092px] mx-auto mt-50 px-4 mb-20">
-      <div className="flex flex-row items-center justify-start gap-6">
+    <div className="flex flex-col max-w-[1092px] mx-auto mt-20 lg:mt-50 px-4 mb-20 overflow-hidden">
+      <div className="flex flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6">
         <Image
           src="/icons/blueHeart.svg"
           alt="heart-paw"
           height={87}
           width={87}
-          className="z-1"
+          className="z-1 w-[48px] lg:w-[87px] h-auto"
         />
-        <h2 className="text-[32px] text-left font-nunito font-normal z-1 leading-[38px] text-primary-black uppercase font-otomanopee-one">
+        <h2 className="text-[22px] lg:text-[32px] text-left font-nunito font-normal z-1 leading-tight lg:leading-[38px] text-primary-black uppercase font-otomanopee-one">
           A Compassionate Team,
-          <br />
+          <br className="hidden lg:block" />
           Committed to Your Pet’s Well-Being
         </h2>
       </div>
-      <h3 className="text-[22px] mt-4 text-primary-black leading-[28px] font-medium">
+      <h3 className="text-[18px] lg:text-[22px] mt-4 text-primary-black leading-snug lg:leading-[28px] font-medium text-left">
         From first hellos to follow-up care, our team is here to make every
-        visit <br /> calm, comfortable, and filled with compassion.
+        <br className="hidden lg:block" /> calm, comfortable, and filled with
+        compassion.
       </h3>
 
-      <div className="flex flex-row gap-[40px] mt-10">
+      <div
+        className="flex flex-row overflow-x-auto lg:overflow-visible pb-6 lg:pb-0 gap-6 lg:gap-[40px] mt-10 scrollbar-hide w-full"
+        style={{ WebkitOverflowScrolling: "touch" }}
+      >
         {teamMembers.map((member, index) => (
           <div
             key={index}
-            className={`relative w-[243px] flex flex-col justify-end h-[259px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_#57575614] ${
+            className={`relative flex-shrink-0 w-[243px] flex flex-col justify-end h-[259px] rounded-[18px] overflow-hidden shadow-[0px_0px_30px_0px_#57575614] ${
               !member.image ? "bg-[#E7D2FF]" : ""
             }`}
           >
@@ -80,7 +84,7 @@ export const Team = () => {
           </div>
         ))}
       </div>
-      <div className="flex flex-row items-center justify-start mt-10 gap-6">
+      <div className="flex flex-row items-center justify-center lg:justify-start mt-6 lg:mt-10 gap-6">
         <CtaButton icon="/icons/team.svg">meet our team</CtaButton>
       </div>
     </div>

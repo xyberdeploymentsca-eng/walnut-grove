@@ -6,6 +6,16 @@ import { Header } from "@/components/shared/header";
 import localFont from "next/font/local";
 import Footer from "@/components/shared/footer";
 import { CalendlyModal } from "@/components/ui/calendlyModal";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: {
+    default: "Walnut Grove Animal Hospital",
+    template: "%s | Walnut Grove Animal Hospital",
+  },
+  description:
+    "Expert veterinary care in Langley. We offer preventive care, surgery, boarding, and more for your beloved pets.",
+};
 
 const nunito = Nunito({
   variable: "--font-nunito",
