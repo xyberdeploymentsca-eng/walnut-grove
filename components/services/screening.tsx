@@ -80,7 +80,7 @@ export const Screening = () => {
   return (
     <>
       <div className="max-w-[1268px] mx-auto lg:my-[176px] my-12 lg:my-20 px-6 lg:px-0">
-        <div className="flex flex-col lg:flex-row-reverse justify-between items-center max-w-[1296px] mx-auto px-4 relative z-1 gap-12 lg:gap-16">
+        <div className="flex flex-col-reverse lg:flex-row-reverse justify-between items-center max-w-[1296px] mx-auto px-4 relative z-1 gap-12 lg:gap-16">
           <div className="flex flex-col -mt-0 lg:-mt-10 items-center w-full max-w-[424px]">
             <Image
               src="/assets/serviceDog.webp"
