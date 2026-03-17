@@ -68,7 +68,7 @@ export const Team = () => {
               top:
                 typeof window !== "undefined" && window.innerWidth < 768
                   ? `${100 + index * 20}px`
-                  : `${200 + index * 60}px`,
+                  : `${100 + index * 60}px`,
             }}
           >
             <div className="flex-shrink-0 w-full md:w-auto flex justify-center">

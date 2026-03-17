@@ -13,7 +13,7 @@ const HomeContainer = ({ testimonials }: { testimonials: any }) => {
   return (
     <div className="max-w-[1920px] mx-auto font-nunito bg-primary-white overflow-hidden">
       {/* Hero Banner */}
-      <section className="relative w-full h-auto lg:h-[755px] max-w-[1880px] mx-auto overflow-visible flex flex-col pt-12 lg:pt-0">
+      <section className="relative w-full h-auto lg:h-[755px] max-w-[1880px] mx-auto overflow-visible flex flex-col pt-12 lg:pt-0 px-2.5 md:px-0 -mt-5 md:mt-10">
         <video
           autoPlay
           muted
@@ -40,7 +40,7 @@ const HomeContainer = ({ testimonials }: { testimonials: any }) => {
 
         {/* Content — left-aligned, vertically centered */}
         <div className="relative z-10 lg:h-full flex flex-col justify-center px-6 lg:pl-[6%] lg:max-w-[52%] pb-10 lg:pb-20">
-          <h1 className="font-otomanopee-one uppercase text-primary-black text-[32px] lg:text-[48px] leading-[1.2] lg:leading-[56px] font-normal tracking-tight">
+          <h1 className="font-otomanopee-one uppercase text-primary-black text-[30px] lg:text-[48px] leading-[1.2] lg:leading-[56px] font-normal tracking-tight">
             Trusted Medical Care.
             <br className="hidden lg:block" />
             Genuine Compassion.

@@ -135,7 +135,7 @@ export const Testimonials = ({
         {/* Navigation Arrows */}
         <button
           onClick={handlePrev}
-          className="p-1 lg:p-2 cursor-pointer hover:bg-gray-100 rounded-full transition-colors flex-shrink-0 z-20 bg-white/80 shadow-sm"
+          className="p-1 lg:p-2 cursor-pointer hover:bg-gray-100 rounded-full transition-colors flex-shrink-0 z-20 bg-white/80 shadow-sm lg:bg-transparent lg:shadow-none"
         >
           <ChevronLeft
             size={32}
@@ -151,78 +151,37 @@ export const Testimonials = ({
               transform: `translateX(-${getTranslation()}px)`,
             }}
           >
-            {testimonials.map((testimonial, index) => {
-              const bgColors = ["bg-[#E7D2FF]", "bg-[#D9F2E6]", "bg-[#E0EBFF]"];
-              const borderColors = [
-                "border-[#C9A0DC]",
-                "border-[#87D5B1]",
-                "border-[#AECBFA]",
-              ];
-              const accentColor = bgColors[index % bgColors.length];
-              const borderColor = borderColors[index % borderColors.length];
-
-              return (
-                <div
-                  key={index}
-                  className="flex flex-col items-center justify-center min-w-[200px] lg:min-w-[334px] relative transition-all duration-300"
-                >
-                  <div
-                    className={`w-full min-h-[360px] lg:h-[400px] ${accentColor} border-2 ${borderColor} rounded-[24px] lg:rounded-[40px] p-5 lg:p-10 flex flex-col items-center justify-between relative overflow-hidden shadow-[0px_10px_40px_0px_rgba(0,0,0,0.03)]`}
-                  >
-                    {/* Decorative Background Quote */}
-                    <Image
-                      src="/icons/comma.svg"
-                      alt="quote"
-                      height={120}
-                      width={120}
-                      className="absolute -top-4 -right-4 opacity-[0.05] rotate-180 pointer-events-none"
-                    />
-
-                    <div className="flex flex-col items-center gap-1 lg:gap-3 z-10 w-full">
-                      <div className="w-10 lg:w-12 h-1 bg-primary-black/10 rounded-full mb-1 lg:mb-2" />
-                      <h2 className="text-[18px] lg:text-[26px] text-center font-otomanopee-one text-primary-black leading-tight uppercase tracking-tight">
-                        {testimonial.name}
-                      </h2>
-                      <p className="text-[11px] lg:text-[14px] text-primary-green font-nunito font-extrabold uppercase tracking-[0.1em]">
-                        {testimonial.service}
-                      </p>
-                    </div>
-
-                    <div className="relative z-10 flex flex-col items-center gap-3 lg:gap-6 my-4">
-                      <Image
-                        src="/icons/comma.svg"
-                        alt="quote"
-                        height={20}
-                        width={20}
-                        className="opacity-40 lg:w-[32px] lg:h-[32px]"
-                      />
-                      <p className="text-[15px] lg:text-[18px] text-center text-primary-black font-nunito font-medium leading-relaxed lg:leading-[28px] line-clamp-6 italic px-1">
-                        &quot;{testimonial.message}&quot;
-                      </p>
-                    </div>
-
-                    <div className="w-full flex justify-center pb-1">
-                      <div className="flex gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <span
-                            key={i}
-                            className="text-[#FFB800] text-sm lg:text-lg"
-                          >
-                            ★
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center min-w-[200px] lg:min-w-[334px] relative"
+              >
+                <div className="w-full min-h-[360px] lg:h-[352px] bg-[#FFFCF7] rounded-[24px] lg:rounded-[40px] p-5 lg:p-10 flex flex-col items-center justify-center relative shadow-[0px_0px_30px_0px_rgba(87,87,86,0.08)] border border-[#F0EAF8]">
+                  <h2 className="text-[18px] lg:text-[26px] text-center font-otomanopee-one text-primary-black leading-tight uppercase mb-1 lg:mb-2">
+                    {testimonial.name}
+                  </h2>
+                  <p className="text-[12px] lg:text-[18px] text-primary-black leading-tight font-normal mb-4 lg:mb-6">
+                    Service: {testimonial.service}
+                  </p>
+                  <Image
+                    src="/icons/comma.svg"
+                    alt="quote"
+                    height={20}
+                    width={20}
+                    className="mb-4 lg:mb-6 lg:w-[29px] lg:h-[26px]"
+                  />
+                  <p className="text-[14px] lg:text-[18px] text-center text-primary-black font-nunito font-medium px-2 lg:px-4 line-clamp-6 lg:line-clamp-4 leading-relaxed lg:leading-[28px]">
+                    {testimonial.message}
+                  </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
 
         <button
           onClick={handleNext}
-          className="p-1 lg:p-2 cursor-pointer hover:bg-gray-100 rounded-full transition-colors flex-shrink-0 z-20 bg-white/80 shadow-sm"
+          className="p-1 lg:p-2 cursor-pointer hover:bg-gray-100 rounded-full transition-colors flex-shrink-0 z-20 bg-white/80 shadow-sm lg:bg-transparent lg:shadow-none"
         >
           <ChevronRight
             size={32}

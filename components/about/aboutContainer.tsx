@@ -11,7 +11,7 @@ export const AboutContainer = ({ faqs }: { faqs?: any[] }) => {
   return (
     <>
       <div className="max-w-[1920px] mx-auto bg-primary-white">
-        <section className="relative max-w-[1880px] mx-auto lg:-mt-6 rounded-[30px] lg:rounded-[40px] overflow-hidden min-h-[500px] lg:h-[643px]">
+        <section className="relative max-w-[1880px] mx-auto mt-10 rounded-[30px] lg:rounded-[40px] overflow-hidden min-h-[500px] lg:h-[643px]">
           <Image
             src="/assets/aboutBanner.webp"
             alt="services-banner"

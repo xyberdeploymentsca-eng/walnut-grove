@@ -212,7 +212,10 @@ export const Header = () => {
   };
 
   return (
-    <div className="max-w-[1880px] w-[95%] font-nunito rounded-[24px] lg:rounded-[40px] mx-auto min-h-[72px] lg:h-[92px] bg-primary-white sticky top-5 z-[50] shadow-[0px_0px_20px_0px_#57575614]">
+    <div
+      className="max-w-[1880px] w-[95%] font-nunito rounded-[24px] lg:rounded-[40px] mx-auto min-h-[72px] lg:h-[92px] bg-primary-white sticky top-5 z-[50] shadow-[0px_0px_20px_0px_#57575614]"
+      ref={dropdownRef}
+    >
       <div className="flex items-center justify-between h-full w-full mx-auto px-6 lg:px-[90px] py-4 lg:py-5">
         <Link href="/" className="z-10 shrink-0">
           <Image
@@ -225,10 +228,7 @@ export const Header = () => {
         </Link>
 
         {/* Desktop Nav */}
-        <div
-          className="hidden lg:flex items-center gap-15 ml-2"
-          ref={dropdownRef}
-        >
+        <div className="hidden lg:flex items-center gap-15 ml-2">
           {headerLinks.map((link) => {
             const dropdownKey =
               link.label === "Services"
