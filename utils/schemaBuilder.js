@@ -98,3 +98,22 @@ export const getBreadcrumbSchema = (items) => ({
     item: `${hospitalUrl}${item.url}`,
   })),
 });
+export const getPetFoodRecallsSchema = () => ({
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "Pet Food Recalls & Safety",
+  description:
+    "Stay updated on the latest pet food recalls and health alerts. Access trusted nutrition safety information to protect your pet's well-being.",
+  publisher: {
+    "@type": "VeterinaryCare",
+    name: hospitalName,
+    address: hospitalAddress,
+    telephone: hospitalPhone,
+  },
+  mainEntity: {
+    "@type": "Dataset",
+    name: "VIN Pet Food Recall Center",
+    description: "Official real-time updates on pet food and product recalls.",
+    url: "https://www.vin.com/recallcenter/default.aspx",
+  },
+});

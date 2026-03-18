@@ -455,3 +455,16 @@ export const howToVideosPage = defineType({
     }),
   ],
 });
+export const petFoodRecallsPage = defineType({
+  name: "petFoodRecallsPage",
+  title: "Pet Food Recalls Page",
+  type: "document",
+  fields: [
+    defineField({
+      name: "metaData",
+      title: "SEO Metadata",
+      type: "object",
+      fields: metaDataFields,
+    }),
+  ],
+});
