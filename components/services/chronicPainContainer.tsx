@@ -35,7 +35,7 @@ export const ChronicPainContainer = () => {
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
-              src="/icons/card6.svg"
+              src="/icons/card4.svg"
               alt="chronic-pain-icon"
               height={87}
               width={87}
@@ -77,7 +77,7 @@ export const ChronicPainContainer = () => {
               </div>
               <div className="flex-1 relative rounded-[16px] overflow-hidden min-h-[250px] lg:min-h-0">
                 <Image
-                  src="/assets/chronicPain.png"
+                  src="/assets/pain.png"
                   alt="chronic-pain"
                   fill
                   className="object-cover"

@@ -35,7 +35,7 @@ export const DogBreedingContainer = () => {
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
-              src="/icons/card11.svg"
+              src="/icons/card4.svg"
               alt="breeding-icon"
               height={87}
               width={87}
@@ -78,7 +78,7 @@ export const DogBreedingContainer = () => {
               </div>
               <div className="flex-1 relative rounded-[16px] overflow-hidden min-h-[250px] lg:min-h-0">
                 <Image
-                  src="/assets/breedingManagement.png"
+                  src="/assets/breading.png"
                   alt="breeding"
                   fill
                   className="object-cover"

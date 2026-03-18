@@ -103,7 +103,7 @@ export const DentalContainer = () => {
               </div>
               <div className="flex-1 relative rounded-[16px] overflow-hidden min-h-[250px] lg:min-h-0">
                 <Image
-                  src="/assets/petDental.png"
+                  src="/assets/dental.webp"
                   alt="dental"
                   fill
                   className="object-cover"
