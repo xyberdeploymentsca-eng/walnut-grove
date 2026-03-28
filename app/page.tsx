@@ -11,12 +11,13 @@ export async function generateMetadata() {
 }
 
 export default async function Home() {
-  const data = await getPageData("homepage");
+  // const data = await getPageData("homepage");
+  const aboutData = await getPageData("aboutPage");
   const schema = getHospitalSchema();
   return (
     <>
       <JsonLd data={schema} />
-      <HomeContainer testimonials={data?.testimonials} />
+      <HomeContainer team={aboutData?.team} />
     </>
   );
 }

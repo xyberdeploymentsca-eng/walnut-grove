@@ -4,10 +4,15 @@ import Image from "next/image";
 import { Care } from "./care";
 import { Team } from "./team";
 import { Heart } from "./heart";
-import { AboutFaq } from "./aboutFaq";
 import { Gallery } from "./gallery";
 
-export const AboutContainer = ({ faqs }: { faqs?: any[] }) => {
+export const AboutContainer = ({
+  faqs,
+  team,
+}: {
+  faqs?: any[];
+  team?: any[];
+}) => {
   return (
     <>
       <div className="max-w-[1920px] mx-auto bg-primary-white">
@@ -47,10 +52,9 @@ export const AboutContainer = ({ faqs }: { faqs?: any[] }) => {
           </div>
         </section>
         <Care />
-        <Team />
+        <Team team={team} />
         <Heart />
         <Gallery />
-        <AboutFaq faqs={faqs as any} />
       </div>
     </>
   );

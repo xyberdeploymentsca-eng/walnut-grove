@@ -13,7 +13,7 @@ export const ServicesContainer = ({
   return (
     <div className="max-w-[1920px] mx-auto bg-primary-white">
       {/* New Hero Banner */}
-      <section className="relative max-w-[1880px] mx-auto lg:-mt-6 rounded-[30px] lg:rounded-[40px] overflow-hidden min-h-[500px] lg:h-[643px]">
+      <section className="relative max-w-[1880px] mx-auto lg:mt-10 rounded-[30px] lg:rounded-[40px] overflow-hidden min-h-[500px] lg:h-[643px]">
         <Image
           src="/assets/serviceBanner.webp"
           alt="services-banner"

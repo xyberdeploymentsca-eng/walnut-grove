@@ -4,6 +4,7 @@ import { type SchemaTypeDefinition } from "sanity";
 import { homepage } from "./homepage";
 import { servicesPage } from "./servicesPage";
 import { aboutPage } from "./aboutPage";
+import { faqPage } from "./faqPage";
 import { contactSubmission } from "./contactSubmission";
 import {
   anesthesiaPage,
@@ -32,12 +33,15 @@ import {
   ultrasoundPage,
   vaccinesPage,
 } from "./subServicePages";
+import { popupNotification } from "./popupNotification";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
     homepage,
     servicesPage,
     aboutPage,
+    faqPage,
+    popupNotification,
     contactSubmission,
     anesthesiaPage,
     bloodworkPage,

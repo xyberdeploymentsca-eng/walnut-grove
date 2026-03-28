@@ -16,7 +16,7 @@ const About = async () => {
   return (
     <>
       <JsonLd data={schema} />
-      <AboutContainer faqs={data?.faqs} />
+      <AboutContainer faqs={data?.faqs} team={data?.team} />
     </>
   );
 };

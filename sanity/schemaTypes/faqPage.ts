@@ -2,9 +2,9 @@
 
 import { defineField, defineType } from "sanity";
 
-export const aboutPage = defineType({
-  name: "aboutPage",
-  title: "About Page",
+export const faqPage = defineType({
+  name: "faqPage",
+  title: "FAQ Page",
   type: "document",
   fields: [
     defineField({
@@ -35,27 +35,6 @@ export const aboutPage = defineType({
           title: "Canonical Url",
           type: "string",
         }),
-      ],
-    }),
-    defineField({
-      name: "team",
-      title: "Team Members",
-      type: "array",
-      of: [
-        {
-          type: "object",
-          fields: [
-            { name: "name", title: "Name", type: "string" },
-            { name: "role", title: "Role", type: "string" },
-            {
-              name: "image",
-              title: "Image",
-              type: "image",
-              options: { hotspot: true },
-            },
-            { name: "bio", title: "Bio", type: "text" },
-          ],
-        },
       ],
     }),
     defineField({

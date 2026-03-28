@@ -453,6 +453,58 @@ export const howToVideosPage = defineType({
       type: "object",
       fields: metaDataFields,
     }),
+    defineField({
+      name: "videos",
+      title: "Videos",
+      type: "array",
+      description: "YouTube videos to display in the carousel.",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "youtubeId",
+              title: "YouTube Video ID",
+              type: "string",
+              description: "The video ID from the YouTube URL (e.g. S-pYM4VVNaI).",
+            },
+            {
+              name: "title",
+              title: "Title",
+              type: "string",
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
+      name: "helpfulResources",
+      title: "Helpful Resources",
+      type: "array",
+      description: "External article and resource links.",
+      of: [
+        {
+          type: "object",
+          fields: [
+            {
+              name: "name",
+              title: "Name",
+              type: "string",
+            },
+            {
+              name: "href",
+              title: "URL",
+              type: "string",
+            },
+            {
+              name: "description",
+              title: "Description",
+              type: "text",
+            },
+          ],
+        },
+      ],
+    }),
   ],
 });
 export const petFoodRecallsPage = defineType({

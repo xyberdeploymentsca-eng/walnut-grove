@@ -54,7 +54,7 @@ export const Header = () => {
     {
       label: "Services",
       href: "/services",
-      hasDropdown: true,
+      hasDropdown: false,
     },
     {
       label: "Resources",
@@ -147,27 +147,28 @@ export const Header = () => {
     sections: [
       {
         title: "Pet Food Recalls",
-        description:
-          "Stay informed with the latest safety alerts and recall updates to protect your pet.",
+        description: "Latest safety alerts and recall updates for your pet.",
         href: "/resources/pet-food-recalls",
       },
       {
         title: "Poisonous Plant",
-        description:
-          "Learn which common plants may be harmful to cats and dogs.",
+        description: "Common plants that may be harmful to cats and dogs.",
         href: "/resources/poisonous-plants",
       },
       {
         title: "How To Videos",
-        description:
-          "Helpful, easy-to-follow videos for everyday pet care at home.",
+        description: "Easy-to-follow videos for everyday pet care at home.",
         href: "/resources/how-to-videos",
       },
       {
         title: "Links",
-        description:
-          "Trusted resources and recommendations for additional pet health information.",
+        description: "Trusted resources for additional pet health information.",
         href: "/resources/how-to-videos#important-links",
+      },
+      {
+        title: "F.A.Q's",
+        description: "Answers to common questions about our services and care.",
+        href: "/about#faqs",
       },
     ],
   };
@@ -176,33 +177,24 @@ export const Header = () => {
     sections: [
       {
         title: "Our Story",
-        description:
-          "Learn how Walnut Grove began and what guides our care every day.",
+        description: "Walnut Grove's journey and our daily care philosophy.",
         href: "/about#story",
       },
       {
         title: "How We Care",
-        description:
-          "Discover our philosophy and commitment to providing compassionate care.",
+        description: "Our philosophy and commitment to compassionate care.",
         href: "/about#care-philosophy",
       },
       {
         title: "Meet The Team",
-        description:
-          "Get to know the caring professionals behind your pet's treatment.",
+        description: "The caring professionals behind your pet's treatment.",
         href: "/about#team",
       },
       {
         title: "View Our Gallery",
         description:
-          "Take a look inside our clinic and moments that define our care.",
+          "A look inside our clinic and moments that define our care.",
         href: "/about#gallery",
-      },
-      {
-        title: "F.A.Q's",
-        description:
-          "Quick answers to common questions about our services, hours, and care.",
-        href: "/about#faqs",
       },
     ],
   };
@@ -339,7 +331,7 @@ export const Header = () => {
                           setActiveDropdown(null);
                         }}
                       >
-                        <h3 className="font-nunito font-normal text-[16px] leading-[18px] text-[#3C3C3B] mb-2 pb-1 border-b border-[#E7D2FF] w-fit group-hover:text-primary-green transition-all">
+                        <h3 className="font-nunito font-normal text-[20px] leading-[18px] text-[#3C3C3B] mb-2 pb-1 border-b border-[#E7D2FF] w-fit group-hover:text-primary-green transition-all">
                           {section.title}
                         </h3>
                         <p className="font-nunito font-light text-[14px] leading-[14px] text-[#3C3C3B] group-hover:text-primary-green transition-all">
@@ -365,7 +357,7 @@ export const Header = () => {
                           setActiveDropdown(null);
                         }}
                       >
-                        <h3 className="font-nunito font-normal text-[16px] leading-[18px] text-[#3C3C3B] mb-1 pb-1 border-b border-[#E7D2FF] w-fit group-hover:text-primary-green transition-all">
+                        <h3 className="font-nunito font-normal text-[20px] leading-[18px] text-[#3C3C3B] mb-1 pb-1 border-b border-[#E7D2FF] w-fit group-hover:text-primary-green transition-all">
                           {section.title}
                         </h3>
                         <p className="font-nunito font-light text-[14px] leading-[14px] text-[#3C3C3B] group-hover:text-primary-green transition-all">

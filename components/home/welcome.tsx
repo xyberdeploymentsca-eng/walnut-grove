@@ -1,6 +1,7 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 
 const points = [
@@ -48,14 +49,6 @@ export const Welcome = () => {
             Animal Hospital!
           </h1>
         </div>
-        <div className="mt-4 text-left">
-          <p className="text-primary-black text-[18px] lg:text-[22px] leading-snug lg:leading-[28px] font-medium">
-            At Walnut Grove Animal Hospital, we believe every pet deserves{" "}
-            <br className="hidden lg:block" />
-            compassionate care, clear communication, and a stress-free
-            experience.{" "}
-          </p>
-        </div>
         <div className="flex flex-col mt-4 gap-2 lg:gap-4 items-start text-left">
           {points.map((point) => (
             <div key={point}>
@@ -71,9 +64,11 @@ export const Welcome = () => {
             and give you peace of mind.
           </p>
           <div className="w-full lg:w-fit flex justify-center lg:justify-start">
-            <CtaButton className="mt-6" icon="/icons/vet.svg">
-              know more about us
-            </CtaButton>
+            <Link href="/about">
+              <CtaButton className="mt-6" icon="/icons/vet.svg">
+                know more about us
+              </CtaButton>
+            </Link>
           </div>
         </div>
       </div>

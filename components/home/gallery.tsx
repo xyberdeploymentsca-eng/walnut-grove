@@ -47,7 +47,7 @@ export const Gallery = () => {
             src={images[0]}
             alt="gallery-1"
             fill
-            className="object-cover lg:object-none"
+            className="object-cover"
           />
         </div>
         <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
@@ -55,7 +55,7 @@ export const Gallery = () => {
             src={images[1]}
             alt="gallery-2"
             fill
-            className="object-cover lg:object-none"
+            className="object-cover"
           />
         </div>
         <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
@@ -63,7 +63,7 @@ export const Gallery = () => {
             src={images[4]}
             alt="gallery-3"
             fill
-            className="object-cover lg:object-none"
+            className="object-cover"
           />
         </div>
         <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
@@ -71,7 +71,7 @@ export const Gallery = () => {
             src={images[3]}
             alt="gallery-4"
             fill
-            className="object-cover lg:object-none"
+            className="object-cover"
           />
         </div>
 
@@ -81,7 +81,7 @@ export const Gallery = () => {
             src={images[2]}
             alt="gallery-5"
             fill
-            className="object-cover lg:object-none"
+            className="object-cover"
           />
         </div>
 
@@ -91,7 +91,7 @@ export const Gallery = () => {
             src={images[5]}
             alt="gallery-6"
             fill
-            className="object-cover lg:object-none"
+            className="object-cover"
           />
         </div>
         <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px] col-span-1 lg:col-span-2">
@@ -99,7 +99,7 @@ export const Gallery = () => {
             src={images[6]}
             alt="gallery-7"
             fill
-            className="object-cover lg:object-none"
+            className="object-cover"
           />
         </div>
         <div className="relative overflow-hidden rounded-[12px] lg:rounded-[18px]">
@@ -107,7 +107,7 @@ export const Gallery = () => {
             src={images[7]}
             alt="gallery-8"
             fill
-            className="object-cover lg:object-none"
+            className="object-cover"
           />
         </div>
       </div>

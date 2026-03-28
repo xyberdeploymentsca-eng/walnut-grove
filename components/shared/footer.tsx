@@ -5,7 +5,7 @@
 import Image from "next/image";
 import { CtaButton } from "../ui/ctaButton";
 import Link from "next/link";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram, Facebook, MapPin } from "lucide-react";
 
 const Footer = () => {
   const footerLinks = [
@@ -14,7 +14,7 @@ const Footer = () => {
       links: [
         { name: "Our Team", href: "/team" },
         { name: "Gallery", href: "/gallery" },
-        { name: "F.A.Q's", href: "/faqs" },
+        { name: "F.A.Q's", href: "/faq" },
       ],
     },
     {
@@ -44,21 +44,21 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full max-w-[1920px] mx-auto relative min-h-[649px] mt-20 relative">
-      <Image
+    <footer className="w-full max-w-[calc(100vw-56px)] mx-auto relative h-fit rounded-[20px] mt-20 relative bg-primary-purple pb-10 mb-[28px]">
+      {/* <Image
         src="/assets/footer.svg"
         alt="footer-banner"
         fill
         className="absolute top-0 left-0 z-0 object-cover"
-      />
+      /> */}
 
-      <div className="relative z-10 max-w-[964px] mx-auto pt-24 lg:pt-38 px-4">
+      <div className="relative z-10 max-w-[1296px] mx-auto pt-10 px-6 lg:px-4">
         {/* Top Section: Map and Working Hours */}
         <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-start gap-6 lg:gap-10">
           {/* Map Area */}
           <div className="flex-1 min-h-[131px] bg-white rounded-[18px] overflow-hidden shadow-sm relative border border-gray-100">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10435.947027458502!2d-122.65553799218746!3d49.16285959999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d22c82a4bc57%3A0x6a99a60503a6347e!2sWalnut%20Grove%20Animal%20Hospital%20Langley!5e0!3m2!1sen!2sus!4v1729006985870!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!4v1774700352646!6m8!1m7!1sKh4mWQXbT_BqNYb-C2ubMQ!2m2!1d49.16296129558101!2d-122.6392032980328!3f140.8!4f0!5f0.7820865974627469"
               width="100%"
               height="100%"
               style={{ border: 0 }}
@@ -131,25 +131,25 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section: Logo, Links and Socials */}
-        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start mt-12 pb-24 gap-10 lg:gap-0 text-center lg:text-left">
+        <div className="flex flex-col lg:flex-row justify-between items-center lg:items-start mt-10 pb-8 gap-8 lg:gap-0 text-center lg:text-left">
           {/* Logo Brand */}
           <div className="flex items-center gap-4 max-w-[300px]">
             <Image src="/assets/logo.png" alt="logo" width={251} height={52} />
           </div>
 
           {/* Navigation Links Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10 lg:gap-12 flex-1 lg:px-10 w-full lg:w-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 lg:gap-12 flex-1 lg:px-10 w-full lg:w-auto">
             {footerLinks.map((category, catIdx) => (
               <div key={catIdx}>
-                <h4 className="font-bold text-[14px] mb-4 text-primary-black whitespace-nowrap">
+                <h4 className="font-bold text-[14px] mb-3 text-white whitespace-nowrap">
                   {category.title}
                 </h4>
-                <ul className="space-y-2 text-[12px] text-primary-black/80">
+                <ul className="space-y-2 text-[12px] text-white/70">
                   {category.links.map((link, linkIdx) => (
                     <li key={linkIdx}>
                       <Link
                         href={link.href}
-                        className="cursor-pointer hover:text-primary-green transition-colors whitespace-nowrap"
+                        className="cursor-pointer hover:text-white transition-colors whitespace-nowrap"
                       >
                         {link.name}
                       </Link>
@@ -161,8 +161,8 @@ const Footer = () => {
           </div>
 
           {/* Social Media */}
-          <div className="text-center lg:text-right mt-6 lg:mt-0 w-full lg:w-auto bg-primary-white lg:bg-transparent -mx-4 lg:mx-0 px-4 py-8 lg:p-0">
-            <h4 className="font-bold text-[14px] mb-4 text-primary-black">
+          <div className="text-center lg:text-right mt-2 lg:mt-0 w-full lg:w-auto">
+            <h4 className="font-bold text-[14px] mb-4 text-white">
               Find Us On Social Media!
             </h4>
             <div className="flex gap-4 justify-center lg:justify-end">
@@ -182,13 +182,30 @@ const Footer = () => {
               >
                 <Facebook size={28} className="text-primary-green" />
               </Link>
+              <Link
+                href="https://www.google.com/maps/place/Walnut+Grove+Animal+Hospital+Langley/@49.1629613,-122.6546539,17z"
+                target="_blank"
+                className="bg-primary-green/20 p-2.5 rounded-xl cursor-pointer hover:bg-primary-green/30 transition-colors"
+                aria-label="Google Business"
+              >
+                <MapPin size={28} className="text-primary-green" />
+              </Link>
             </div>
           </div>
         </div>
       </div>
-      <p className="absolute bottom-[2%] lg:bottom-[11%] w-full text-center lg:text-right text-primary-blue text-[14px] font-medium lg:right-[20%]">
-        © Copyright 2026, All Rights Reserved
-      </p>
+      <div className="flex items-center justify-between border-t-2 border-white/30 max-w-[1296px] mx-auto px-6 lg:px-4 pt-5">
+        <p className="text-white/70 text-[13px] font-medium">
+          © Copyright 2026, All Rights Reserved
+        </p>
+        <Image
+          src="/icons/food.svg"
+          alt="footer-bottom"
+          width={120}
+          height={36}
+          className="shrink-0"
+        />
+      </div>
     </footer>
   );
 };

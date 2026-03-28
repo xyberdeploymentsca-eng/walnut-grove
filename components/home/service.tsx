@@ -157,10 +157,6 @@ export const Service = () => {
               PAWS
             </h2>
           </div>
-          <p className="text-[18px] lg:text-[22px] text-primary-black leading-snug lg:leading-[26px] font-medium">
-            Our services are designed to support your pet's health, comfort, and
-            happiness at every stage.
-          </p>
         </div>
 
         {/* Carousel Section */}

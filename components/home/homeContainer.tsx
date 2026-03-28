@@ -9,7 +9,7 @@ import { Gallery } from "./gallery";
 import { Testimonials } from "./testimonials";
 import Link from "next/link";
 
-const HomeContainer = ({ testimonials }: { testimonials: any }) => {
+const HomeContainer = ({ team }: { team?: any[] }) => {
   return (
     <div className="max-w-[1920px] mx-auto font-nunito bg-primary-white overflow-hidden">
       {/* Hero Banner */}
@@ -84,9 +84,9 @@ const HomeContainer = ({ testimonials }: { testimonials: any }) => {
       <div className="relative z-1 pt-12 lg:pt-24">
         <Welcome />
         <Service />
-        <Team />
+        <Team team={team} />
         <Gallery />
-        <Testimonials testimonials={testimonials} />
+        {/* <Testimonials testimonials={testimonials} /> */}
       </div>
     </div>
   );

@@ -45,70 +45,7 @@ const FaqItem = ({ question, answer }: Faq) => {
 };
 
 export const AboutFaq = ({ faqs }: { faqs?: Faq[] }) => {
-  const defaultFaqs = [
-    {
-      question: "What types of care does my pet receive here?",
-      answer:
-        "Preventive care, diagnostics, surgical treatments, dental care, and pet boarding, all in one place.",
-    },
-    {
-      question: "How often should my pet be screened?",
-      answer:
-        "We normally recommend annual screenings for most pets, though senior pets or those with chronic conditions may benefit from bi-annual visits.",
-    },
-    {
-      question: "How do you keep pets safe during surgery?",
-      answer:
-        "Our state-of-the-art surgical suite is equipped with advanced monitoring systems, and every pet is continuously observed by a dedicated technician.",
-    },
-    {
-      question: "How are tests chosen for my pet?",
-      answer:
-        "Diagnostic tests are tailored to your pet's age, breed, lifestyle, and any clinical symptoms they may be exhibiting.",
-    },
-    {
-      question: "Why is dental care important for pets?",
-      answer:
-        "Oral health affects overall health; untreated dental issues can lead to systemic infections and organ damage.",
-    },
-    {
-      question: "When can I drop off or pick up my pet?",
-      answer:
-        "Drop-offs and pick-ups are available during our regular business hours. For boarding, we offer flexible times to suit your schedule.",
-    },
-    {
-      question: "What surgeries do you perform?",
-      answer:
-        "We perform a wide range of surgeries, from routine spays and neuters to complex soft tissue and dental procedures.",
-    },
-    {
-      question: "Why screen a pet that looks healthy?",
-      answer:
-        "Early detection is key! Many life-threatening conditions can be managed effectively if caught before symptoms appear.",
-    },
-    {
-      question: "What diagnostic tests are available?",
-      answer:
-        "We offer in-house laboratory testing, radiology, and ultrasound services for rapid and accurate diagnosis.",
-    },
-    {
-      question: "Are screening tests safe?",
-      answer:
-        "Yes, our screening tests are non-invasive or minimally invasive, designed to be calm and low-stress for your pet.",
-    },
-    {
-      question: "Do you offer pet boarding?",
-      answer:
-        "Yes, we offer specialized cat-only boarding in a calm, individualized environment.",
-    },
-    {
-      question: "How do I book an appointment?",
-      answer:
-        "You can book an appointment by calling us at (604) 888-2628 or through our online booking portal.",
-    },
-  ];
-
-  const displayFaqs = faqs && faqs.length > 0 ? faqs : defaultFaqs;
+  if (!faqs || faqs.length === 0) return null;
 
   return (
     <div
@@ -130,7 +67,7 @@ export const AboutFaq = ({ faqs }: { faqs?: Faq[] }) => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6">
-        {displayFaqs.map((faq, index) => (
+        {faqs.map((faq: Faq, index: number) => (
           <FaqItem key={index} {...faq} />
         ))}
       </div>
