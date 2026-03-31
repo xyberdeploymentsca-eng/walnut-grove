@@ -18,12 +18,12 @@ const icons: FloatingIconItem[] = [
   {
     label: "Pet Supplies",
     icon: "/icons/petFood.svg",
-    href: "#", // Placeholder
+    href: "https://www.myvetstore.ca/",
   },
   {
     label: "Pet Care Tips",
     icon: "/icons/petCare.svg",
-    href: "#", // Placeholder
+    href: "/resources/how-to-videos",
   },
 ];
 

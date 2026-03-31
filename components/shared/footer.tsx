@@ -12,23 +12,22 @@ const Footer = () => {
     {
       title: "About Us",
       links: [
-        { name: "Our Team", href: "/team" },
-        { name: "Gallery", href: "/gallery" },
-        { name: "F.A.Q's", href: "/faq" },
+        { name: "Our Team", href: "/about#team" },
+        { name: "Gallery", href: "/about#gallery" },
+        { name: "F.A.Q's", href: "/about#faqs" },
       ],
     },
     {
       title: "Services",
       links: [
-        { name: "Surgery", href: "/services/surgery" },
-        { name: "Screenings", href: "/services/screenings" },
-        { name: "Boarding", href: "/services/boarding" },
+        { name: "Surgery", href: "/services/pet-surgery" },
+        { name: "Screenings", href: "/services" },
+        { name: "Boarding", href: "/services/pet-boarding-services" },
       ],
     },
     {
       title: "Support",
       links: [
-        { name: "Help Centre", href: "/support/help-centre" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms & Conditions", href: "/terms-conditions" },
       ],
@@ -36,9 +35,9 @@ const Footer = () => {
     {
       title: "Resources",
       links: [
-        { name: "Pet Library", href: "/resources/pet-library" },
+        { name: "Pet Library", href: "/resources/how-to-videos" },
         { name: "Pet Food Recalls", href: "/resources/pet-food-recalls" },
-        { name: "Links", href: "/links" },
+        { name: "Links", href: "/resources/how-to-videos#important-links" },
       ],
     },
   ];
@@ -141,15 +140,15 @@ const Footer = () => {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-8 lg:gap-12 flex-1 lg:px-10 w-full lg:w-auto">
             {footerLinks.map((category, catIdx) => (
               <div key={catIdx}>
-                <h4 className="font-bold text-[14px] mb-3 text-white whitespace-nowrap">
+                <h4 className="font-bold text-[14px] mb-3 text-primary-black   whitespace-nowrap">
                   {category.title}
                 </h4>
-                <ul className="space-y-2 text-[12px] text-white/70">
+                <ul className="space-y-2 text-[12px] text-primary-black">
                   {category.links.map((link, linkIdx) => (
                     <li key={linkIdx}>
                       <Link
                         href={link.href}
-                        className="cursor-pointer hover:text-white transition-colors whitespace-nowrap"
+                        className="cursor-pointer hover:text-primary-green transition-colors whitespace-nowrap"
                       >
                         {link.name}
                       </Link>
@@ -162,7 +161,7 @@ const Footer = () => {
 
           {/* Social Media */}
           <div className="text-center lg:text-right mt-2 lg:mt-0 w-full lg:w-auto">
-            <h4 className="font-bold text-[14px] mb-4 text-white">
+            <h4 className="font-bold text-[14px] mb-4 text-primary-black">
               Find Us On Social Media!
             </h4>
             <div className="flex gap-4 justify-center lg:justify-end">
