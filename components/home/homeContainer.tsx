@@ -57,7 +57,7 @@ const HomeContainer = ({ team }: { team?: any[] }) => {
         {/* Stat Cards — overlapping bottom of banner on desktop, stacked on mobile */}
         <div className="relative lg:absolute lg:bottom-0 lg:left-1/2 lg:-translate-x-1/2 lg:translate-y-1/2 z-20 flex flex-col lg:flex-row gap-6 px-6 lg:px-0 w-full lg:w-[90%] max-w-[1296px]">
           {[
-            { stat: "500+", label: "Cases", sub: "Served over 500+ pets!" },
+            { stat: "100k+", label: "Cases", sub: "Expert care for every beloved pet." },
             {
               stat: "40+",
               label: "Years",

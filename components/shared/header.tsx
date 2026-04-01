@@ -7,6 +7,7 @@ import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { CtaButton } from "../ui/ctaButton";
 import { Menu, X } from "lucide-react";
+import { useModalStore } from "@/utils/store";
 
 type DropdownType = "services" | "about" | "resources" | null;
 
@@ -14,6 +15,7 @@ export const Header = () => {
   const pathname = usePathname();
   const [activeDropdown, setActiveDropdown] = useState<DropdownType>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { openModal } = useModalStore();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -168,7 +170,7 @@ export const Header = () => {
       {
         title: "F.A.Q's",
         description: "Answers to common questions about our services and care.",
-        href: "/about#faqs",
+        href: "/faq",
       },
     ],
   };
@@ -513,8 +515,27 @@ export const Header = () => {
             );
           })}
 
+          {/* Mobile-only additional links */}
+          <div className="flex flex-col space-y-6 pt-4">
+            <Link
+              className="text-[20px] font-otomanopee-one text-primary-black uppercase w-full block hover:text-primary-green transition-colors border-b border-[#EBE2F9] pb-4"
+              href="https://www.myvetstore.ca/"
+              target="_blank"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pet Supplies
+            </Link>
+            <Link
+              className="text-[20px] font-otomanopee-one text-primary-black uppercase w-full block hover:text-primary-green transition-colors border-b border-[#EBE2F9] pb-4"
+              href="/resources/how-to-videos"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Pet Care Tips
+            </Link>
+          </div>
+
           <div className="pt-6 w-full flex justify-center">
-            <CtaButton icon="/icons/calender.svg">
+            <CtaButton icon="/icons/calender.svg" onClick={openModal}>
               Schedule Appointment
             </CtaButton>
           </div>
