@@ -38,7 +38,7 @@ export const FloatingIcons = () => {
   ];
 
   return (
-    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[100] flex flex-col gap-4 pr-4">
+    <div className="fixed right-0 top-1/2 -translate-y-1/2 z-[21] flex flex-col gap-4 pr-4">
       {icons.map((item, index) => {
         const Icon = item.icon;
         const buttonContent = (
