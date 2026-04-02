@@ -27,12 +27,12 @@ export const FloatingIcons = () => {
     },
     {
       label: "Pet Supplies",
-      icon: "/icons/petFood.svg",
+      icon: "/icons/petCare.svg",
       href: "https://www.myvetstore.ca/",
     },
     {
       label: "Pet Care Tips",
-      icon: "/icons/petCare.svg",
+      icon: "/icons/petFood.svg",
       href: "/resources/how-to-videos",
     },
   ];
