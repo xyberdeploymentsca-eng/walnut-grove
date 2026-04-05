@@ -34,7 +34,7 @@ export const HowToVideosContainer = () => {
   useEffect(() => {
     const fetchData = async () => {
       const data = await client.fetch(
-        `*[_type == "howToVideosPage"][0]{ videos, helpfulResources }`
+        `*[_type == "howToVideosPage"][0]{ videos, helpfulResources }`,
       );
       if (data?.videos) setVideoLinks(data.videos);
       if (data?.helpfulResources) setHelpfulResources(data.helpfulResources);
