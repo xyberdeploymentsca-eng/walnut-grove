@@ -30,13 +30,13 @@ export default function NotFound() {
         Oops! This page has wandered off.
       </h2>
       <p className="text-[16px] lg:text-[18px] font-nunito text-[#3C3C3B] max-w-md mb-10 leading-relaxed">
-        It seems the page you're looking for doesn't exist or has moved to a new home.
-        Let's get you back on track!
+        It seems the page you're looking for doesn't exist or has moved to a new
+        home. Let's get you back on track!
       </p>
 
       {/* Home Redirect Button */}
       <CtaButton
-        icon="/icons/arrowIcon.svg"
+        icon="/icons/paw.svg"
         onClick={() => router.push("/")}
         className="scale-110"
       >
