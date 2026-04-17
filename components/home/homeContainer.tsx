@@ -41,7 +41,7 @@ const HomeContainer = ({ team }: { team?: any[] }) => {
         {/* Content — left-aligned, vertically centered */}
         <div className="relative z-10 lg:h-full flex flex-col justify-center px-6 lg:pl-[6%] lg:max-w-[52%] pb-10 lg:pb-20">
           <h1 className="font-otomanopee-one uppercase text-primary-black text-[30px] lg:text-[48px] leading-[1.2] lg:leading-[56px] font-normal tracking-tight">
-            Trusted Medical Care.
+            Langley&apos;s Best Medical Care.
             <br className="hidden lg:block" />
             Genuine Compassion.
           </h1>

@@ -21,7 +21,7 @@ const Footer = () => {
       title: "Services",
       links: [
         { name: "Surgery", href: "/services/pet-surgery" },
-        { name: "Screenings", href: "/services" },
+        { name: "Lab Services", href: "/services/lab-services" },
         { name: "Boarding", href: "/services/pet-boarding-services" },
       ],
     },
@@ -166,16 +166,18 @@ const Footer = () => {
             </h4>
             <div className="flex gap-4 justify-center lg:justify-end">
               <Link
-                href="https://instagram.com"
+                href="https://www.instagram.com/walnutgroveanimalhospital/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary-green/20 p-2.5 rounded-xl cursor-pointer hover:bg-primary-green/30 transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram size={28} className="text-primary-green" />
               </Link>
               <Link
-                href="https://facebook.com"
+                href="https://www.facebook.com/WalnutGroveAnimalClinic/"
                 target="_blank"
+                rel="noopener noreferrer"
                 className="bg-primary-green/20 p-2.5 rounded-xl cursor-pointer hover:bg-primary-green/30 transition-colors"
                 aria-label="Facebook"
               >

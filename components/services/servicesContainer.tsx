@@ -35,7 +35,7 @@ export const ServicesContainer = ({
               />
             </div>
             <h1 className="text-[24px] lg:text-[40px] font-otomanopee-one leading-tight lg:leading-[38px] text-text-white uppercase tracking-[0.02em] max-w-[700px] text-center lg:text-left">
-              Compassionate Veterinary Services for Lifelong Pet Care
+              Top Rated Veterinary Services for Your Beloved Pets
             </h1>
           </div>
           <div className="max-w-[550px] lg:ml-4">

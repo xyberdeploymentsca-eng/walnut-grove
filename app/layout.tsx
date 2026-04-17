@@ -9,6 +9,7 @@ import { CalendlyModal } from "@/components/ui/calendlyModal";
 import { FloatingIcons } from "@/components/shared/floatingIcons";
 import { Popup } from "@/components/shared/popup";
 import { Metadata } from "next";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: {
@@ -41,6 +42,23 @@ export default function RootLayout({
         style={{ backgroundColor: "#FFF9EF" }}
         className={`${nunito.variable} ${otomanopeeOne.variable} font-nunito antialiased bg-primary-white`}
       >
+        <meta
+          name="google-site-verification"
+          content="JbSbcqLiBgmQPUEFuBeiEjdDG1O2goH6IpSEnwkVZKk"
+        />
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NXGBNEFDBS"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NXGBNEFDBS');
+          `}
+        </Script>
         <Header />
         <CalendlyModal />
         <FloatingIcons />
