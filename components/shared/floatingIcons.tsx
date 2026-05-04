@@ -42,9 +42,9 @@ export const FloatingIcons = () => {
       {icons.map((item, index) => {
         const Icon = item.icon;
         const buttonContent = (
-          <div className="flex flex-col lg:flex-row items-center bg-[#A6D377] hover:bg-[#8CBF67] transition-all duration-500 ease-in-out h-auto lg:h-[66px] w-[64px] lg:w-auto rounded-[12px] lg:rounded-[22px] overflow-hidden shadow-lg border-none outline-none py-2 lg:py-0">
+          <div className="flex flex-col lg:flex-row items-center bg-primary-green hover:bg-[#8CBF67] transition-all duration-500 ease-in-out h-auto lg:h-[54px] w-[64px] lg:w-auto rounded-[12px] lg:rounded-[22px] overflow-hidden shadow-lg border-none outline-none py-2 lg:py-0">
             {/* Icon Container - fixed width on desktop, centric on mobile */}
-            <div className="w-[40px] lg:w-[66px] h-[40px] lg:h-[66px] flex items-center justify-center flex-shrink-0 lg:bg-transparent order-1 lg:order-2">
+            <div className="w-[40px] lg:w-[54px] h-[40px] lg:h-[54px] flex items-center justify-center flex-shrink-0 lg:bg-transparent order-1 lg:order-2">
               {item.isLucide && typeof Icon !== "string" ? (
                 (() => {
                   const LucideIcon = Icon as any;
@@ -65,7 +65,7 @@ export const FloatingIcons = () => {
 
             {/* Label Container - visible on mobile, expandable on desktop */}
             <div className="lg:max-w-0 lg:group-hover:max-w-[240px] transition-all duration-500 ease-in-out overflow-hidden order-2 lg:order-1 mt-1 lg:mt-0">
-              <span className="text-white font-nunito font-bold text-[10px] lg:text-[18px] text-center lg:text-left whitespace-nowrap lg:whitespace-nowrap px-1 lg:pl-6 lg:pr-2 block leading-tight">
+              <span className="text-white font-nunito font-bold text-[10px] lg:text-[16px] text-center lg:text-left whitespace-nowrap lg:whitespace-nowrap px-1 lg:pl-6 lg:pr-2 block leading-tight">
                 {item.label}
               </span>
             </div>

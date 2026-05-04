@@ -17,14 +17,14 @@ export const Welcome = () => {
       <Image
         src="/assets/leftPaws.svg"
         alt="left"
-        className="hidden lg:block absolute top-[80%] h-[1485px] -left-[30%] z-0"
+        className="hidden lg:block absolute top-[600%] h-[1485px] -left-[30%] z-0"
         width={392}
         height={1484}
       />
       <Image
         src="/assets/rightPaws.svg"
         alt="right"
-        className="hidden lg:block absolute top-[200%] h-[1485px] -right-[30%] z-0"
+        className="hidden lg:block absolute top-[200%] h-[1485px] -right-[25%] z-0"
         width={392}
         height={1484}
       />
@@ -33,7 +33,7 @@ export const Welcome = () => {
         alt="welcome"
         height={481}
         width={522}
-        className="z-1 md:h-[481px] w-[522px] h-[373px]"
+        className="z-2 md:h-[481px] w-[522px] h-[373px]"
       />
       <div className="flex flex-col justify-center items-start">
         <div className="flex flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 mt-6 lg:mt-0">

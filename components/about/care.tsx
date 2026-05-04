@@ -34,9 +34,9 @@ export const Care = () => {
       <Image
         src="/assets/about-1.webp"
         alt="welcome"
-        height={473}
+        height={573}
         width={458}
-        className="z-1 w-full lg:w-[458px] h-auto rounded-[30px] lg:rounded-none"
+        className="z-1 w-full lg:w-[458px] md:h-[573px] h-auto rounded-[30px] lg:rounded-none"
       />
       <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
         <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6">

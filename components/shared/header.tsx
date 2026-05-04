@@ -207,7 +207,9 @@ export const Header = () => {
 
   return (
     <div
-      className="max-w-[1880px] w-[95%] font-nunito rounded-[24px] lg:rounded-[40px] mx-auto min-h-[72px] lg:h-[92px] bg-primary-white sticky top-5 z-[50] shadow-[0px_0px_20px_0px_#57575614]"
+      className={`max-w-[1880px] w-[95%] font-nunito rounded-[24px] lg:rounded-[40px] mx-auto min-h-[72px] lg:h-[92px] bg-primary-white/90 backdrop-blur-md z-[50] shadow-[0px_0px_20px_0px_#57575614] top-5 ${
+        pathname === "/" ? "absolute left-1/2 -translate-x-1/2" : "sticky"
+      }`}
       ref={dropdownRef}
     >
       <div className="flex items-center justify-between h-full w-full mx-auto px-6 lg:px-[90px] py-4 lg:py-5">
