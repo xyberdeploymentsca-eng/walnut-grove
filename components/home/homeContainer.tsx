@@ -21,6 +21,8 @@ const HomeContainer = ({ team }: { team?: any[] }) => {
           alt="Veterinary Care"
           fill
           priority
+          quality={85}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1880px"
           className="object-cover object-center"
         />
 
