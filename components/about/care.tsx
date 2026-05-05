@@ -32,14 +32,14 @@ export const Care = () => {
         height={1484}
       />
       <Image
-        src="/assets/about-1.webp"
+        src="/assets/homeWeCare.webp"
         alt="welcome"
         height={573}
         width={458}
-        className="z-1 w-full lg:w-[458px] md:h-[573px] h-auto rounded-[30px] lg:rounded-none"
+        className="z-1 w-full object-cover lg:w-[458px] md:h-[573px] h-auto rounded-[16px]"
       />
       <div className="flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
-        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6">
+        <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 ">
           <Image
             src="/assets/heartPaw.svg"
             alt="heart-paw"
@@ -47,7 +47,7 @@ export const Care = () => {
             width={87}
             className="hidden lg:block w-[56px] lg:w-[87px] h-auto"
           />
-          <h1 className="text-[24px] lg:text-[32px] font-nunito font-normal z-1 leading-tight lg:leading-[38px] text-primary-black uppercase font-otomanopee-one">
+          <h1 className="text-[24px] lg:text-[32px] font-nunito font-normal z-1 leading-tight lg:leading-[38px] text-primary-black uppercase font-otomanopee-one rounded-[16px]">
             Dedicated to Exceptional Care, Every Day!
           </h1>
         </div>

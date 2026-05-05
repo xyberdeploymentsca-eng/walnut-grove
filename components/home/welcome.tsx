@@ -13,7 +13,7 @@ const points = [
 
 export const Welcome = () => {
   return (
-    <div className="mb-20 lg:mb-50 max-w-[1296px] relative mx-auto flex flex-col lg:flex-row items-center gap-10 mt-10 lg:mt-[140px] font-nunito px-4 lg:px-0">
+    <div className="mb-20 max-w-[1296px] relative mx-auto flex flex-col lg:flex-row items-center gap-10 mt-10 lg:mt-[140px] font-nunito px-4 lg:px-0">
       <Image
         src="/assets/leftPaws.svg"
         alt="left"
