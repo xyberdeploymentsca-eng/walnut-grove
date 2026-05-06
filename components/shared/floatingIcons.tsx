@@ -5,7 +5,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { LucideIcon } from "lucide-react";
+import { LucideIcon, Phone } from "lucide-react";
 import { useModalStore } from "@/utils/store";
 
 type FloatingIconItem = {
@@ -20,6 +20,12 @@ export const FloatingIcons = () => {
   const { openModal } = useModalStore();
 
   const icons: FloatingIconItem[] = [
+    {
+      label: "Call Now",
+      icon: Phone,
+      href: "tel:6048882628",
+      isLucide: true,
+    },
     {
       label: "Schedule",
       icon: "/icons/calender.svg",
@@ -49,7 +55,10 @@ export const FloatingIcons = () => {
                 (() => {
                   const LucideIcon = Icon as any;
                   return (
-                    <LucideIcon className="text-white w-6 lg:w-10 h-auto" />
+                    <LucideIcon
+                      strokeWidth={1.2}
+                      className="text-white w-6 lg:w-10 h-auto"
+                    />
                   );
                 })()
               ) : (
