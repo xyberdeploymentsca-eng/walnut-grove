@@ -92,7 +92,7 @@ export const SpayNeuterContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               We recommend discussing the ideal timing for your pet&apos;s
               procedure with your veterinarian, as age, breed, and health
-              factors can influence the best approach.
+              factors can influence the optimal approach.
             </p>
 
             <div className="flex justify-center lg:justify-start">

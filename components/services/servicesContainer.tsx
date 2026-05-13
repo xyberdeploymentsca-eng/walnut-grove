@@ -35,7 +35,7 @@ export const ServicesContainer = ({
               />
             </div>
             <h1 className="text-[24px] lg:text-[40px] font-otomanopee-one leading-tight lg:leading-[38px] text-text-white uppercase tracking-[0.02em] max-w-[700px] text-center lg:text-left">
-              Top Rated Veterinary Services for Your Beloved Pets
+              Trusted Veterinary Services for Your Beloved Pets
             </h1>
           </div>
           <div className="max-w-[550px] lg:ml-4">
@@ -43,7 +43,7 @@ export const ServicesContainer = ({
               From preventive screenings to surgical care and boarding,
               we&apos;re here to help your pet feel safe, comfortable, and well
               cared for. Contact us for a free consultation on how we can become
-              your pet&apos;s best choice of vet!
+              your pet&apos;s trusted choice of vet!
             </p>
           </div>
         </div>

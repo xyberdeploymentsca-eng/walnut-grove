@@ -23,7 +23,15 @@ export const FloatingIcons = () => {
     {
       label: "Call Now",
       icon: Phone,
-      href: "tel:6048882628",
+      onClick: () => {
+        const phoneNumber = "6048882628";
+        if (window.innerWidth >= 1024) {
+          navigator.clipboard.writeText(phoneNumber);
+          alert("Phone number copied to clipboard!");
+        } else {
+          window.location.href = `tel:${phoneNumber}`;
+        }
+      },
       isLucide: true,
     },
     {

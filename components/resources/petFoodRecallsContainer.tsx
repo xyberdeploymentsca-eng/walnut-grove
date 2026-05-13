@@ -36,7 +36,7 @@ export const PetFoodRecallsContainer = () => {
             <p className="text-[16px] lg:text-[20px] font-nunito font-medium text-primary-black leading-relaxed mt-4 max-w-[950px]">
               Keeping your pets safe starts with knowing what goes into their
               bowls. Stay updated with the latest pet food and product recalls
-              to ensure your furry family members receive only the best, highest
+              to ensure your furry family members receive only the safest, highest
               quality nutrition.
             </p>
           </div>

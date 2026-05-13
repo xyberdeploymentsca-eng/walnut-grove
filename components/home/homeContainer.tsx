@@ -33,12 +33,12 @@ const HomeContainer = ({ team }: { team?: any[] }) => {
         <div className="flex flex-col justify-center items-center mb-48 lg:mb-40 pt-20 lg:pt-0">
           <div className="relative z-10 bg-white/20 backdrop-blur-md rounded-[18px] border border-white/30 p-6 lg:p-2.5 max-w-[90%] lg:max-w-[850px] flex flex-col items-center text-center shadow-2xl">
             <h1 className="font-otomanopee-one uppercase text-primary-black text-[24px] lg:text-[41px] leading-[1.1] font-normal tracking-tight">
-              Langley&apos;s Best Medical Care,
+              Langley&apos;s Trusted Medical Care,
               <br />
               Genuine Compassion.
             </h1>
             <p className="mt-4 text-primary-black text-[14px] lg:text-[20px] leading-[1.2] font-nunito font-semibold max-w-[700px]">
-              We offer Langley’s pets expert care with clear communication and
+              We offer Langley’s pets specialized care with clear communication and
               genuine compassion. Our goal is to keep them healthy and happy
               every day.
             </p>

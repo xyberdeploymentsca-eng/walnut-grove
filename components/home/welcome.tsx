@@ -46,7 +46,7 @@ export const Welcome = () => {
           />
           <h1 className="text-[22px] lg:text-[32px] text-left font-nunito font-normal z-1 leading-tight lg:leading-[38px] text-primary-black uppercase font-otomanopee-one">
             Welcome to Walnut Grove - <br className="hidden lg:block" />
-            Langley&apos;s Best Animal Hospital!
+            Langley&apos;s Trusted Animal Hospital!
           </h1>
         </div>
         <div className="flex flex-col mt-4 gap-2 lg:gap-4 items-start text-left">

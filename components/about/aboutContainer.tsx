@@ -46,7 +46,7 @@ export const AboutContainer = ({
                 From preventive screenings to surgical care and boarding,
                 we&apos;re here to help your pet feel safe, comfortable, and
                 well cared for. Contact us for a free consultation on how we can
-                become your pet&apos;s best choice of vet!
+                become your pet&apos;s trusted choice of vet!
               </p>
             </div>
           </div>
