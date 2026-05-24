@@ -5,7 +5,6 @@ import "./globals.css";
 import { Header } from "@/components/shared/header";
 import localFont from "next/font/local";
 import Footer from "@/components/shared/footer";
-import { CalendlyModal } from "@/components/ui/calendlyModal";
 import { FloatingIcons } from "@/components/shared/floatingIcons";
 import { Popup } from "@/components/shared/popup";
 import { Metadata } from "next";
@@ -60,7 +59,6 @@ export default function RootLayout({
           `}
         </Script>
         <Header />
-        <CalendlyModal />
         <FloatingIcons />
         <Popup />
         {children}

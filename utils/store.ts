@@ -10,6 +10,13 @@ interface ModalStore {
 
 export const useModalStore = create<ModalStore>((set) => ({
   isOpen: false,
-  openModal: () => set({ isOpen: true }),
+  openModal: () => {
+    if (typeof window !== "undefined") {
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSehUwbaqcTlwSin_brRmliAyTd3o4EvM7lk6baeJgzMfcszzw/viewform?usp=publish-editor",
+        "_blank"
+      );
+    }
+  },
   closeModal: () => set({ isOpen: false }),
 }));

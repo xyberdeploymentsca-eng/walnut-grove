@@ -21,10 +21,10 @@ export const FloatingIcons = () => {
 
   const icons: FloatingIconItem[] = [
     {
-      label: "Call Now",
+      label: "(604) 888-2628",
       icon: Phone,
       onClick: () => {
-        const phoneNumber = "6048882628";
+        const phoneNumber = "+16048882628";
         if (window.innerWidth >= 1024) {
           navigator.clipboard.writeText(phoneNumber);
           alert("Phone number copied to clipboard!");

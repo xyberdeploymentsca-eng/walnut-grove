@@ -41,7 +41,10 @@ export const getHospitalSchema = () => ({
       closes: "17:00",
     },
   ],
-  sameAs: ["https://facebook.com", "https://instagram.com"],
+  sameAs: [
+    "https://www.facebook.com/walnutgroveanimalhospitalga/",
+    "https://www.instagram.com/walnutgroveanimalhospital/",
+  ],
 });
 
 export const getWebPageSchema = (name, description, url) => ({

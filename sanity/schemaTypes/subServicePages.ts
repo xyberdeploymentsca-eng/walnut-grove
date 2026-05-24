@@ -520,3 +520,19 @@ export const petFoodRecallsPage = defineType({
     }),
   ],
 });
+
+export const euthanasiaPage = defineType({
+  name: "euthanasiaPage",
+  title: "Euthanasia Page",
+  type: "document",
+  fields: [
+    defineField({
+      name: "metaData",
+      title: "SEO Metadata",
+      type: "object",
+      fields: metaDataFields,
+    }),
+    faqField,
+  ],
+});
+

@@ -6,7 +6,7 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { CtaButton } from "../ui/ctaButton";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
 import { useModalStore } from "@/utils/store";
 
 type DropdownType = "services" | "about" | "resources" | null;
@@ -121,6 +121,10 @@ export const Header = () => {
             label: "Soft tissue, eye & ear procedures",
             href: "/services/soft-tissue-eye-ear",
           },
+          {
+            label: "Compassionate Euthanasia",
+            href: "/services/euthanasia",
+          },
         ],
       },
       {
@@ -208,7 +212,7 @@ export const Header = () => {
   return (
     <div
       className={`max-w-[1880px] w-[95%] font-nunito rounded-[24px] lg:rounded-[40px] mx-auto min-h-[72px] lg:h-[92px] bg-primary-white/90 backdrop-blur-md z-[50] shadow-[0px_0px_20px_0px_#57575614] top-5 ${
-        pathname === "/" ? "absolute left-1/2 -translate-x-1/2" : "sticky"
+        pathname === "/" ? "fixed left-1/2 -translate-x-1/2" : "sticky"
       }`}
       ref={dropdownRef}
     >
@@ -375,17 +379,34 @@ export const Header = () => {
             );
           })}
         </div>
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex items-center gap-6">
+          <a
+            href="tel:+16048882628"
+            className="flex items-center gap-2 text-primary-black hover:text-primary-green font-medium text-[18px] transition-colors whitespace-nowrap"
+          >
+            <Phone size={20} className="text-primary-green" />
+            <span>(604) 888-2628</span>
+          </a>
           <CtaButton icon="/icons/calender.svg">Schedule Appointment</CtaButton>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <button
-          className="lg:hidden p-2 text-primary-black z-10"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-        >
-          {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        {/* Mobile Action Buttons */}
+        <div className="flex lg:hidden items-center gap-3 z-10">
+          <a
+            href="tel:+16048882628"
+            className="p-2.5 bg-primary-green/20 text-primary-green rounded-xl hover:bg-primary-green/30 transition-colors flex items-center justify-center"
+            aria-label="Call Us"
+          >
+            <Phone size={20} />
+          </a>
+          <button
+            className="p-2 text-primary-black flex items-center justify-center"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -536,7 +557,14 @@ export const Header = () => {
             </Link>
           </div>
 
-          <div className="pt-6 w-full flex justify-center">
+          <div className="pt-6 w-full flex flex-col items-center gap-4">
+            <a
+              href="tel:+16048882628"
+              className="flex items-center justify-center gap-2.5 bg-primary-green/20 hover:bg-primary-green/30 text-primary-black rounded-[18px] px-6 py-3 w-full font-medium text-[18px] transition-all"
+            >
+              <Phone size={20} className="text-primary-green" />
+              <span>Call (604) 888-2628</span>
+            </a>
             <CtaButton icon="/icons/calender.svg" onClick={openModal}>
               Schedule Appointment
             </CtaButton>

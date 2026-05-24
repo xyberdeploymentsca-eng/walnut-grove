@@ -29,7 +29,7 @@ const Footer = () => {
       title: "Support",
       links: [
         { name: "Privacy Policy", href: "/privacy-policy" },
-        { name: "Terms & Conditions", href: "/terms-conditions" },
+        { name: "Terms & Conditions", href: "/terms-and-conditions" },
       ],
     },
     {
@@ -175,7 +175,7 @@ const Footer = () => {
                 <Instagram size={28} className="text-primary-green" />
               </Link>
               <Link
-                href="https://www.facebook.com/WalnutGroveAnimalClinic/"
+                href="https://www.facebook.com/walnutgroveanimalhospitalga/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-primary-green/20 p-2.5 rounded-xl cursor-pointer hover:bg-primary-green/30 transition-colors"

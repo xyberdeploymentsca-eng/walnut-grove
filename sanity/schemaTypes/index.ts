@@ -15,6 +15,7 @@ import {
   laboratoryPage,
   microchippingPage,
   contactPage,
+  euthanasiaPage,
   howToVideosPage,
   parasitePreventionPage,
   petBoardingPage,
@@ -68,5 +69,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     vaccinesPage,
     contactPage,
     howToVideosPage,
+    euthanasiaPage,
   ],
 };

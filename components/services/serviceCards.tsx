@@ -33,6 +33,7 @@ export const ServiceCards = () => {
         "Diagnosis and treatment of chronic pain conditions",
         "Small mammal medicine for rabbits and pocket pets",
         "Dermatology care for persistent skin and ear concerns",
+        "Compassionate end-of-life and euthanasia support",
       ],
       links: [
         { name: "Pet Dental Care", href: "/services/dental-services" },
@@ -51,6 +52,10 @@ export const ServiceCards = () => {
         {
           name: "Soft Tissue, Eye & Ear Procedures",
           href: "/services/soft-tissue-eye-ear",
+        },
+        {
+          name: "Compassionate Euthanasia",
+          href: "/services/euthanasia",
         },
       ],
       border: "border-primary-blue",

@@ -15,6 +15,7 @@ export const AllServicesList = () => {
       name: "Chronic Pain Management",
       href: "/services/chronic-pain-management",
     },
+    { name: "Compassionate Euthanasia", href: "/services/euthanasia" },
     { name: "Puppy & Kitten Care", href: "/services/puppy-kitten-care" },
     { name: "Skin & Ear Infections", href: "/services/skin-ear-infections" },
     { name: "Microchipping", href: "/services/microchipping" },
