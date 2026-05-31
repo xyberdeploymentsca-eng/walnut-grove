@@ -20,14 +20,18 @@ const Footer = () => {
     {
       title: "Services",
       links: [
-        { name: "Surgery", href: "/services/pet-surgery" },
-        { name: "Lab Services", href: "/services/lab-services" },
-        { name: "Boarding", href: "/services/pet-boarding-services" },
+        { name: "Preventive & Wellness", href: "/services/preventative-care" },
+        { name: "Dental & Specialized", href: "/services/dental-services" },
+        { name: "Surgery & Reproductive", href: "/services/pet-surgery" },
+        { name: "Diagnostics & Lab", href: "/services/bloodwork" },
+        { name: "Pet Boarding", href: "/services/pet-boarding-services" },
+        { name: "View All Services", href: "/services" },
       ],
     },
     {
       title: "Support",
       links: [
+        { name: "Contact Us", href: "/contact" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms & Conditions", href: "/terms-and-conditions" },
       ],
@@ -37,6 +41,7 @@ const Footer = () => {
       links: [
         { name: "Pet Library", href: "/resources/how-to-videos" },
         { name: "Pet Food Recalls", href: "/resources/pet-food-recalls" },
+        { name: "Poisonous Plants", href: "/resources/poisonous-plants" },
         { name: "Links", href: "/resources/how-to-videos#important-links" },
       ],
     },

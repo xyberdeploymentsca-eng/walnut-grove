@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const LaboratoryContainer = () => {
   const points = [
@@ -13,6 +16,12 @@ export const LaboratoryContainer = () => {
     "Heartworm and tick-borne disease testing",
     "Feline leukaemia (FeLV) and FIV testing",
     "Pancreatic, clotting, skin, ear, and parasite diagnostics",
+  ];
+
+  const relatedServices = [
+    { name: "Bloodwork", href: "/services/bloodwork", icon: "/icons/card4.svg" },
+    { name: "Pet X-Ray", href: "/services/pet-x-ray", icon: "/icons/card4.svg" },
+    { name: "Pet Ultrasound", href: "/services/ultrasound-services", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -33,7 +42,14 @@ export const LaboratoryContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Lab Services", href: "/services/lab-services" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -52,12 +68,28 @@ export const LaboratoryContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Detailed lab testing is essential for accurate diagnosis and
               effective treatment. Our comprehensive in-house laboratory
-              services allow us to perform a variety of tests quickly and
+              services, including{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork analysis
+              </Link>
+              , allow us to perform a variety of tests quickly and
               accurately, providing prompt answers for your pet&apos;s care.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
-              From routine screenings to urgent diagnostic evaluations, our lab
-              capabilities support every aspect of veterinary medicine.
+              From routine{" "}
+              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+                wellness screenings
+              </Link>{" "}
+              to urgent diagnostic evaluations, our lab
+              capabilities support every aspect of veterinary medicine. Lab results complement{" "}
+              <Link href="/services/ultrasound-services" className="text-primary-green hover:underline font-semibold">
+                ultrasound
+              </Link>{" "}
+              and{" "}
+              <Link href="/services/pet-x-ray" className="text-primary-green hover:underline font-semibold">
+                X-ray imaging
+              </Link>{" "}
+              for comprehensive diagnostics.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -100,6 +132,7 @@ export const LaboratoryContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

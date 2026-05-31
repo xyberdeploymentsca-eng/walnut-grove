@@ -56,7 +56,7 @@ export const Header = () => {
     {
       label: "Services",
       href: "/services",
-      hasDropdown: false,
+      hasDropdown: true,
     },
     {
       label: "Resources",
@@ -380,13 +380,6 @@ export const Header = () => {
           })}
         </div>
         <div className="hidden lg:flex items-center gap-6">
-          <a
-            href="tel:+16048882628"
-            className="flex items-center gap-2 text-primary-black hover:text-primary-green font-medium text-[18px] transition-colors whitespace-nowrap"
-          >
-            <Phone size={20} className="text-primary-green" />
-            <span>(604) 888-2628</span>
-          </a>
           <CtaButton icon="/icons/calender.svg">Schedule Appointment</CtaButton>
         </div>
 

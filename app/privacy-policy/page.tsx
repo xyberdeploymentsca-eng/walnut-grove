@@ -5,7 +5,7 @@ import { getMetadata, getPageData } from "@/utils/seoBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("privacyPolicyPage");
-  return getMetadata(data);
+  return getMetadata(data, "/privacy-policy");
 }
 
 const PrivacyPolicyPage = async () => {

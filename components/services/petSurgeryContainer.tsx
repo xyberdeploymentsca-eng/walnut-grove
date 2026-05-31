@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const PetSurgeryContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const PetSurgeryContainer = () => {
     "Internal surgical treatments addressing digestive, reproductive, or structural concerns.",
     "Pre-surgical consultations and planning to ensure every procedure is carefully evaluated.",
     "Post-operative monitoring and recovery care supporting safe healing and patient comfort.",
+  ];
+
+  const relatedServices = [
+    { name: "Anesthesia", href: "/services/anesthesia", icon: "/icons/card3.svg" },
+    { name: "Spay & Neuter", href: "/services/spay-neuter", icon: "/icons/card1.svg" },
+    { name: "Bloodwork", href: "/services/bloodwork", icon: "/icons/card4.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const PetSurgeryContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Pet Surgery", href: "/services/pet-surgery" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -49,13 +65,27 @@ export const PetSurgeryContainer = () => {
           <div className="space-y-4">
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our surgical services address a wide range of medical conditions
-              requiring precise intervention. From routine procedures to more
-              complex treatments, our team focuses on careful planning, patient
+              requiring precise intervention. From routine{" "}
+              <Link href="/services/spay-neuter" className="text-primary-green hover:underline font-semibold">
+                spay & neuter
+              </Link>{" "}
+              procedures to more complex{" "}
+              <Link href="/services/soft-tissue-eye-ear" className="text-primary-green hover:underline font-semibold">
+                soft tissue surgeries
+              </Link>, our team focuses on careful planning, patient
               safety, and attentive recovery care.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               We utilize modern surgical techniques and monitoring equipment to
-              support successful outcomes.
+              support successful outcomes. Every surgical patient receives individualized{" "}
+              <Link href="/services/anesthesia" className="text-primary-green hover:underline font-semibold">
+                anesthesia
+              </Link>{" "}
+              and pre-operative{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              assessment.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -98,6 +128,7 @@ export const PetSurgeryContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const SkinEarContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const SkinEarContainer = () => {
     "Comprehensive ear examinations to identify infections, inflammation, or structural issues.",
     "Skin cytology and diagnostic testing to accurately determine the cause of skin problems.",
     "Long-term treatment plans designed to prevent recurring infections and maintain skin health.",
+  ];
+
+  const relatedServices = [
+    { name: "Soft Tissue, Eye & Ear Procedures", href: "/services/soft-tissue-eye-ear", icon: "/icons/card1.svg" },
+    { name: "Bloodwork", href: "/services/bloodwork", icon: "/icons/card4.svg" },
+    { name: "Lab Services", href: "/services/lab-services", icon: "/icons/card4.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const SkinEarContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Skin & Ear Infections", href: "/services/skin-ear-infections" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -50,12 +66,20 @@ export const SkinEarContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Skin and ear conditions are among the most common reasons pets
               visit the veterinarian. Our team provides thorough examinations
-              and diagnostic testing to determine the underlying cause of
+              and{" "}
+              <Link href="/services/lab-services" className="text-primary-green hover:underline font-semibold">
+                diagnostic testing
+              </Link>{" "}
+              to determine the underlying cause of
               irritation, infection, or discomfort.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               By identifying the source of the problem, we can provide targeted
-              treatment and long-term management strategies.
+              treatment and long-term management strategies. Persistent or severe cases may require{" "}
+              <Link href="/services/soft-tissue-eye-ear" className="text-primary-green hover:underline font-semibold">
+                soft tissue procedures
+              </Link>{" "}
+              for effective resolution.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -87,7 +111,11 @@ export const SkinEarContainer = () => {
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               Early diagnosis and proper treatment help restore comfort while
-              preventing chronic skin and ear conditions.
+              preventing chronic skin and ear conditions.{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                Bloodwork
+              </Link>{" "}
+              may be recommended to rule out underlying systemic causes.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -98,6 +126,7 @@ export const SkinEarContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

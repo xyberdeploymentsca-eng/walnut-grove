@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const BloodworkContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const BloodworkContainer = () => {
     "Pre-anesthetic blood testing to ensure pets are healthy enough for surgical procedures.",
     "Routine wellness blood screening for early detection of underlying medical conditions.",
     "Ongoing disease monitoring for pets with chronic conditions requiring regular evaluation.",
+  ];
+
+  const relatedServices = [
+    { name: "Lab Services", href: "/services/lab-services", icon: "/icons/card4.svg" },
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
+    { name: "Pet Ultrasound", href: "/services/ultrasound-services", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const BloodworkContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Bloodwork", href: "/services/bloodwork" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -49,13 +65,24 @@ export const BloodworkContainer = () => {
           <div className="space-y-4">
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Blood testing provides important insights into your pet&apos;s
-              internal health and organ function. Our in-house diagnostic
+              internal health and organ function. Our in-house{" "}
+              <Link href="/services/lab-services" className="text-primary-green hover:underline font-semibold">
+                laboratory
+              </Link>{" "}
               capabilities allow us to perform blood tests quickly and interpret
               results without unnecessary delay.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
-              Routine bloodwork can help detect early signs of disease before
-              symptoms become visible.
+              Routine bloodwork is a vital part of{" "}
+              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+                preventative care
+              </Link>{" "}
+              and can help detect early signs of disease before
+              symptoms become visible. Pre-{" "}
+              <Link href="/services/anesthesia" className="text-primary-green hover:underline font-semibold">
+                anesthetic
+              </Link>{" "}
+              blood panels ensure your pet is ready for any procedure.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -87,7 +114,11 @@ export const BloodworkContainer = () => {
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               Timely blood diagnostics allow us to detect health concerns early
-              and provide more effective treatment plans.
+              and provide more effective treatment plans. Combined with{" "}
+              <Link href="/services/ultrasound-services" className="text-primary-green hover:underline font-semibold">
+                ultrasound imaging
+              </Link>
+              , we can form a comprehensive diagnostic picture.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -98,6 +129,7 @@ export const BloodworkContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

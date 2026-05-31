@@ -7,7 +7,7 @@ import { getServiceSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("microchippingPage");
-  return getMetadata(data);
+  return getMetadata(data, "/services/microchipping");
 }
 
 const MicrochippingPage = async () => {

@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const SpayNeuterContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const SpayNeuterContainer = () => {
     "Reduced Risk of Mammary Tumors: Significantly lowers cancer risk when performed early.",
     "Reduced Prostate Disease Risk: Lowers incidence of benign prostatic enlargement and infections.",
     "Long-Term Health & Longevity Benefits: Contributes to a healthier, more predictable life course.",
+  ];
+
+  const relatedServices = [
+    { name: "Anesthesia", href: "/services/anesthesia", icon: "/icons/card3.svg" },
+    { name: "Pet Surgery", href: "/services/pet-surgery", icon: "/icons/card3.svg" },
+    { name: "Puppy & Kitten Care", href: "/services/puppy-kitten-care", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const SpayNeuterContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Spay & Neuter", href: "/services/spay-neuter" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -49,17 +65,27 @@ export const SpayNeuterContainer = () => {
           <div className="space-y-4">
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Spaying and neutering are important preventive procedures that
-              support your pet’s long-term health and well-being. Beyond
-              preventing unplanned litters, these surgeries play a key role in
+              support your pet's long-term health and well-being. Beyond
+              preventing unplanned litters, these{" "}
+              <Link href="/services/pet-surgery" className="text-primary-green hover:underline font-semibold">
+                surgical procedures
+              </Link>{" "}
+              play a key role in
               reducing the risk of serious health conditions and improving
               quality of life.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our experienced veterinary team provides professional,
-              compassionate spay and neuter care, guiding you through every step
-              of the process. Together, we can help your pet live a healthier,
-              happier life while contributing to a safer and more humane
-              community.
+              compassionate spay and neuter care, using safe{" "}
+              <Link href="/services/anesthesia" className="text-primary-green hover:underline font-semibold">
+                anesthesia protocols
+              </Link>{" "}
+              and guiding you through every step
+              of the process. Pre-surgical{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              ensures your pet is ready for the procedure.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -92,7 +118,10 @@ export const SpayNeuterContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               We recommend discussing the ideal timing for your pet&apos;s
               procedure with your veterinarian, as age, breed, and health
-              factors can influence the optimal approach.
+              factors can influence the optimal approach. This is especially important for{" "}
+              <Link href="/services/puppy-kitten-care" className="text-primary-green hover:underline font-semibold">
+                puppies and kittens
+              </Link>.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -103,6 +132,7 @@ export const SpayNeuterContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

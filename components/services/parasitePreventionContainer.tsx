@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const ParasitePreventionContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const ParasitePreventionContainer = () => {
     "Routine intestinal parasite screening to detect common internal parasites early.",
     "Preventative medication recommendations tailored to your pet's lifestyle and exposure risk.",
     "Seasonal parasite risk assessments to ensure your pet remains protected throughout the year.",
+  ];
+
+  const relatedServices = [
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
+    { name: "Vaccinations", href: "/services/vaccines", icon: "/icons/card2.svg" },
+    { name: "Puppy & Kitten Care", href: "/services/puppy-kitten-care", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const ParasitePreventionContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Parasite Prevention", href: "/services/parasite-prevention" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -51,13 +67,20 @@ export const ParasitePreventionContainer = () => {
               Parasites can affect pets throughout the year and may lead to
               significant health problems if left untreated. Our parasite
               prevention programs are designed to protect pets from both
-              internal and external parasites that commonly affect companion
-              animals.
+              internal and external parasites, and form a key part of our{" "}
+              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+                preventative care
+              </Link>{" "}
+              approach.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Through regular screenings and preventative treatments, we help
-              reduce the risk of infection and protect your pet’s overall
-              wellbeing.
+              reduce the risk of infection and protect your pet's overall
+              wellbeing. Routine{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              can help detect heartworm and other parasitic infections.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -88,8 +111,12 @@ export const ParasitePreventionContainer = () => {
             </div>
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
-              Consistent parasite prevention helps safeguard not only your pet’s
-              health but also the health of your household.
+              Consistent parasite prevention helps safeguard not only your pet's
+              health but also the health of your household. It is especially critical for{" "}
+              <Link href="/services/puppy-kitten-care" className="text-primary-green hover:underline font-semibold">
+                puppies and kittens
+              </Link>{" "}
+              during their early development.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -100,6 +127,7 @@ export const ParasitePreventionContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

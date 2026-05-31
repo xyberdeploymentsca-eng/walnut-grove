@@ -7,7 +7,7 @@ import { getMetadata, getPageData } from "@/utils/seoBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("petFoodRecallsPage");
-  return getMetadata(data);
+  return getMetadata(data, "/resources/pet-food-recalls");
 }
 
 export default async function PetFoodRecallsPage() {

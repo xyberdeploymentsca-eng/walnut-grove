@@ -7,7 +7,7 @@ import { getContactPageSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("contactPage");
-  return getMetadata(data);
+  return getMetadata(data, "/contact");
 }
 
 const ContactPage = () => {

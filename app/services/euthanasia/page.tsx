@@ -7,7 +7,7 @@ import { EuthanasiaContainer } from "@/components/services/euthanasiaContainer";
 
 export async function generateMetadata() {
   const data = await getPageData("euthanasiaPage");
-  return getMetadata(data);
+  return getMetadata(data, "/services/euthanasia");
 }
 
 const EuthanasiaPage = async () => {

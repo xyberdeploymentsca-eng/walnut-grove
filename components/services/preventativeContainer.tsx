@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const PreventativeContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const PreventativeContainer = () => {
     "Nutritional counselling and weight management guidance to support healthy growth and prevent obesity-related conditions.",
     "Lifestyle and behavioural health guidance to ensure your pet's physical and emotional wellbeing.",
     "Long-term preventative health planning designed to protect your pet throughout every stage of life.",
+  ];
+
+  const relatedServices = [
+    { name: "Vaccinations", href: "/services/vaccines", icon: "/icons/card2.svg" },
+    { name: "Puppy & Kitten Care", href: "/services/puppy-kitten-care", icon: "/icons/card2.svg" },
+    { name: "Parasite Prevention", href: "/services/parasite-prevention", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const PreventativeContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Preventative Care", href: "/services/preventative-care" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -49,7 +65,11 @@ export const PreventativeContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our preventative care programs are designed to protect your
               pet&apos;s health before problems arise. Through regular wellness
-              examinations, routine screenings, and lifestyle-based care plans,
+              examinations, routine{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork screenings
+              </Link>
+              , and lifestyle-based care plans,
               we focus on maintaining long-term health and early disease
               detection.
             </p>
@@ -57,7 +77,15 @@ export const PreventativeContainer = () => {
               By monitoring your pet&apos;s development, weight, and overall
               condition, our team can identify potential concerns early and
               recommend proactive treatment strategies tailored to your
-              pet&apos;s individual needs.
+              pet&apos;s individual needs. Keeping up with{" "}
+              <Link href="/services/vaccines" className="text-primary-green hover:underline font-semibold">
+                vaccinations
+              </Link>{" "}
+              and{" "}
+              <Link href="/services/parasite-prevention" className="text-primary-green hover:underline font-semibold">
+                parasite prevention
+              </Link>{" "}
+              is a key part of any wellness plan.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -102,6 +130,7 @@ export const PreventativeContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

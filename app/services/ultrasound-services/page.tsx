@@ -7,7 +7,7 @@ import { getServiceSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("ultrasoundPage");
-  return getMetadata(data);
+  return getMetadata(data, "/services/ultrasound-services");
 }
 
 const UltrasoundPage = async () => {

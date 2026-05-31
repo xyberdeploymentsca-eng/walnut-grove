@@ -15,17 +15,32 @@ export const getProductMetaData = async (slug) => {
     metaData {
       metaTitle,
       metaDescription,
-      metaImage
+      metaImage,
+      canonical
     }
   }`;
   const data = await client.fetch(query, { slug });
   return data;
 };
 
-export function getMetadata(data, currentUrl = null) {
+/**
+ * @param {any} data
+ * @param {string} currentUrl
+ */
+export function getMetadata(data, currentUrl = "") {
   const seo = data?.metaData;
-  // Use provided URL or default to homepage
-  const canonicalUrl = currentUrl || "https://walnutgroveanimalclinic.com/";
+  
+  // Resolve standard domain + path
+  let canonicalUrl = "";
+  if (currentUrl && (currentUrl.startsWith("http://") || currentUrl.startsWith("https://"))) {
+    canonicalUrl = currentUrl;
+  } else {
+    let cleanPath = currentUrl || "";
+    if (cleanPath && !cleanPath.startsWith("/")) {
+      cleanPath = "/" + cleanPath;
+    }
+    canonicalUrl = `https://www.walnutgroveanimalclinic.com${cleanPath}`;
+  }
 
   const metadata = {
     title: "Walnut Grove Animal Hospital",
@@ -41,7 +56,7 @@ export function getMetadata(data, currentUrl = null) {
     },
     alternates: {
       languages: {
-        "en-US": "https://walnutgroveanimalclinic.com/",
+        "en-US": canonicalUrl,
       },
       canonical: canonicalUrl,
     },

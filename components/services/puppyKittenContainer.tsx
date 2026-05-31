@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const PuppyKittenContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const PuppyKittenContainer = () => {
     "Development and growth monitoring to track physical and behavioural milestones.",
     "Nutritional guidance to support healthy development during the early stages of life.",
     "Preventative health education for owners to build confidence in caring for a new pet.",
+  ];
+
+  const relatedServices = [
+    { name: "Vaccinations", href: "/services/vaccines", icon: "/icons/card2.svg" },
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
+    { name: "Spay & Neuter", href: "/services/spay-neuter", icon: "/icons/card1.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const PuppyKittenContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Puppy & Kitten Care", href: "/services/puppy-kitten-care" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -51,7 +67,14 @@ export const PuppyKittenContainer = () => {
               The early stages of life are essential for building a strong
               foundation of lifelong health. Our puppy and kitten care programs
               focus on growth monitoring, preventative medicine, and early
-              behavioral guidance.
+              behavioral guidance, including timely{" "}
+              <Link href="/services/vaccines" className="text-primary-green hover:underline font-semibold">
+                vaccinations
+              </Link>{" "}
+              and{" "}
+              <Link href="/services/parasite-prevention" className="text-primary-green hover:underline font-semibold">
+                parasite prevention
+              </Link>.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Through structured wellness visits and education for new pet
@@ -87,8 +110,15 @@ export const PuppyKittenContainer = () => {
             </div>
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
-              Consistent parasite prevention helps safeguard not only your
-              pet&apos;s health but also the health of your household.
+              As your young pet grows, we also recommend discussing{" "}
+              <Link href="/services/spay-neuter" className="text-primary-green hover:underline font-semibold">
+                spay and neuter
+              </Link>{" "}
+              options and{" "}
+              <Link href="/services/microchipping" className="text-primary-green hover:underline font-semibold">
+                microchipping
+              </Link>{" "}
+              to ensure their long-term safety and health.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -99,6 +129,7 @@ export const PuppyKittenContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

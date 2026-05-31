@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const UltrasoundContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const UltrasoundContainer = () => {
     "Pregnancy monitoring and reproductive health",
     "Unexplained pain, weight loss, vomiting, or changes in appetite",
     "Follow-up monitoring of ongoing medical conditions",
+  ];
+
+  const relatedServices = [
+    { name: "Pet X-Ray", href: "/services/pet-x-ray", icon: "/icons/card4.svg" },
+    { name: "Bloodwork", href: "/services/bloodwork", icon: "/icons/card4.svg" },
+    { name: "Lab Services", href: "/services/lab-services", icon: "/icons/card4.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const UltrasoundContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Pet Ultrasound", href: "/services/ultrasound-services" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -48,15 +64,26 @@ export const UltrasoundContainer = () => {
 
           <div className="space-y-4">
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
-              Ultrasound imaging allows us to look inside your pet’s body in a
+              Ultrasound imaging allows us to look inside your pet's body in a
               gentle, non-invasive way. This advanced diagnostic tool helps us
-              assess internal organs in real time, providing valuable
-              information instantly.
+              assess internal organs in real time, complementing{" "}
+              <Link href="/services/pet-x-ray" className="text-primary-green hover:underline font-semibold">
+                X-ray imaging
+              </Link>{" "}
+              and{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              for a complete diagnostic picture.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Ultrasounds are especially useful for evaluating soft tissues and
               identifying concerns that may not appear on routine exams or blood
-              tests.
+              tests. They are also an essential part of{" "}
+              <Link href="/services/dog-breeding" className="text-primary-green hover:underline font-semibold">
+                dog breeding
+              </Link>{" "}
+              and pregnancy monitoring.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -101,6 +128,7 @@ export const UltrasoundContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

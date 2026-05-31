@@ -7,7 +7,7 @@ import { getWebPageSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("poisonousPlantsPage");
-  return getMetadata(data);
+  return getMetadata(data, "/resources/poisonous-plants");
 }
 
 const PoisonousPlantsPage = async () => {

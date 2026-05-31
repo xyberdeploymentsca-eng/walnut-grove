@@ -7,7 +7,7 @@ import { getServiceSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("softTissuePage");
-  return getMetadata(data);
+  return getMetadata(data, "/services/soft-tissue-eye-ear");
 }
 
 const SoftTissuePage = async () => {

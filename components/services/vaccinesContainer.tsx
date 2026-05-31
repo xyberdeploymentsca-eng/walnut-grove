@@ -1,16 +1,25 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const VaccinesContainer = () => {
   const points = [
     "Core vaccinations for dogs and cats to protect against highly contagious and serious diseases.",
-    "Lifestyle-based non-core vaccines recommended based on your pet’s environment, travel, and exposure risks.",
+    "Lifestyle-based non-core vaccines recommended based on your pet's environment, travel, and exposure risks.",
     "Structured puppy and kitten vaccination schedules to safely build immunity during early development.",
     "Adult booster vaccinations to maintain long-term disease protection throughout your pet's life.",
     "Personalized vaccine consultations to evaluate your pet's health status and determine the most appropriate schedule.",
+  ];
+
+  const relatedServices = [
+    { name: "Puppy & Kitten Care", href: "/services/puppy-kitten-care", icon: "/icons/card2.svg" },
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
+    { name: "Parasite Prevention", href: "/services/parasite-prevention", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const VaccinesContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Vaccinations", href: "/services/vaccines" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -48,15 +64,22 @@ export const VaccinesContainer = () => {
           <div className="space-y-4">
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Vaccinations play a critical role in protecting pets from
-              infectious and potentially life-threatening diseases. Our
-              vaccination protocols are designed to provide effective protection
+              infectious and potentially life-threatening diseases. As part of our{" "}
+              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+                preventative care
+              </Link>{" "}
+              programs, our vaccination protocols are designed to provide effective protection
               while considering your pet&apos;s lifestyle, age, and individual
               risk factors.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our team follows evidence-based guidelines to ensure each pet
               receives the appropriate immunizations without unnecessary
-              treatments.
+              treatments. Vaccines are often paired with{" "}
+              <Link href="/services/parasite-prevention" className="text-primary-green hover:underline font-semibold">
+                parasite prevention
+              </Link>{" "}
+              for comprehensive protection.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -88,7 +111,11 @@ export const VaccinesContainer = () => {
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               A strong start during puppy-hood and kitten-hood helps create the
-              foundation for a lifetime of good health.
+              foundation for a lifetime of good health. Learn more about our{" "}
+              <Link href="/services/puppy-kitten-care" className="text-primary-green hover:underline font-semibold">
+                puppy & kitten care
+              </Link>{" "}
+              programs.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -99,6 +126,7 @@ export const VaccinesContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

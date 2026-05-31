@@ -7,7 +7,7 @@ import { getHospitalSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("homepage");
-  return getMetadata(data);
+  return getMetadata(data, "");
 }
 
 export default async function Home() {

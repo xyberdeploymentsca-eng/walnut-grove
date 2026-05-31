@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const DentalContainer = () => {
   const problems = [
@@ -16,6 +19,12 @@ export const DentalContainer = () => {
     "Professional teeth cleaning and polishing",
     "Dental X-rays for accurate diagnosis",
     "Tooth extractions and oral surgical procedures when needed",
+  ];
+
+  const relatedServices = [
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
+    { name: "Anesthesia", href: "/services/anesthesia", icon: "/icons/card3.svg" },
+    { name: "Pet Surgery", href: "/services/pet-surgery", icon: "/icons/card3.svg" },
   ];
 
   return (
@@ -36,7 +45,14 @@ export const DentalContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Pet Dental Care", href: "/services/dental-services" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -55,13 +71,20 @@ export const DentalContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Oral health is deepy connected to your pet&apos;s overall
               wellbeing. Left untreated, dental disease can cause pain and lead
-              to systemic issues affecting the heart, liver, and kidneys. We
-              offer professional dental care to keep your pet&apos;s smile
+              to systemic issues affecting the heart, liver, and kidneys. As part of a comprehensive{" "}
+              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+                preventative care
+              </Link>{" "}
+              approach, we offer professional dental care to keep your pet&apos;s smile
               healthy and their breath fresh.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our dental services include thorough cleanings, examinations, and
-              polishing to remove plaque and tartar buildup.
+              polishing to remove plaque and tartar buildup. Advanced{" "}
+              <Link href="/services/pet-x-ray" className="text-primary-green hover:underline font-semibold">
+                digital X-ray imaging
+              </Link>{" "}
+              helps us identify issues below the gumline.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -118,7 +141,7 @@ export const DentalContainer = () => {
               <ul className="space-y-4 lg:space-y-3">
                 <li className="flex items-start gap-3 text-[16px] lg:text-[18px] font-nunito font-medium text-primary-black">
                   <span className="mt-2 w-2 h-2 rounded-full bg-primary-black flex-shrink-0" />
-                  Regularly brushing your pet’s teeth can effectively reduce the
+                  Regularly brushing your pet's teeth can effectively reduce the
                   accumulation of harmful bacteria and plaque within its oral
                   cavity.
                 </li>
@@ -139,7 +162,11 @@ export const DentalContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               Regular dental checkups and professional cleanings are key to
               preventing painful oral conditions and supporting long-term
-              health.
+              health. Many dental procedures require safe{" "}
+              <Link href="/services/anesthesia" className="text-primary-green hover:underline font-semibold">
+                anesthesia
+              </Link>{" "}
+              to ensure your pet remains comfortable throughout.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -150,6 +177,7 @@ export const DentalContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

@@ -1,16 +1,25 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const MicrochippingContainer = () => {
   const points = [
     "Safe and minimally invasive microchip placement performed during a routine appointment.",
-    "Microchip registration guidance to ensure your pet’s information is correctly stored in national databases.",
+    "Microchip registration guidance to ensure your pet's information is correctly stored in national databases.",
     "Microchip scanning and verification to confirm proper chip placement and functionality.",
     "Microchip placement during routine visits or surgical procedures for added convenience.",
     "Lost pet identification support when a scanned microchip helps reunite pets with their families.",
+  ];
+
+  const relatedServices = [
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
+    { name: "Puppy & Kitten Care", href: "/services/puppy-kitten-care", icon: "/icons/card2.svg" },
+    { name: "Vaccinations", href: "/services/vaccines", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const MicrochippingContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Microchipping", href: "/services/microchipping" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -50,8 +66,14 @@ export const MicrochippingContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Microchipping provides permanent identification that significantly
               increases the chances of reuniting lost pets with their families.
-              The procedure is quick, safe, and can be performed during a
-              routine visit.
+              The procedure is quick, safe, and can be performed during a{" "}
+              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+                routine wellness visit
+              </Link>{" "}
+              or alongside{" "}
+              <Link href="/services/spay-neuter" className="text-primary-green hover:underline font-semibold">
+                spay & neuter surgery
+              </Link>.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Each microchip contains a unique identification number that can be
@@ -88,7 +110,11 @@ export const MicrochippingContainer = () => {
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               Microchipping offers a reliable layer of protection that can
-              greatly improve the chances of bringing a lost pet back home.
+              greatly improve the chances of bringing a lost pet back home. We recommend it for all{" "}
+              <Link href="/services/puppy-kitten-care" className="text-primary-green hover:underline font-semibold">
+                puppies and kittens
+              </Link>{" "}
+              as part of their early care.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -99,6 +125,7 @@ export const MicrochippingContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

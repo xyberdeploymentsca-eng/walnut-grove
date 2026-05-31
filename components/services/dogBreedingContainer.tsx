@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const DogBreedingContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const DogBreedingContainer = () => {
     "Pregnancy monitoring and guidance throughout gestation.",
     "Pre-breeding health assessments to identify potential concerns before breeding.",
     "Post-birth health support for both the mother and newborn puppies.",
+  ];
+
+  const relatedServices = [
+    { name: "Pet Ultrasound", href: "/services/ultrasound-services", icon: "/icons/card2.svg" },
+    { name: "Bloodwork", href: "/services/bloodwork", icon: "/icons/card4.svg" },
+    { name: "Spay & Neuter", href: "/services/spay-neuter", icon: "/icons/card1.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const DogBreedingContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Dog Breeding", href: "/services/dog-breeding" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -51,10 +67,17 @@ export const DogBreedingContainer = () => {
               We provide professional veterinary support for breeders, focused
               on canine reproductive health and successful litters. Our services
               aim to support the health of the mother and the overall well-being
-              of the puppies.
+              of the puppies, including pre-breeding{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              and health assessments.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
-              From ovulation timing to pregnancy monitoring, we offer the
+              From ovulation timing to pregnancy monitoring via{" "}
+              <Link href="/services/ultrasound-services" className="text-primary-green hover:underline font-semibold">
+                ultrasound imaging
+              </Link>, we offer the
               clinical expertise needed to manage reproductive cycles
               effectively.
             </p>
@@ -88,7 +111,11 @@ export const DogBreedingContainer = () => {
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               Detailed care during a breeding cycle ensures the health of the
-              mother and promotes healthy developments for future litters.
+              mother and promotes healthy developments for future litters. For those not planning to breed, learn about our{" "}
+              <Link href="/services/spay-neuter" className="text-primary-green hover:underline font-semibold">
+                spay & neuter
+              </Link>{" "}
+              services.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -99,6 +126,7 @@ export const DogBreedingContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

@@ -7,7 +7,7 @@ import { JsonLd } from "@/components/shared/jsonLd";
 
 export async function generateMetadata() {
   const data = await getPageData("faqPage");
-  return getMetadata(data);
+  return getMetadata(data, "/faq");
 }
 
 const FAQPage = async () => {

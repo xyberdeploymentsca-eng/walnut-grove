@@ -7,7 +7,7 @@ import { getServiceSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("skinEarPage");
-  return getMetadata(data);
+  return getMetadata(data, "/services/skin-ear-infections");
 }
 
 const SkinEarPage = async () => {

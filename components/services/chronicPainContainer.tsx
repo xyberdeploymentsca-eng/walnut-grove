@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const ChronicPainContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const ChronicPainContainer = () => {
     "Medication and therapeutic treatment strategies designed to manage inflammation and discomfort.",
     "Mobility support recommendations including lifestyle adjustments and supportive therapies.",
     "Ongoing quality-of-life evaluations to ensure your pet remains comfortable and active.",
+  ];
+
+  const relatedServices = [
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
+    { name: "Bloodwork", href: "/services/bloodwork", icon: "/icons/card4.svg" },
+    { name: "Pet Ultrasound", href: "/services/ultrasound-services", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const ChronicPainContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Chronic Pain Management", href: "/services/chronic-pain-management" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -50,12 +66,23 @@ export const ChronicPainContainer = () => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Chronic pain, often caused by arthritis or age-related conditions,
               can significantly impact your pet&apos;s quality of life. We focus
-              on identifying the source of discomfort and creating
+              on identifying the source of discomfort through diagnostic tools like{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              and{" "}
+              <Link href="/services/pet-x-ray" className="text-primary-green hover:underline font-semibold">
+                X-ray imaging
+              </Link>, and creating
               individualized multimodal plans to manage pain effectively.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our goal is to improve mobility, increase comfort, and help your
-              pet stay active and happy in their daily life.
+              pet stay active and happy in their daily life. Regular{" "}
+              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+                wellness exams
+              </Link>{" "}
+              can help detect pain early.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -98,6 +125,7 @@ export const ChronicPainContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

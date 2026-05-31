@@ -7,7 +7,7 @@ import { getWebPageSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("howToVideosPage");
-  return getMetadata(data);
+  return getMetadata(data, "/resources/how-to-videos");
 }
 
 const HowToVideosPage = async () => {

@@ -1,16 +1,25 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const EuthanasiaContainer = () => {
   const points = [
-    "Quality of life consultations to help you assess your pet’s comfort, pain levels, and overall well-being.",
+    "Quality of life consultations to help you assess your pet's comfort, pain levels, and overall well-being.",
     "A dedicated, quiet comfort space designed to provide a peaceful, stress-free setting for you and your pet.",
     "Step-by-step guidance on what to expect, ensuring you feel supported and informed throughout the process.",
     "Personalized options for family presence, allowing you to choose how you wish to say goodbye.",
     "Compassionate post-care arrangements, including private or communal cremation services and memorial keepsakes.",
+  ];
+
+  const relatedServices = [
+    { name: "Chronic Pain Management", href: "/services/chronic-pain-management", icon: "/icons/card4.svg" },
+    { name: "Bloodwork", href: "/services/bloodwork", icon: "/icons/card4.svg" },
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const EuthanasiaContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Compassionate Euthanasia", href: "/services/euthanasia" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -53,7 +69,11 @@ export const EuthanasiaContainer = () => {
               quality of life and guide you through a gentle, peaceful transition when the time comes.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
-              We believe that every pet deserves a peaceful, painless, and dignified farewell. Our staff handles
+              We believe that every pet deserves a peaceful, painless, and dignified farewell. Our{" "}
+              <Link href="/services/chronic-pain-management" className="text-primary-green hover:underline font-semibold">
+                chronic pain management
+              </Link>{" "}
+              services can help improve comfort during difficult health challenges, and our staff handles
               every detail with gentle care, focusing entirely on your pet&apos;s comfort and your family&apos;s emotional needs.
             </p>
 
@@ -85,7 +105,11 @@ export const EuthanasiaContainer = () => {
             </div>
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
-              We are here to support you at every stage of the decision-making process. Please do not hesitate to reach
+              We are here to support you at every stage of the decision-making process. Diagnostic tools like{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              can help assess your pet&apos;s current condition. Please do not hesitate to reach
               out if you need to talk, ask questions about the procedure, or receive resources on pet loss and grieving.
             </p>
 
@@ -97,6 +121,7 @@ export const EuthanasiaContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

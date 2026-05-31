@@ -7,7 +7,7 @@ import { getServiceSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("chronicPainPage");
-  return getMetadata(data);
+  return getMetadata(data, "/services/chronic-pain-management");
 }
 
 const ChronicPainPage = async () => {

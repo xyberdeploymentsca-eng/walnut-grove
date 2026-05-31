@@ -7,7 +7,7 @@ import { getServiceSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("spayNeuterPage");
-  return getMetadata(data);
+  return getMetadata(data, "/services/spay-neuter");
 }
 
 const SpayNeuterPage = async () => {

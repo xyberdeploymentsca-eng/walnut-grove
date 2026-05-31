@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const BoardingContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const BoardingContainer = () => {
     "Gentle interaction and enrichment time to help keep cats relaxed, engaged, and emotionally comfortable during their stay.",
     "Veterinary supervision within our clinic allowing immediate medical attention if any concerns arise.",
     "Flexible drop-off and pick-up scheduling available during regular hospital hours throughout the week.",
+  ];
+
+  const relatedServices = [
+    { name: "Vaccinations", href: "/services/vaccines", icon: "/icons/card2.svg" },
+    { name: "Parasite Prevention", href: "/services/parasite-prevention", icon: "/icons/card2.svg" },
+    { name: "Microchipping", href: "/services/microchipping", icon: "/icons/card2.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const BoardingContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Pet Boarding", href: "/services/pet-boarding-services" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -51,7 +67,11 @@ export const BoardingContainer = () => {
               We offer cozy, individualized boarding specifically for our feline
               friends. Our boarding area is designed to be a quiet, low-stress
               environment where your cat can feel safe and relaxed while you are
-              away.
+              away. We recommend ensuring{" "}
+              <Link href="/services/vaccines" className="text-primary-green hover:underline font-semibold">
+                vaccinations
+              </Link>{" "}
+              are up to date before boarding.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our dedicated staff provides attentive care, clean facilities, and
@@ -87,10 +107,18 @@ export const BoardingContainer = () => {
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               Rest easy knowing your cat is in a calm, caring environment
-              supervised by veterinary professionals.
+              supervised by veterinary professionals. We also recommend{" "}
+              <Link href="/services/microchipping" className="text-primary-green hover:underline font-semibold">
+                microchipping
+              </Link>{" "}
+              and current{" "}
+              <Link href="/services/parasite-prevention" className="text-primary-green hover:underline font-semibold">
+                parasite prevention
+              </Link>{" "}
+              for all boarding guests.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
-              When you can’t be there, you can trust that your cat is in
+              When you can't be there, you can trust that your cat is in
               compassionate, capable hands, receiving attentive care in a clean,
               secure, and professionally supervised setting. We strive to
               maintain a calm, low-stress environment so your cat can rest
@@ -105,6 +133,7 @@ export const BoardingContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

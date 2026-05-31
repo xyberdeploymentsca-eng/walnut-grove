@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const SmallMammalContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const SmallMammalContainer = () => {
     "Dental and digestive health evaluations addressing common issues in small mammals.",
     "Diagnostic testing and treatment plans for illness or behavioural changes.",
     "Preventative health recommendations tailored to the unique needs of small companion animals.",
+  ];
+
+  const relatedServices = [
+    { name: "Preventative Care", href: "/services/preventative-care", icon: "/icons/card2.svg" },
+    { name: "Skin & Ear Infections", href: "/services/skin-ear-infections", icon: "/icons/card1.svg" },
+    { name: "Chronic Pain Management", href: "/services/chronic-pain-management", icon: "/icons/card4.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const SmallMammalContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Small Mammal Medicine", href: "/services/small-mammal-medicine" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -51,12 +67,24 @@ export const SmallMammalContainer = () => {
               Small mammals such as rabbits and pocket pets require specialized
               medical knowledge and handling. Our veterinary team provides
               tailored examinations and treatment plans designed specifically
-              for these unique companions.
+              for these unique companions, including specialized{" "}
+              <Link href="/services/dental-services" className="text-primary-green hover:underline font-semibold">
+                dental care
+              </Link>{" "}
+              for species with continuously growing teeth.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Because small mammals often hide signs of illness, early
-              evaluation and preventative care are especially important in
-              maintaining their health.
+              evaluation and{" "}
+              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+                preventative care
+              </Link>{" "}
+              are especially important in
+              maintaining their health. Diagnostic{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              can reveal hidden conditions.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -99,6 +127,7 @@ export const SmallMammalContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

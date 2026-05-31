@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const SoftTissueContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const SoftTissueContainer = () => {
     "Internal surgical treatments addressing digestive, reproductive, or structural concerns.",
     "Pre-surgical consultations and planning to ensure every procedure is carefully evaluated.",
     "Post-operative monitoring and recovery care supporting safe healing and patient comfort.",
+  ];
+
+  const relatedServices = [
+    { name: "Anesthesia", href: "/services/anesthesia", icon: "/icons/card3.svg" },
+    { name: "Pet Surgery", href: "/services/pet-surgery", icon: "/icons/card3.svg" },
+    { name: "Skin & Ear Infections", href: "/services/skin-ear-infections", icon: "/icons/card1.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const SoftTissueContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Soft Tissue, Eye & Ear Procedures", href: "/services/soft-tissue-eye-ear" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -48,13 +64,24 @@ export const SoftTissueContainer = () => {
 
           <div className="space-y-4">
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
-              Beyond routine surgery, our team performs various soft tissue
+              Beyond routine{" "}
+              <Link href="/services/pet-surgery" className="text-primary-green hover:underline font-semibold">
+                surgery
+              </Link>, our team performs various soft tissue
               procedures to address masses, injuries, and conditions affecting
               the eyes, ears, and internal organs.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our surgical team prioritizes safety, precision, and compassionate
-              care throughout every stage of treatment.
+              care throughout every stage of treatment, using tailored{" "}
+              <Link href="/services/anesthesia" className="text-primary-green hover:underline font-semibold">
+                anesthesia protocols
+              </Link>{" "}
+              for each patient. For ear and skin conditions that don&apos;t require surgery, see our{" "}
+              <Link href="/services/skin-ear-infections" className="text-primary-green hover:underline font-semibold">
+                skin & ear infections
+              </Link>{" "}
+              services.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -86,7 +113,11 @@ export const SoftTissueContainer = () => {
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               We utilize modern surgical techniques and monitoring equipment to
-              support successful outcomes.
+              support successful outcomes. Pre-surgical{" "}
+              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+                bloodwork
+              </Link>{" "}
+              is recommended before any procedure.
             </p>
 
             <div className="flex justify-center lg:justify-start">
@@ -97,6 +128,7 @@ export const SoftTissueContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );

@@ -7,7 +7,7 @@ import { getAboutPageSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("aboutPage");
-  return getMetadata(data);
+  return getMetadata(data, "/about");
 }
 
 const About = async () => {

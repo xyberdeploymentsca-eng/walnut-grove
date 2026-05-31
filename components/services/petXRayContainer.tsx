@@ -1,8 +1,11 @@
 /** @format */
 
 import Image from "next/image";
+import Link from "next/link";
 import { CtaButton } from "../ui/ctaButton";
 import { AllServicesList } from "./allServicesList";
+import { RelatedServices } from "./relatedServices";
+import { Breadcrumbs } from "../shared/breadcrumbs";
 
 export const PetXRayContainer = () => {
   const points = [
@@ -11,6 +14,12 @@ export const PetXRayContainer = () => {
     "Chest and abdominal imaging to examine internal organs and detect abnormalities.",
     "Dental and structural evaluations when imaging is required for oral or skeletal assessment.",
     "Pre-surgical diagnostic imaging used to guide treatment planning and procedures.",
+  ];
+
+  const relatedServices = [
+    { name: "Pet Ultrasound", href: "/services/ultrasound-services", icon: "/icons/card2.svg" },
+    { name: "Lab Services", href: "/services/lab-services", icon: "/icons/card4.svg" },
+    { name: "Bloodwork", href: "/services/bloodwork", icon: "/icons/card4.svg" },
   ];
 
   return (
@@ -31,7 +40,14 @@ export const PetXRayContainer = () => {
         height={1484}
       />
 
-      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-[120px] lg:pt-[197px] px-6 lg:px-4 relative z-1">
+      <Breadcrumbs
+        items={[
+          { name: "Services", href: "/services" },
+          { name: "Pet X-Ray", href: "/services/pet-x-ray" },
+        ]}
+      />
+
+      <div className="flex flex-col lg:flex-row justify-between items-start max-w-[1296px] mx-auto pt-6 lg:pt-8 px-6 lg:px-4 relative z-1">
         <div className="flex flex-col w-full rounded-[16px] p-6 lg:p-16 relative shrink-0">
           <div className="flex flex-col lg:flex-row items-center lg:items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-8 lg:mb-6 text-center lg:text-left">
             <Image
@@ -49,13 +65,28 @@ export const PetXRayContainer = () => {
           <div className="space-y-4">
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Digital X-ray imaging allows veterinarians to quickly evaluate
-              bones, joints, and internal structures. This diagnostic tool helps
+              bones, joints, and internal structures. Combined with{" "}
+              <Link href="/services/ultrasound-services" className="text-primary-green hover:underline font-semibold">
+                ultrasound imaging
+              </Link>{" "}
+              and{" "}
+              <Link href="/services/lab-services" className="text-primary-green hover:underline font-semibold">
+                lab services
+              </Link>, X-rays help
               identify injuries, structural abnormalities, and certain internal
               conditions.
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our imaging technology allows us to diagnose problems efficiently
-              and guide appropriate treatment plans.
+              and guide appropriate treatment plans, including pre-{" "}
+              <Link href="/services/pet-surgery" className="text-primary-green hover:underline font-semibold">
+                surgical
+              </Link>{" "}
+              planning and{" "}
+              <Link href="/services/dental-services" className="text-primary-green hover:underline font-semibold">
+                dental
+              </Link>{" "}
+              assessments.
             </p>
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
@@ -99,6 +130,7 @@ export const PetXRayContainer = () => {
           </div>
         </div>
       </div>
+      <RelatedServices services={relatedServices} />
       <AllServicesList />
     </div>
   );
