@@ -1,5 +1,7 @@
 /** @format */
 
+export const revalidate = 3600; // revalidate every hour
+
 import { TermsContainer } from "@/components/legal/termsContainer";
 import { getMetadata, getPageData } from "@/utils/seoBuilder";
 

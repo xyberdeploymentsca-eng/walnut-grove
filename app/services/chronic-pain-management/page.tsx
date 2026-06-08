@@ -1,5 +1,7 @@
 /** @format */
 
+export const revalidate = 3600; // revalidate every hour
+
 import { ChronicPainContainer } from "@/components/services/chronicPainContainer";
 import { getMetadata, getPageData } from "@/utils/seoBuilder";
 import { JsonLd } from "@/components/shared/jsonLd";

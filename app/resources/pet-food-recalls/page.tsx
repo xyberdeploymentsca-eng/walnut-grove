@@ -1,5 +1,7 @@
 /** @format */
 
+export const revalidate = 3600; // revalidate every hour
+
 import { JsonLd } from "@/components/shared/jsonLd";
 import { PetFoodRecallsContainer } from "@/components/resources/petFoodRecallsContainer";
 import { getPetFoodRecallsSchema } from "@/utils/schemaBuilder";
