@@ -1,6 +1,6 @@
 /** @format */
 
-export const revalidate = 3600; // revalidate every hour
+export const dynamic = "force-dynamic";
 
 import { UltrasoundContainer } from "@/components/services/ultrasoundContainer";
 import { getMetadata, getPageData } from "@/utils/seoBuilder";

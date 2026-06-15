@@ -1,6 +1,6 @@
 /** @format */
 
-export const revalidate = 3600; // revalidate every hour
+export const dynamic = "force-dynamic";
 
 import { getMetadata, getPageData } from "@/utils/seoBuilder";
 import { JsonLd } from "@/components/shared/jsonLd";

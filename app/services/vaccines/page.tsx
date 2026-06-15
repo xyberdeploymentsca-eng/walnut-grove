@@ -1,6 +1,6 @@
 /** @format */
 
-export const revalidate = 3600; // revalidate every hour
+export const dynamic = "force-dynamic";
 
 import { VaccinesContainer } from "@/components/services/vaccinesContainer";
 import { getMetadata, getPageData } from "@/utils/seoBuilder";
