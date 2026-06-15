@@ -253,6 +253,8 @@ export const softTissuePage = defineType({
   ],
 });
 
+//re
+
 export const anesthesiaPage = defineType({
   name: "anesthesiaPage",
   title: "Anesthesia Page",
@@ -466,7 +468,8 @@ export const howToVideosPage = defineType({
               name: "youtubeId",
               title: "YouTube Video ID",
               type: "string",
-              description: "The video ID from the YouTube URL (e.g. S-pYM4VVNaI).",
+              description:
+                "The video ID from the YouTube URL (e.g. S-pYM4VVNaI).",
             },
             {
               name: "title",
@@ -535,4 +538,3 @@ export const euthanasiaPage = defineType({
     faqField,
   ],
 });
-
