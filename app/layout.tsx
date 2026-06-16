@@ -11,10 +11,7 @@ import { Metadata } from "next";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Walnut Grove Animal Hospital",
-    template: "%s | Walnut Grove Animal Hospital",
-  },
+  title: "Walnut Grove Animal Hospital",
   description:
     "Expert veterinary care in Langley. We offer preventive care, surgery, boarding, and more for your beloved pets.",
 };
