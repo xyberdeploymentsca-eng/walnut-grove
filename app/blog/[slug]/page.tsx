@@ -34,9 +34,11 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   const metaData = {
     metaData: {
+      // search results show about 60 characters: use the shortest brand suffix that fits
       metaTitle:
         blog.metaData?.metaTitle ||
-        `${blog.title} | Walnut Grove Animal Hospital`,
+        [`${blog.title} | Walnut Grove Animal Hospital`, `${blog.title} | Walnut Grove`].find((t) => t.length <= 60) ||
+        blog.title,
       metaDescription:
         blog.metaData?.metaDescription ||
         blog.excerpt ||
