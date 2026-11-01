@@ -55,6 +55,15 @@ export default function RootLayout({
             gtag('config', 'G-NXGBNEFDBS');
           `}
         </Script>
+        {/* Vercel Web Analytics and Speed Insights: first-party, no cookies (data shows in Vercel and in the clinic's Walnut Desk) */}
+        <Script id="vercel-insights-queue" strategy="afterInteractive">
+          {`
+            window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+            window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+          `}
+        </Script>
+        <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
+        <Script src="/_vercel/speed-insights/script.js" strategy="afterInteractive" />
         <Header />
         <FloatingIcons />
         <Popup />
