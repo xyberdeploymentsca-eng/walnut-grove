@@ -227,7 +227,18 @@ export function getMetadata(data, currentUrl = "") {
     metadata.alternates.canonical = seo.canonical;
   }
 
+  metadata.title = fitTitle(metadata.title);
+  if (metadata.twitter) metadata.twitter.title = metadata.title;
   metadata.openGraph.title = metadata.title;
   metadata.openGraph.description = metadata.description;
   return metadata;
+}
+
+/** Search results show about 60 characters: shorten a long brand suffix, and name the clinic on very short titles. CMS text is otherwise kept. */
+function fitTitle(title) {
+  if (typeof title !== "string") return title;
+  const long = " | Walnut Grove Animal Hospital";
+  if (title.length > 60 && title.endsWith(long)) return title.slice(0, -long.length) + " | Walnut Grove";
+  if (title.length < 30 && !title.includes("Walnut Grove")) return title + (title.length + long.length <= 60 ? long : " | Walnut Grove");
+  return title;
 }
