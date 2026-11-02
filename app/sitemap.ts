@@ -2,6 +2,7 @@
 
 import { MetadataRoute } from "next";
 import { getAllBlogSlugs, sampleBlogs } from "@/utils/blogData";
+import { clinicPosts } from "@/utils/clinicPosts";
 
 // rebuilt every hour, so blog posts published in the CMS after a deploy are listed too
 export const revalidate = 3600;
@@ -57,7 +58,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   // CMS posts plus the built-in articles (they are live pages too, served when the CMS has no post with that slug)
-  const blogSlugs = Array.from(new Set([...(await getAllBlogSlugs()), ...sampleBlogs.map((b) => b.slug)]));
+  const blogSlugs = Array.from(new Set([...(await getAllBlogSlugs()), ...sampleBlogs.map((b) => b.slug), ...clinicPosts.map((b) => b.slug)]));
   const blogRoutes = blogSlugs.map((slug) => ({
     url: `${baseUrl}/blog/${slug}`,
     lastModified: new Date(),

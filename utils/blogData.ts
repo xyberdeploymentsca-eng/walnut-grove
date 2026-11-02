@@ -2,6 +2,7 @@
 
 import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
+import { clinicPosts } from "@/utils/clinicPosts";
 
 export interface BlogAuthor {
   name: string;
@@ -649,17 +650,23 @@ sampleBlogs.forEach((blog, index) => {
   }
 });
 
+// Posts kept in the site code are listed with the CMS posts (a CMS post with the same slug wins), newest first
+function withClinicPosts(posts: BlogPost[]): BlogPost[] {
+  const have = new Set(posts.map((p) => p.slug));
+  return [...posts, ...clinicPosts.filter((p) => !have.has(p.slug))].sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
+}
+
 // Fetch All Blogs (with fallback)
 export const getAllBlogs = async (): Promise<BlogPost[]> => {
   try {
     const data = await client.fetch(getAllBlogsQuery);
     if (data && Array.isArray(data) && data.length > 0) {
-      return data;
+      return withClinicPosts(data);
     }
   } catch (err) {
     console.warn("[Sanity] Unable to fetch blogs from Sanity, using fallback sample data.");
   }
-  return sampleBlogs;
+  return withClinicPosts(sampleBlogs);
 };
 
 // Fetch Single Blog by Slug (with fallback)
@@ -673,7 +680,7 @@ export const getBlogBySlug = async (slug: string): Promise<BlogPost | null> => {
     console.warn(`[Sanity] Unable to fetch blog for slug ${slug}, checking fallback data.`);
   }
 
-  const found = sampleBlogs.find((b) => b.slug === slug);
+  const found = clinicPosts.find((b) => b.slug === slug) || sampleBlogs.find((b) => b.slug === slug);
   return found || null;
 };
 
