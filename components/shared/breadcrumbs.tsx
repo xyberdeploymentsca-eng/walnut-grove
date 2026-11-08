@@ -14,7 +14,7 @@ interface BreadcrumbsProps {
 }
 
 export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
-  const baseUrl = "https://walnutgroveanimalhospital.ca";
+  const baseUrl = "https://www.walnutgroveanimalclinic.com";
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",

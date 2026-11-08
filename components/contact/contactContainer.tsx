@@ -2,6 +2,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { submitContactForm } from "@/actions/submitContactForm";
 import { CtaButton } from "../ui/ctaButton";
@@ -104,11 +105,30 @@ export const ContactContainer = () => {
         <div className="mt-12 lg:mt-16 mb-12 lg:mb-16">
           <div className="w-full max-w-[784px] mx-auto bg-[#FFFCF7] rounded-[24px] lg:rounded-[16px] p-6 lg:p-8 shadow-[0px_0px_30px_0px_rgba(87,87,86,0.08)] border border-[#F0EAF8]">
             <h1 className="font-nunito font-bold text-[22px] lg:text-[24px] text-primary-black mb-3 pb-2 border-b-[3px] border-[#E7D2FF] w-fit">
-              Our Location & Working Hours
+              Hours &amp; Location
             </h1>
-            <p className="text-[14px] font-nunito font-medium text-primary-black leading-[160%] mb-4">
+            <p className="text-[14px] font-nunito font-medium text-primary-black leading-[160%] mb-2">
+              Walnut Grove Animal Hospital is open 7 days a week in Walnut
+              Grove, Langley: Monday to Friday 8:30am to 7:00pm, and Saturday
+              and Sunday 9:00am to 5:00pm. Please call ahead on statutory
+              holidays to confirm our hours.
+            </p>
+            <p className="text-[14px] font-nunito font-medium text-primary-black leading-[160%] mb-2">
               In the event of an emergency during our normal office hours,
               please proceed directly to our practice and call while on the way.
+            </p>
+            <p className="text-[14px] font-nunito font-medium text-primary-black leading-[160%] mb-4">
+              After hours, go to a 24-hour emergency hospital. The nearest to us
+              is Animal Emergency Clinic of the Fraser Valley, 6325 204 St, Unit
+              302, Langley (
+              <a href="https://www.animalemerg.com/" target="_blank" rel="noopener noreferrer" className="text-primary-green font-semibold hover:underline">
+                animalemerg.com
+              </a>
+              ), open 24 hours.{" "}
+              <Link href="/pet-emergency-langley" className="text-primary-green font-semibold hover:underline">
+                What to do in a pet emergency
+              </Link>
+              .
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 mb-6">
@@ -184,6 +204,47 @@ export const ContactContainer = () => {
                 {hospitalCopied ? "Number Copied!" : HOSPITAL_PHONE}
               </button>
             </div>
+          </div>
+
+          {/* Before you visit: answers to the questions callers ask most */}
+          <div className="w-full max-w-[784px] mx-auto mt-8 text-[15px] lg:text-[16px] font-nunito font-medium text-primary-black leading-[160%] space-y-3">
+            <h2 className="font-bold text-[20px] lg:text-[22px]">Before Your Visit</h2>
+            <p>
+              <span className="font-bold">Need to be seen today?</span> Call
+              us as early in the day as you can. Read{" "}
+              <Link href="/same-day-weekend-vet-langley" className="text-primary-green font-semibold hover:underline">
+                how same-day and weekend visits work
+              </Link>
+              .
+            </p>
+            <p>
+              <span className="font-bold">New to our clinic?</span> Ask your
+              previous clinic to send your pet&apos;s history before the first
+              appointment.{" "}
+              <Link href="/blog/transfer-pet-medical-records-langley" className="text-primary-green font-semibold hover:underline">
+                How to transfer your pet&apos;s records
+              </Link>
+              .
+            </p>
+            <p>
+              <span className="font-bold">Picking up a prescription?</span>{" "}
+              Request refills a few days before the last dose.{" "}
+              <Link href="/blog/pet-prescription-refills-pickup-langley" className="text-primary-green font-semibold hover:underline">
+                How refills and pickups work
+              </Link>
+              .
+            </p>
+            <p>
+              <span className="font-bold">Wondering about cost?</span> See{" "}
+              <Link href="/vet-prices-langley" className="text-primary-green font-semibold hover:underline">
+                vet prices in Langley
+              </Link>{" "}
+              and how estimates work, or browse our{" "}
+              <Link href="/faq" className="text-primary-green font-semibold hover:underline">
+                frequently asked questions
+              </Link>
+              .
+            </p>
           </div>
         </div>
 

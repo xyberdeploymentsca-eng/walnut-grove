@@ -7,6 +7,33 @@ import { AllServicesList } from "./allServicesList";
 import { RelatedServices } from "./relatedServices";
 import { Breadcrumbs } from "../shared/breadcrumbs";
 import { ServiceFaq } from "./serviceFaq";
+import { ContentBlocks, type Block } from "../shared/contentPage";
+
+
+// Answers to the questions Langley callers ask most about spay and neuter (facts from our FAQ and surgery pages).
+const moreAnswers: Block[] = [
+  { h2: "What is the best age to spay or neuter?" },
+  { p: "It depends on your pet's species, breed, adult size and development. Many cats are spayed or neutered as kittens, while for some large-breed dogs your veterinarian may suggest waiting. We recommend the right timing at your puppy or kitten visits." },
+  { h2: "What happens before and during surgery" },
+  {
+    list: [
+      "A pre-surgery visit first: we check your pet's health, review their history, discuss recommended pre-anesthetic bloodwork, answer your questions and give you a detailed cost estimate.",
+      "Pain relief starts before the procedure, your pet stays under continuously monitored general anesthesia, and pain medication continues at home.",
+      "Owners wait outside the operating room to keep it clean and sterile.",
+    ],
+  },
+  { h2: "Recovery at home" },
+  {
+    list: [
+      "Keep your pet quiet, with short leash walks and no running, jumping or rough play, until your veterinarian says otherwise (usually about 10 to 14 days).",
+      "Use the cone or recovery suit so your pet can't lick the incision.",
+      "Check the incision every day, and don't bathe your pet until it has healed.",
+      ["Call us if you see swelling, discharge, bleeding or an opening wound, or if your pet won't eat, vomits repeatedly, or seems very sleepy or in pain. After hours, see ", { text: "what to do in a pet emergency", href: "/pet-emergency-langley" }, "."],
+    ],
+  },
+  { h2: "What does a spay or neuter cost?" },
+  { p: ["The cost depends on species, sex, weight and age, and you get a detailed estimate at the pre-surgery visit. See ", { text: "vet prices in Langley", href: "/vet-prices-langley" }, " for other common costs."] },
+];
 
 export const SpayNeuterContainer = ({ faqs }: { faqs?: any[] }) => {
   const points = [
@@ -59,7 +86,7 @@ export const SpayNeuterContainer = ({ faqs }: { faqs?: any[] }) => {
               className="w-[54px] lg:w-[87px] h-auto"
             />
             <h1 className="text-[28px] lg:text-[48px] text-center lg:text-left font-otomanopee-one leading-tight lg:leading-[120%] text-primary-black uppercase">
-              SPAY & NEUTER
+              Spay & Neuter in Langley
             </h1>
           </div>
 
@@ -124,6 +151,8 @@ export const SpayNeuterContainer = ({ faqs }: { faqs?: any[] }) => {
                 puppies and kittens
               </Link>.
             </p>
+
+            <ContentBlocks blocks={moreAnswers} />
 
             <div className="flex justify-center lg:justify-start">
               <CtaButton className="mt-6 capitalize" icon="/icons/calender.svg">

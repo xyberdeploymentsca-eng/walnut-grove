@@ -7,6 +7,40 @@ import { AllServicesList } from "./allServicesList";
 import { RelatedServices } from "./relatedServices";
 import { Breadcrumbs } from "../shared/breadcrumbs";
 import { ServiceFaq } from "./serviceFaq";
+import { ContentBlocks, type Block } from "../shared/contentPage";
+
+
+// The questions people ask about ears and itchy skin, answered on the page (and in search results).
+const moreAnswers: Block[] = [
+  { h2: "What are the signs of an ear infection in dogs?" },
+  {
+    list: [
+      "Shaking the head or scratching at an ear",
+      "A bad smell from the ear",
+      "Brown, yellow or black discharge",
+      "Redness or swelling inside the ear flap",
+      "Pain when the ear is touched, or a tilted head",
+    ],
+  },
+  { h2: "Will a dog ear infection go away on its own?" },
+  { p: "Usually not. Without the right treatment, ear infections tend to linger or come back, and a long-standing infection can damage the ear canal. Ear drops work best once we know what is causing the infection." },
+  { h2: "Why is my dog so itchy if there are no fleas?" },
+  { p: "Allergies are a common cause: to things in the environment, such as pollen and dust mites, or to an ingredient in food. Bacterial and yeast skin infections often follow and make the itch worse. Mites and other parasites can also cause itching even when you don't see fleas." },
+  { h2: "What can be mistaken for an ear infection?" },
+  { p: "Ear mites, a grass seed or other object stuck in the ear, a growth in the ear canal, or an allergy flare can all look like an infection. That is why we look inside the ear before choosing a treatment." },
+  { h2: "How we find the cause" },
+  {
+    list: [
+      "An exam of the skin, and of the ear canal with an otoscope.",
+      "Skin and ear cytology: a sample checked under the microscope for bacteria and yeast.",
+      ["Further tests when infections keep coming back, such as a food trial, ", { text: "lab tests", href: "/services/lab-services" }, " or a culture."],
+    ],
+  },
+  { h2: "Why home remedies can delay healing" },
+  { p: "Cleaning an infected ear with the wrong product can sting, push debris deeper, or hide what the infection really is. Call us before trying home treatments, especially if the ear is painful." },
+  { h2: "When to call us today" },
+  { p: ["A very painful or swollen ear, a head tilt, loss of balance, or skin that is raw and oozing should be seen soon. See ", { text: "same-day and weekend visits", href: "/same-day-weekend-vet-langley" }, "."] },
+];
 
 export const SkinEarContainer = ({ faqs }: { faqs?: any[] }) => {
   const points = [
@@ -59,7 +93,7 @@ export const SkinEarContainer = ({ faqs }: { faqs?: any[] }) => {
               className="w-[54px] lg:w-[87px] h-auto"
             />
             <h1 className="text-[28px] lg:text-[48px] text-center lg:text-left font-otomanopee-one leading-tight lg:leading-[120%] text-primary-black uppercase">
-              SKIN & EAR INFECTIONS
+              Skin & Ear Infections in Langley
             </h1>
           </div>
 
@@ -118,6 +152,8 @@ export const SkinEarContainer = ({ faqs }: { faqs?: any[] }) => {
               </Link>{" "}
               may be recommended to rule out underlying systemic causes.
             </p>
+
+            <ContentBlocks blocks={moreAnswers} />
 
             <div className="flex justify-center lg:justify-start">
               <CtaButton className="mt-8 capitalize" icon="/icons/calender.svg">

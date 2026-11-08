@@ -25,6 +25,8 @@ const Footer = () => {
         { name: "Surgery & Reproductive", href: "/services/pet-surgery" },
         { name: "Diagnostics & Lab", href: "/services/bloodwork" },
         { name: "Pet Boarding", href: "/services/pet-boarding-services" },
+        { name: "Same-Day & Weekend Visits", href: "/same-day-weekend-vet-langley" },
+        { name: "Vet Prices", href: "/vet-prices-langley" },
         { name: "View All Services", href: "/services" },
       ],
     },
@@ -32,6 +34,7 @@ const Footer = () => {
       title: "Support",
       links: [
         { name: "Contact Us", href: "/contact" },
+        { name: "Pet Emergency", href: "/pet-emergency-langley" },
         { name: "Privacy Policy", href: "/privacy-policy" },
         { name: "Terms & Conditions", href: "/terms-and-conditions" },
       ],

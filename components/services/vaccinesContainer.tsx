@@ -7,6 +7,38 @@ import { AllServicesList } from "./allServicesList";
 import { RelatedServices } from "./relatedServices";
 import { Breadcrumbs } from "../shared/breadcrumbs";
 import { ServiceFaq } from "./serviceFaq";
+import { ContentBlocks, type Block } from "../shared/contentPage";
+
+
+// Schedule and core vaccines as already answered in this page's FAQ, set out as tables.
+const moreAnswers: Block[] = [
+  { h2: "Puppy and kitten vaccine schedule" },
+  {
+    table: {
+      caption: "Your veterinarian sets the exact schedule for your pet.",
+      head: ["Age", "What happens"],
+      rows: [
+        ["6 to 8 weeks", "First vaccines of the puppy or kitten series"],
+        ["Every 3 to 4 weeks after", "Boosters to build immunity"],
+        ["About 14 to 16 weeks", "The series finishes"],
+        ["Adult", "Boosters: some core vaccines last up to 3 years, others are given every year"],
+      ],
+    },
+  },
+  { h2: "Core and lifestyle vaccines" },
+  {
+    table: {
+      head: ["", "Dogs", "Cats"],
+      rows: [
+        ["Core (for nearly all pets)", "Rabies; distemper, adenovirus and parvovirus (DHPP)", "Rabies; FVRCP (herpesvirus, calicivirus, panleukopenia)"],
+        ["Lifestyle (based on risk)", "Bordetella (kennel cough), leptospirosis", "Feline leukemia, for cats that go outdoors or live with other cats"],
+      ],
+    },
+  },
+  { h2: "What do vaccines cost?" },
+  { p: ["Vaccines cost roughly $30 to $60 each in BC, and combined packages are often available for the puppy and kitten series. See ", { text: "vet prices in Langley", href: "/vet-prices-langley" }, "."] },
+  { p: ["Boarding, grooming and travel providers usually ask for proof of vaccination, so check your pet's record before you book ", { text: "boarding", href: "/services/pet-boarding-services" }, " or plan a trip with a ", { text: "health certificate", href: "/services/health-certificates" }, "."] },
+];
 
 export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
   const points = [
@@ -58,7 +90,7 @@ export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
               width={87}
             />
             <h1 className="text-[28px] lg:text-[48px] text-center lg:text-left font-otomanopee-one leading-tight lg:leading-[120%] text-primary-black uppercase">
-              VACCINATIONS
+              Pet Vaccines in Langley
             </h1>
           </div>
 
@@ -119,9 +151,11 @@ export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
               programs.
             </p>
 
+            <ContentBlocks blocks={moreAnswers} />
+
             <div className="flex justify-center lg:justify-start">
               <CtaButton className="mt-8 capitalize" icon="/icons/calender.svg">
-                Update Vaccinations
+                Schedule Vaccinations
               </CtaButton>
             </div>
           </div>

@@ -32,6 +32,9 @@ export const AllServicesList = () => {
     { name: "Dog Breeding", href: "/services/dog-breeding" },
     { name: "Pet X-Ray", href: "/services/pet-x-ray" },
     { name: "Pet Boarding Services", href: "/services/pet-boarding-services" },
+    { name: "Nail Trims", href: "/services/nail-trims" },
+    { name: "Prescription Diets", href: "/services/prescription-diets" },
+    { name: "Health Certificates", href: "/services/health-certificates" },
   ];
 
   return (

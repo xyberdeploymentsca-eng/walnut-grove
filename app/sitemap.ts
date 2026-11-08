@@ -22,6 +22,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/resources/how-to-videos",
     "/resources/poisonous-plants",
     "/resources/pet-food-recalls",
+    "/vet-prices-langley",
+    "/same-day-weekend-vet-langley",
+    "/pet-emergency-langley",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -50,6 +53,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "spay-neuter",
     "ultrasound-services",
     "vaccines",
+    "nail-trims",
+    "prescription-diets",
+    "health-certificates",
   ].map((service) => ({
     url: `${baseUrl}/services/${service}`,
     lastModified: new Date(),

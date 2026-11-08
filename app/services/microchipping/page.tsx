@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 import { MicrochippingContainer } from "@/components/services/microchippingContainer";
 import { getMetadata, getPageData } from "@/utils/seoBuilder";
 import { JsonLd } from "@/components/shared/jsonLd";
-import { getServiceSchema } from "@/utils/schemaBuilder";
+import { getFaqPageSchema, getServiceSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("microchippingPage");
@@ -23,6 +23,7 @@ const MicrochippingPage = async () => {
   return (
     <>
       <JsonLd data={schema} />
+      {data?.faqs?.length ? <JsonLd data={getFaqPageSchema(data.faqs)} /> : null}
       <MicrochippingContainer faqs={data?.faqs} />
     </>
   );

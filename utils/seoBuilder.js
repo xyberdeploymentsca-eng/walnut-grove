@@ -52,7 +52,7 @@ const PAGE_SEO = {
     "description": "Answers to the questions pet parents ask us most about appointments, vaccines, surgery, boarding and caring for your pet at Walnut Grove Animal Hospital."
   },
   "/services": {
-    "title": "Veterinary Services in Langley | Walnut Grove Animal Hospital",
+    "title": "Vet Services in Langley | Walnut Grove Animal Hospital",
     "description": "All veterinary services at Walnut Grove Animal Hospital in Langley, BC: preventive care, vaccines, dental, surgery, diagnostics, boarding and more."
   },
   "/blog": {
@@ -128,7 +128,7 @@ const PAGE_SEO = {
     "description": "Digital X-rays for dogs and cats to diagnose injuries and illness, at Walnut Grove Animal Hospital in Langley, BC."
   },
   "/services/preventative-care": {
-    "title": "Preventive Pet Care & Wellness Exams in Langley | Walnut Grove",
+    "title": "Preventive Care & Wellness Exams in Langley | Walnut Grove",
     "description": "Wellness exams and preventive care that keep dogs and cats healthy at every age, at Walnut Grove Animal Hospital in Langley, BC."
   },
   "/services/puppy-kitten-care": {
@@ -158,8 +158,98 @@ const PAGE_SEO = {
   "/services/vaccines": {
     "title": "Pet Vaccines in Langley | Walnut Grove Animal Hospital",
     "description": "Core and lifestyle vaccines for dogs and cats, set to your pet's age and needs, at Walnut Grove Animal Hospital in Langley, BC."
+  },
+  "/vet-prices-langley": {
+    "title": "Vet Prices in Langley, BC | Walnut Grove Animal Hospital",
+    "description": "What a vet visit costs at Walnut Grove Animal Hospital, Langley: exams, vaccines, spay/neuter, dental and nail trims, plus pet insurance and estimates."
+  },
+  "/same-day-weekend-vet-langley": {
+    "title": "Same-Day & Weekend Vet in Langley | Walnut Grove",
+    "description": "Need a vet today in Langley? Walnut Grove Animal Hospital is open 7 days, including Saturday and Sunday 9am–5pm. How same-day visits work and when to call."
+  },
+  "/pet-emergency-langley": {
+    "title": "Pet Emergency in Langley: What to Do | Walnut Grove",
+    "description": "Is it an emergency? Signs that need a vet now, what to do on the way, what to do if your dog ate chocolate, and where to go in Langley after hours."
+  },
+  "/services/nail-trims": {
+    "title": "Dog & Cat Nail Trims in Langley | Walnut Grove",
+    "description": "Gentle nail trims for dogs and cats at Walnut Grove Animal Hospital in Langley, BC: how often to trim, help for nervous pets, and how to book."
+  },
+  "/services/prescription-diets": {
+    "title": "Prescription Pet Food in Langley | Walnut Grove",
+    "description": "Prescription diets for urinary, kidney, digestive, skin and weight problems in dogs and cats, approved by our Langley vets. Order online or for pickup."
+  },
+  "/services/health-certificates": {
+    "title": "Pet Travel Health Certificates in BC | Walnut Grove",
+    "description": "Travelling with your dog or cat? What a health certificate is, US and overseas travel paperwork, and how to get ready with our Langley vets."
   }
 };
+
+/**
+ * Titles and descriptions set here win over the CMS (they follow the SEO plan of Nov 2026: the main search phrase
+ * first, 60 characters or fewer, one brand suffix). Delete an entry to let the CMS text show again.
+ */
+const SEO_OVERRIDES = {
+  "": {
+    "title": "Langley BC Vet, Open 7 Days | Walnut Grove Animal Hospital",
+    "description": "Veterinarian in Walnut Grove, Langley BC. Open 7 days: Mon–Fri 8:30am–7pm, Sat–Sun 9am–5pm. Request an appointment online or call (604) 888-2628."
+  },
+  "/contact": {
+    "title": "Hours & Location | Walnut Grove Animal Hospital, Langley",
+    "description": PAGE_SEO["/contact"].description
+  },
+  "/services/spay-neuter": {
+    "title": "Spay & Neuter in Langley: Cost & Recovery | Walnut Grove",
+    "description": "Spay and neuter surgery for dogs and cats in Langley, BC: the best age, what's included, recovery at home, and a detailed estimate before surgery."
+  },
+  "/services/vaccines": {
+    "title": "Pet Vaccines in Langley: Schedule & Cost | Walnut Grove",
+    "description": "Core and lifestyle vaccines for dogs and cats in Langley, BC: the puppy and kitten schedule, adult boosters and typical costs, at Walnut Grove."
+  },
+  "/services/dental-services": {
+    "title": "Pet Dental Cleaning in Langley | Walnut Grove",
+    "description": "Dental cleaning for dogs and cats in Langley, BC with digital dental X-rays and monitored anesthesia: what happens, signs it's time, and estimates."
+  },
+  "/services/skin-ear-infections": {
+    "title": "Dog Ear Infections & Itchy Skin in Langley | Walnut Grove",
+    "description": "Ear infections and itchy skin in dogs and cats: the signs, common causes, how we find the cause and treat it, and when to call our Langley vets."
+  },
+  "/services/soft-tissue-eye-ear": {
+    "title": "Soft Tissue, Eye & Ear Surgery in Langley | Walnut Grove",
+    "description": PAGE_SEO["/services/soft-tissue-eye-ear"].description
+  },
+  "/services/anesthesia": PAGE_SEO["/services/anesthesia"],
+  "/services/chronic-pain-management": PAGE_SEO["/services/chronic-pain-management"],
+  "/services/dog-breeding": PAGE_SEO["/services/dog-breeding"],
+  "/services/pet-surgery": PAGE_SEO["/services/pet-surgery"],
+  "/resources/how-to-videos": PAGE_SEO["/resources/how-to-videos"],
+  "/blog/pet-dental-health-signs-gum-disease": { "title": "Signs of Tooth Pain in Pets & Why Cleanings Matter" },
+  "/blog/pet-diagnostics-explained-bloodwork-x-rays-and-ultrasound-in-langley": { "title": "Pet Bloodwork, X-Rays & Ultrasound Explained | Langley" },
+  "/blog/preventative-pet-care-in-langley-bc-what-every-pet-owner-needs-to-know": { "title": "Preventive Pet Care in Langley: What Owners Need to Know" },
+  "/blog/preventative-pet-care-wellness-exams-langley": { "title": "Why Routine Wellness Exams Matter | Langley Vet" },
+  "/blog/puppy-kitten-first-year-health-checklist": { "title": "Puppy & Kitten First-Year Checklist: Vaccines & Care" },
+  "/blog/seasonal-pet-safety-fleas-ticks-poisonous-plants": { "title": "Fraser Valley Pet Safety: Fleas, Ticks & Toxic Plants" },
+  "/blog/stress-free-cat-boarding-guide": { "title": "Stress-Free Cat Boarding in Langley: How We Do It" }
+};
+
+/** The title and description a page is published with (overrides first), for its structured data. */
+export function getPageSeo(path) {
+  return { ...PAGE_SEO[path], ...SEO_OVERRIDES[path] };
+}
+
+function applyOverride(metadata, pagePath) {
+  const o = SEO_OVERRIDES[pagePath];
+  if (!o) return metadata;
+  if (o.title) metadata.title = o.title;
+  if (o.description) metadata.description = o.description;
+  if (metadata.twitter) {
+    metadata.twitter.title = metadata.title;
+    metadata.twitter.description = metadata.description;
+  }
+  metadata.openGraph.title = metadata.title;
+  metadata.openGraph.description = metadata.description;
+  return metadata;
+}
 
 /**
  * @param {any} data
@@ -206,7 +296,7 @@ export function getMetadata(data, currentUrl = "") {
   metadata.openGraph.title = metadata.title;
   metadata.openGraph.description = metadata.description;
   if (!seo) {
-    return metadata;
+    return applyOverride(metadata, pagePath);
   }
 
   if (seo.metaTitle) {
@@ -231,7 +321,7 @@ export function getMetadata(data, currentUrl = "") {
   if (metadata.twitter) metadata.twitter.title = metadata.title;
   metadata.openGraph.title = metadata.title;
   metadata.openGraph.description = metadata.description;
-  return metadata;
+  return applyOverride(metadata, pagePath);
 }
 
 /** Search results show about 60 characters: shorten a long brand suffix, and name the clinic on very short titles. CMS text is otherwise kept. */

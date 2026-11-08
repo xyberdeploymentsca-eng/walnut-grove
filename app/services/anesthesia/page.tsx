@@ -5,7 +5,7 @@ export const dynamic = "force-dynamic";
 import { AnesthesiaContainer } from "@/components/services/anesthesiaContainer";
 import { getMetadata, getPageData } from "@/utils/seoBuilder";
 import { JsonLd } from "@/components/shared/jsonLd";
-import { getServiceSchema } from "@/utils/schemaBuilder";
+import { getFaqPageSchema, getServiceSchema } from "@/utils/schemaBuilder";
 
 export async function generateMetadata() {
   const data = await getPageData("anesthesiaPage");
@@ -24,6 +24,7 @@ const AnesthesiaPage = async () => {
   return (
     <>
       <JsonLd data={schema} />
+      {data?.faqs?.length ? <JsonLd data={getFaqPageSchema(data.faqs)} /> : null}
       <AnesthesiaContainer faqs={data?.faqs} />
     </>
   );

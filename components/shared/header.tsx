@@ -86,6 +86,21 @@ export const Header = () => {
               "A safe, calm, and caring stay for your pet while you're away.",
             href: "/services/pet-boarding-services",
           },
+          {
+            label: "Same-Day & Weekend Visits",
+            description: "Open 7 days. How to get your pet seen today.",
+            href: "/same-day-weekend-vet-langley",
+          },
+          {
+            label: "Pet Emergency: What to Do",
+            description: "Urgent signs, and where to go after hours.",
+            href: "/pet-emergency-langley",
+          },
+          {
+            label: "Vet Prices",
+            description: "Typical costs and how estimates work.",
+            href: "/vet-prices-langley",
+          },
         ],
       },
       {
@@ -99,6 +114,9 @@ export const Header = () => {
           },
           { label: "Puppy & kitten care", href: "/services/puppy-kitten-care" },
           { label: "Microchipping", href: "/services/microchipping" },
+          { label: "Dental care", href: "/services/dental-services" },
+          { label: "Nail trims", href: "/services/nail-trims" },
+          { label: "Health certificates", href: "/services/health-certificates" },
         ],
       },
       {
@@ -124,6 +142,10 @@ export const Header = () => {
           {
             label: "Compassionate Euthanasia",
             href: "/services/euthanasia",
+          },
+          {
+            label: "Prescription diets",
+            href: "/services/prescription-diets",
           },
         ],
       },

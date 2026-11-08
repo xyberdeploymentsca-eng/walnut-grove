@@ -7,6 +7,37 @@ import { AllServicesList } from "./allServicesList";
 import { RelatedServices } from "./relatedServices";
 import { Breadcrumbs } from "../shared/breadcrumbs";
 import { ServiceFaq } from "./serviceFaq";
+import { ContentBlocks, type Block } from "../shared/contentPage";
+
+
+// What a dental cleaning involves (facts from our dental, anesthesia and FAQ pages).
+const moreAnswers: Block[] = [
+  { h2: "What happens during a dental cleaning" },
+  {
+    list: [
+      "A health check first, and a talk about recommended pre-anesthetic bloodwork, so we know your pet is ready for anesthesia.",
+      "Your pet is under monitored general anesthesia, so the whole mouth can be cleaned safely and without stress.",
+      "We remove plaque and tartar, including below the gum line, then polish the teeth.",
+      "Digital dental X-rays show what can't be seen by looking: tooth roots and the bone around them.",
+      "Your veterinarian explains what was found and what it means for your pet.",
+    ],
+  },
+  { h2: "Signs your pet needs a dental visit" },
+  {
+    list: [
+      "Bad breath",
+      "Yellow or brown tartar on the teeth",
+      "Red or bleeding gums",
+      "Chewing on one side, dropping food, or avoiding hard food",
+      "Pawing at the mouth, or a swollen face",
+    ],
+  },
+  { p: ["Read more: ", { text: "signs of tooth pain in pets", href: "/blog/pet-dental-health-signs-gum-disease" }, "."] },
+  { h2: "Is anesthesia safe for older pets?" },
+  { p: "Age alone isn't a reason to skip dental care. Before anesthesia your pet has a health check and we discuss pre-anesthetic bloodwork, which gives the team a safety baseline, and anesthesia is monitored throughout. Your veterinarian will talk you through the risks and benefits for your pet." },
+  { h2: "What does a dental cleaning cost?" },
+  { p: ["It depends on what the exam and dental X-rays show. Ask our team for an estimate, and see ", { text: "vet prices in Langley", href: "/vet-prices-langley" }, "."] },
+];
 
 export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
   const problems = [
@@ -64,7 +95,7 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
               className="w-[54px] lg:w-[87px] h-auto"
             />
             <h1 className="text-[28px] lg:text-[48px] text-center lg:text-left font-otomanopee-one leading-tight lg:leading-[120%] text-primary-black uppercase">
-              PET DENTAL CARE
+              Pet Dental Cleaning in Langley
             </h1>
           </div>
 
@@ -169,6 +200,8 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
               </Link>{" "}
               to ensure your pet remains comfortable throughout.
             </p>
+
+            <ContentBlocks blocks={moreAnswers} />
 
             <div className="flex justify-center lg:justify-start">
               <CtaButton className="mt-6 capitalize" icon="/icons/calender.svg">
