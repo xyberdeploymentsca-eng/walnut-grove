@@ -23,7 +23,7 @@ const HowToVideosPage = async () => {
   return (
     <>
       <JsonLd data={schema} />
-      <HowToVideosContainer />
+      <HowToVideosContainer videos={data?.videos} resources={data?.helpfulResources} />
     </>
   );
 };

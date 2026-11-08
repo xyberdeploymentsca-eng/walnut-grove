@@ -6,7 +6,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { PortableText, PortableTextComponents } from "next-sanity";
-import { getBlogImageUrl } from "@/utils/blogData";
+import { getBlogImageUrl } from "@/utils/blogImage";
 import { CtaButton } from "@/components/ui/ctaButton";
 import { Info, Lightbulb, AlertCircle, ExternalLink } from "lucide-react";
 

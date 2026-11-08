@@ -5,7 +5,8 @@
 import React, { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BlogPost, getBlogImageUrl } from "@/utils/blogData";
+import type { BlogPost } from "@/utils/blogData";
+import { getBlogImageUrl } from "@/utils/blogImage";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { CtaButton } from "@/components/ui/ctaButton";
 import { Search, Calendar, Clock, ArrowRight, Sparkles, Filter } from "lucide-react";

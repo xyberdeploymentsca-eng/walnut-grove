@@ -6,43 +6,27 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { X } from "lucide-react";
-import { client } from "@/sanity/lib/client";
 import { urlFor } from "@/sanity/lib/image";
 
-export const Popup = () => {
-  const [data, setData] = useState<any>(null);
+// The notice is read from the CMS on the server (app/layout.tsx), so the CMS token never reaches the browser.
+export const Popup = ({ popup }: { popup?: any }) => {
+  const data = popup?.isActive ? popup : null;
   const [isVisible, setIsVisible] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const query = `*[_type == "popupNotification"][0]`;
-        const result = await client.fetch(query);
+    if (!popup?.isActive) return;
 
-        if (result?.isActive) {
-          // Check session storage
-          if (result.showOncePerSession) {
-            const hasSeen = sessionStorage.getItem("hasSeenPopup");
-            if (hasSeen) return;
-          }
+    // Check session storage
+    if (popup.showOncePerSession && sessionStorage.getItem("hasSeenPopup")) return;
 
-          setData(result);
+    // Delay
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, (popup.delay || 2) * 1000);
 
-          // Delay
-          const timer = setTimeout(() => {
-            setIsVisible(true);
-          }, (result.delay || 2) * 1000);
-
-          return () => clearTimeout(timer);
-        }
-      } catch (error) {
-        console.error("Error fetching popup data:", error);
-      }
-    };
-
-    fetchData();
-  }, []);
+    return () => clearTimeout(timer);
+  }, [popup]);
 
   const closePopup = () => {
     setIsClosing(true);

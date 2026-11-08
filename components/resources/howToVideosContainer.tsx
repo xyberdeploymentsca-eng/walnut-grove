@@ -5,7 +5,6 @@
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight, Link2 } from "lucide-react";
-import { client } from "@/sanity/lib/client";
 
 type Video = {
   youtubeId: string;
@@ -18,28 +17,25 @@ type Resource = {
   description: string;
 };
 
-export const HowToVideosContainer = () => {
+// Videos and links are read from the CMS on the server (the page passes them in), so they are in the page's
+// HTML for search engines and no CMS token reaches the browser.
+export const HowToVideosContainer = ({
+  videos,
+  resources,
+}: {
+  videos?: Video[];
+  resources?: Resource[];
+}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
-  const [videoLinks, setVideoLinks] = useState<Video[]>([]);
-  const [helpfulResources, setHelpfulResources] = useState<Resource[]>([]);
+  const videoLinks: Video[] = videos || [];
+  const helpfulResources: Resource[] = resources || [];
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await client.fetch(
-        `*[_type == "howToVideosPage"][0]{ videos, helpfulResources }`,
-      );
-      if (data?.videos) setVideoLinks(data.videos);
-      if (data?.helpfulResources) setHelpfulResources(data.helpfulResources);
-    };
-    fetchData();
   }, []);
 
   const handleNext = () => {
@@ -86,6 +82,14 @@ export const HowToVideosContainer = () => {
                 veterinary team to help you confidently support your pet at
                 home.
               </p>
+              <p className="text-[16px] lg:text-[18px] font-nunito font-medium text-primary-black/80 leading-relaxed mt-4 max-w-[950px]">
+                Each video shows one everyday care task, step by step. Watch it
+                through once before you start, go slowly, and keep sessions
+                short with a reward at the end. If your pet resists, seems to be
+                in pain, or what you see doesn&apos;t match the video, stop and
+                call us at (604) 888-2628. We&apos;re happy to show you in person
+                at your next visit.
+              </p>
             </div>
           </div>
 
@@ -131,6 +135,19 @@ export const HowToVideosContainer = () => {
               >
                 <ChevronRight size={32} />
               </button>
+            </div>
+          )}
+
+          {videoLinks.length > 0 && (
+            <div className="mt-12 max-w-[950px] text-center lg:text-left">
+              <h2 className="text-[22px] lg:text-[24px] font-otomanopee-one text-primary-black uppercase mb-4">
+                In This Video Library
+              </h2>
+              <ul className="list-disc pl-6 space-y-2 text-left text-[16px] lg:text-[18px] font-nunito font-medium text-primary-black/80">
+                {videoLinks.map((video) => (
+                  <li key={`title-${video.youtubeId}`}>{video.title}</li>
+                ))}
+              </ul>
             </div>
           )}
         </section>

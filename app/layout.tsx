@@ -9,6 +9,7 @@ import { FloatingIcons } from "@/components/shared/floatingIcons";
 import { Popup } from "@/components/shared/popup";
 import { Metadata } from "next";
 import Script from "next/script";
+import { getPageData } from "@/utils/seoBuilder";
 
 export const metadata: Metadata = {
   title: "Walnut Grove Animal Hospital",
@@ -27,11 +28,12 @@ const otomanopeeOne = localFont({
   display: "swap",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const popup = await getPageData("popupNotification");
   return (
     <html lang="en">
       <body
@@ -66,7 +68,7 @@ export default function RootLayout({
         <Script src="/_vercel/speed-insights/script.js" strategy="afterInteractive" />
         <Header />
         <FloatingIcons />
-        <Popup />
+        <Popup popup={popup} />
         {children}
         <Footer />
       </body>

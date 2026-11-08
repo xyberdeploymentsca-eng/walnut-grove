@@ -1,7 +1,6 @@
 /** @format */
 
 import { client } from "@/sanity/lib/client";
-import { urlFor } from "@/sanity/lib/image";
 import { clinicPosts } from "@/utils/clinicPosts";
 
 export interface BlogAuthor {
@@ -106,19 +105,8 @@ export const getRelatedBlogsQuery = `*[_type == "blog" && slug.current != $slug 
 
 export const getAllBlogSlugsQuery = `*[_type == "blog" && defined(slug.current)][].slug.current`;
 
-// Image URL Resolver Helper
-export const getBlogImageUrl = (imageSource: any): string => {
-  if (!imageSource) return "/assets/preventionCare.png";
-  if (typeof imageSource === "string") return imageSource;
-  if (imageSource?.asset?._ref || imageSource?.asset?._id) {
-    try {
-      return urlFor(imageSource).url();
-    } catch {
-      return "/assets/preventionCare.png";
-    }
-  }
-  return "/assets/preventionCare.png";
-};
+// Image URL Resolver Helper (lives in utils/blogImage so browser components don't load the CMS client)
+export { getBlogImageUrl } from "@/utils/blogImage";
 
 // Rich Sample Data Fallback (Used when Sanity holds no blog documents yet or offline)
 export const sampleBlogs: BlogPost[] = [

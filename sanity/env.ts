@@ -3,8 +3,6 @@
 export const apiVersion =
   process.env.NEXT_PUBLIC_SANITY_API_VERSION || "2026-02-08";
 
-export const token = process.env.NEXT_PUBLIC_SANITY_TOKEN;
-
 export const dataset =
   process.env.NEXT_PUBLIC_SANITY_DATASET || "production";
 

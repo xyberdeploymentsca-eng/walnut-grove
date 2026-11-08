@@ -5,7 +5,8 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BlogPost, RelatedPost, getBlogImageUrl } from "@/utils/blogData";
+import type { BlogPost, RelatedPost } from "@/utils/blogData";
+import { getBlogImageUrl } from "@/utils/blogImage";
 import { Breadcrumbs } from "@/components/shared/breadcrumbs";
 import { PortableTextRenderer } from "./portableTextRenderer";
 import { CtaButton } from "@/components/ui/ctaButton";
