@@ -238,6 +238,7 @@ export const Header = () => {
 
   return (
     <div
+      data-link-location="header"
       className={`max-w-[1880px] w-[95%] font-nunito rounded-[24px] lg:rounded-[40px] mx-auto min-h-[72px] lg:h-[92px] bg-primary-white/90 backdrop-blur-md z-[50] shadow-[0px_0px_20px_0px_#57575614] top-5 ${
         pathname === "/" ? "fixed left-1/2 -translate-x-1/2" : "sticky"
       }`}

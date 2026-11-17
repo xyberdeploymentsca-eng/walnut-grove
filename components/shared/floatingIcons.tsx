@@ -77,7 +77,7 @@ export const FloatingIcons = () => {
               ) : (
                 <Image
                   src={Icon as string}
-                  alt={item.label}
+                  alt=""
                   width={40}
                   height={40}
                   className="w-6 lg:w-10 h-auto"
@@ -87,7 +87,7 @@ export const FloatingIcons = () => {
 
             {/* Label Container - visible on mobile, expandable on desktop */}
             <div className="lg:max-w-0 lg:group-hover:max-w-[280px] transition-all duration-500 ease-in-out overflow-hidden order-2 lg:order-1 mt-1 lg:mt-0">
-              <span className="text-white font-nunito font-bold text-[10px] lg:text-[16px] text-center lg:text-left whitespace-normal lg:whitespace-nowrap px-1 lg:pl-6 lg:pr-2 block leading-tight">
+              <span className="text-primary-black font-nunito font-bold text-[10px] lg:text-[16px] text-center lg:text-left whitespace-normal lg:whitespace-nowrap px-1 lg:pl-6 lg:pr-2 block leading-tight">
                 {item.label}
               </span>
             </div>
@@ -114,6 +114,7 @@ export const FloatingIcons = () => {
           <button
             key={index}
             onClick={item.onClick}
+            data-track={item.isLucide ? "phone_click" : undefined}
             className="group flex items-center justify-end bg-transparent p-0 border-none outline-none cursor-pointer"
             aria-label={item.label}
           >

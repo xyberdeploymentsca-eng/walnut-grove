@@ -34,7 +34,7 @@ export interface ContentPageProps {
 }
 
 const text = "text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]";
-const linkClass = "text-primary-green hover:underline font-semibold";
+const linkClass = "text-primary-green-dark hover:underline font-semibold";
 
 export const RichText = ({ value }: { value: Rich }) => {
   if (typeof value === "string") return <>{value}</>;
@@ -152,14 +152,14 @@ export const ContentPage = ({
   <div className="max-w-[1920px] mx-auto overflow-hidden bg-primary-white">
     <Image
       src={"/assets/commonBanner.svg"}
-      alt="banner"
+      alt="banner" priority
       height={466}
       width={1920}
       className="absolute top-0 left-0 z-0 w-full h-[250px] lg:h-auto object-cover"
     />
     <Image
       src="/assets/rightPaws.svg"
-      alt="paws"
+      alt="" aria-hidden="true"
       className="absolute top-50 h-[1485px] right-10 z-0 hidden lg:block"
       width={392}
       height={1484}

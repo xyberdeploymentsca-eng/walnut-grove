@@ -16,14 +16,14 @@ export const Welcome = () => {
     <div className="mb-20 max-w-[1296px] relative mx-auto flex flex-col lg:flex-row items-center gap-10 mt-10 lg:mt-[140px] font-nunito px-4 lg:px-0">
       <Image
         src="/assets/leftPaws.svg"
-        alt="left"
+        alt="" aria-hidden="true"
         className="hidden lg:block absolute top-[600%] h-[1485px] -left-[30%] z-0"
         width={392}
         height={1484}
       />
       <Image
         src="/assets/rightPaws.svg"
-        alt="right"
+        alt="" aria-hidden="true"
         className="hidden lg:block absolute top-[200%] h-[1485px] -right-[25%] z-0"
         width={392}
         height={1484}
@@ -39,7 +39,7 @@ export const Welcome = () => {
         <div className="flex flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 mt-6 lg:mt-0">
           <Image
             src="/assets/heartPaw.svg"
-            alt="heart-paw"
+            alt="" aria-hidden="true"
             height={87}
             width={87}
             className="w-[48px] lg:w-[87px] h-auto"

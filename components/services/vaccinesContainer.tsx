@@ -59,7 +59,7 @@ export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
     <div className="max-w-[1920px] mx-auto overflow-hidden bg-primary-white">
       <Image
         src={"/assets/commonBanner.svg"}
-        alt="services-banner"
+        alt="services-banner" priority
         height={466}
         width={1920}
         className="absolute top-0 left-0 z-0 w-full h-[250px] lg:h-auto object-cover"
@@ -67,7 +67,7 @@ export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
 
       <Image
         src="/assets/rightPaws.svg"
-        alt="right"
+        alt="" aria-hidden="true"
         className="absolute top-50 h-[1485px] -right-10 z-0 hidden lg:block"
         width={392}
         height={1484}
@@ -98,7 +98,7 @@ export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Vaccinations play a critical role in protecting pets from
               infectious and potentially life-threatening diseases. As part of our{" "}
-              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/preventative-care" className="text-primary-green-dark hover:underline font-semibold">
                 preventative care
               </Link>{" "}
               programs, our vaccination protocols are designed to provide effective protection
@@ -109,7 +109,7 @@ export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
               Our team follows evidence-based guidelines to ensure each pet
               receives the appropriate immunizations without unnecessary
               treatments. Vaccines are often paired with{" "}
-              <Link href="/services/parasite-prevention" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/parasite-prevention" className="text-primary-green-dark hover:underline font-semibold">
                 parasite prevention
               </Link>{" "}
               for comprehensive protection.
@@ -117,9 +117,9 @@ export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
               <div className="flex-1 bg-[#FFFCF7] rounded-[16px] py-6 px-6 lg:py-5 lg:px-8 shadow-[0px_4px_30px_0px_rgba(87,87,87,0.06)] border border-[#F0EAF8] lg:border-none">
-                <h4 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
+                <h2 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
                   Key Vaccination Services Include
-                </h4>
+                </h2>
                 <ul className="space-y-3 lg:space-y-2">
                   {points.map((point, index) => (
                     <li
@@ -145,7 +145,7 @@ export const VaccinesContainer = ({ faqs }: { faqs?: any[] }) => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               A strong start during puppy-hood and kitten-hood helps create the
               foundation for a lifetime of good health. Learn more about our{" "}
-              <Link href="/services/puppy-kitten-care" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/puppy-kitten-care" className="text-primary-green-dark hover:underline font-semibold">
                 puppy & kitten care
               </Link>{" "}
               programs.

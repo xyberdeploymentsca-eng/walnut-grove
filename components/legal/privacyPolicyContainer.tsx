@@ -59,7 +59,7 @@ export const PrivacyPolicyContainer = () => {
     <div className="max-w-[1920px] mx-auto overflow-x-hidden bg-primary-white relative">
       <Image
         src="/assets/commonBanner.svg"
-        alt="banner"
+        alt="banner" priority
         height={466}
         width={1920}
         className="absolute top-0 left-0 z-0 w-full h-[250px] lg:h-auto object-cover"
@@ -77,7 +77,7 @@ export const PrivacyPolicyContainer = () => {
         <div className="flex flex-col lg:flex-row items-center lg:items-center gap-4 lg:gap-5 mb-8 lg:mb-6 text-center lg:text-left">
           <Image
             src="/icons/pinkPaw.svg"
-            alt="paw"
+            alt="" aria-hidden="true"
             height={60}
             width={60}
             className="bg-primary-white/60 rounded-full p-2 w-[54px] lg:w-[60px] h-auto"

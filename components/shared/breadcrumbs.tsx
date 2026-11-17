@@ -46,7 +46,7 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
           <li>
             <Link
               href="/"
-              className="text-primary-black/60 hover:text-primary-green transition-colors"
+              className="text-primary-black/80 hover:text-primary-green transition-colors"
             >
               Home
             </Link>
@@ -58,13 +58,13 @@ export const Breadcrumbs = ({ items }: BreadcrumbsProps) => {
                 className="text-primary-black/40 flex-shrink-0"
               />
               {index === items.length - 1 ? (
-                <span className="text-primary-green font-semibold">
+                <span className="text-primary-green-dark font-semibold">
                   {item.name}
                 </span>
               ) : (
                 <Link
                   href={item.href}
-                  className="text-primary-black/60 hover:text-primary-green transition-colors"
+                  className="text-primary-black/80 hover:text-primary-green transition-colors"
                 >
                   {item.name}
                 </Link>

@@ -14,7 +14,7 @@ const HomeContainer = ({ team }: { team?: any[] }) => {
   return (
     <div className="max-w-[1920px] mx-auto font-nunito bg-primary-white overflow-hidden">
       {/* Hero Banner */}
-      <section className="relative w-full h-[850px] lg:h-[900px] max-w-[1880px] mx-auto overflow-hidden flex flex-col items-center justify-center">
+      <section data-link-location="hero" className="relative w-full h-[850px] lg:h-[900px] max-w-[1880px] mx-auto overflow-hidden flex flex-col items-center justify-center">
         {/* Background Image */}
         <Image
           src="/assets/bannerHer.webp"
@@ -70,10 +70,10 @@ const HomeContainer = ({ team }: { team?: any[] }) => {
               key={label}
               className="flex-1 bg-white rounded-[24px] shadow-[0px_10px_40px_0px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center py-6 lg:py-10 gap-1 border border-white/50 hover:shadow-2xl transition-all duration-300"
             >
-              <span className="font-otomanopee-one text-primary-blue text-[32px] lg:text-[48px] leading-tight font-normal text-center">
+              <span className="font-otomanopee-one text-primary-blue-dark text-[32px] lg:text-[48px] leading-tight font-normal text-center">
                 {stat} {label}
               </span>
-              <span className="text-primary-black font-nunito text-[14px] lg:text-[18px] leading-snug font-medium text-center px-4 opacity-70">
+              <span className="text-primary-black font-nunito text-[14px] lg:text-[18px] leading-snug font-medium text-center px-4 opacity-90">
                 {sub}
               </span>
             </div>
@@ -113,6 +113,16 @@ const HomeContainer = ({ team }: { team?: any[] }) => {
               </Link>
             ))}
           </div>
+          <p className="mt-6 text-[15px] lg:text-[17px] font-nunito font-medium text-primary-black/80 text-center lg:text-left">
+            Planning ahead? Read about{" "}
+            <Link href="/services/spay-neuter" className="text-primary-green-dark font-semibold hover:underline">spay and neuter surgery</Link>{" "}
+            and{" "}
+            <Link href="/vet-prices-langley" className="text-primary-green-dark font-semibold hover:underline">typical vet prices</Link>.
+            Need help now? See{" "}
+            <Link href="/same-day-weekend-vet-langley" className="text-primary-green-dark font-semibold hover:underline">same-day and weekend visits</Link>{" "}
+            or{" "}
+            <Link href="/pet-emergency-langley" className="text-primary-green-dark font-semibold hover:underline">what to do in a pet emergency</Link>.
+          </p>
         </section>
         <Welcome />
         <Service />

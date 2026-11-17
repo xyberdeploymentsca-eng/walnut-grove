@@ -63,7 +63,7 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
     <div className="max-w-[1920px] mx-auto overflow-hidden bg-primary-white">
       <Image
         src={"/assets/commonBanner.svg"}
-        alt="services-banner"
+        alt="services-banner" priority
         height={466}
         width={1920}
         className="absolute top-0 left-0 z-0 w-full h-[250px] lg:h-auto object-cover"
@@ -71,7 +71,7 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
 
       <Image
         src="/assets/rightPaws.svg"
-        alt="right"
+        alt="" aria-hidden="true"
         className="absolute top-50 h-[1485px] -right-10 z-0 hidden lg:block"
         width={392}
         height={1484}
@@ -104,7 +104,7 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
               Oral health is deepy connected to your pet&apos;s overall
               wellbeing. Left untreated, dental disease can cause pain and lead
               to systemic issues affecting the heart, liver, and kidneys. As part of a comprehensive{" "}
-              <Link href="/services/preventative-care" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/preventative-care" className="text-primary-green-dark hover:underline font-semibold">
                 preventative care
               </Link>{" "}
               approach, we offer professional dental care to keep your pet&apos;s smile
@@ -113,7 +113,7 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               Our dental services include thorough cleanings, examinations, and
               polishing to remove plaque and tartar buildup. Advanced{" "}
-              <Link href="/services/pet-x-ray" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/pet-x-ray" className="text-primary-green-dark hover:underline font-semibold">
                 digital X-ray imaging
               </Link>{" "}
               helps us identify issues below the gumline.
@@ -123,9 +123,9 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
               <div className="flex-1 bg-[#FFFCF7] rounded-[16px] py-6 px-6 lg:py-5 lg:px-8 shadow-[0px_4px_30px_0px_rgba(87,87,87,0.06)] border border-[#F0EAF8] lg:border-none">
                 <div className="space-y-8">
                   <div>
-                    <h4 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
+                    <h2 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
                       Our Comprehensive Dental Services Include
-                    </h4>
+                    </h2>
                     <ul className="space-y-3 lg:space-y-2">
                       {services.map((point, index) => (
                         <li
@@ -139,9 +139,9 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
                     </ul>
                   </div>
                   <div>
-                    <h4 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
+                    <h2 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
                       Common Dental Problems
-                    </h4>
+                    </h2>
                     <ul className="space-y-3 lg:space-y-2">
                       {problems.map((point, index) => (
                         <li
@@ -167,9 +167,9 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
             </div>
 
             <div className="mt-8 pt-6">
-              <h4 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
+              <h2 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
                 Preventative Care
-              </h4>
+              </h2>
               <ul className="space-y-4 lg:space-y-3">
                 <li className="flex items-start gap-3 text-[16px] lg:text-[18px] font-nunito font-medium text-primary-black">
                   <span className="mt-2 w-2 h-2 rounded-full bg-primary-black flex-shrink-0" />
@@ -195,7 +195,7 @@ export const DentalContainer = ({ faqs }: { faqs?: any[] }) => {
               Regular dental checkups and professional cleanings are key to
               preventing painful oral conditions and supporting long-term
               health. Many dental procedures require safe{" "}
-              <Link href="/services/anesthesia" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/anesthesia" className="text-primary-green-dark hover:underline font-semibold">
                 anesthesia
               </Link>{" "}
               to ensure your pet remains comfortable throughout.

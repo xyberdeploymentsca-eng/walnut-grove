@@ -19,14 +19,14 @@ export const Care = () => {
     >
       <Image
         src="/assets/leftPaws.svg"
-        alt="left"
+        alt="" aria-hidden="true"
         className="absolute top-[30%] h-[1485px] -left-[30%] z-0 hidden lg:block"
         width={392}
         height={1484}
       />
       <Image
         src="/assets/rightPaws.svg"
-        alt="right"
+        alt="" aria-hidden="true"
         className="absolute top-[185%] h-[1485px] -right-[30%] z-0 hidden lg:block"
         width={392}
         height={1484}
@@ -42,7 +42,7 @@ export const Care = () => {
         <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 ">
           <Image
             src="/assets/heartPaw.svg"
-            alt="heart-paw"
+            alt="" aria-hidden="true"
             height={87}
             width={87}
             className="hidden lg:block w-[56px] lg:w-[87px] h-auto"
@@ -59,21 +59,21 @@ export const Care = () => {
             excellence, and genuine compassion.
           </p>
         </div>
-        <h4 className="text-[20px] lg:text-[24px] my-6 lg:my-4 leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-semibold font-nunito text-primary-black mb-4 w-fit">
+        <h3 className="text-[20px] lg:text-[24px] my-6 lg:my-4 leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-semibold font-nunito text-primary-black mb-4 w-fit">
           Our Mission
-        </h4>
+        </h3>
         <p className="text-primary-black text-[16px] lg:text-[22px] leading-relaxed lg:leading-[28px] font-medium">
           To assemble a veterinary healthcare team committed to delivering
           outstanding client service and the highest standards of veterinary
           medicine.
         </p>
-        <h4 className="text-[20px] lg:text-[24px] my-6 lg:my-4 leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-semibold font-nunito text-primary-black mb-4 w-fit">
+        <h3 className="text-[20px] lg:text-[24px] my-6 lg:my-4 leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-semibold font-nunito text-primary-black mb-4 w-fit">
           We continuously invest in
-        </h4>
+        </h3>
         <div className="flex flex-col gap-3 lg:gap-2 items-center lg:items-start text-center lg:text-left">
           {points.map((point) => (
             <div key={point} className="flex items-center gap-3">
-              <span className="text-primary-green hidden lg:inline">
+              <span className="text-primary-green-dark hidden lg:inline">
                 &#9679;
               </span>
               <p className="text-primary-black text-[15px] lg:text-[20px] leading-relaxed lg:leading-[28px] font-normal">

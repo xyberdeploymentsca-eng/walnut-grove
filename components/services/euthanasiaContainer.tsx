@@ -27,7 +27,7 @@ export const EuthanasiaContainer = ({ faqs }: { faqs?: any[] }) => {
     <div className="max-w-[1920px] mx-auto overflow-hidden bg-primary-white">
       <Image
         src={"/assets/commonBanner.svg"}
-        alt="services-banner"
+        alt="services-banner" priority
         height={466}
         width={1920}
         className="absolute top-0 left-0 z-0 w-full h-[250px] lg:h-auto object-cover"
@@ -35,7 +35,7 @@ export const EuthanasiaContainer = ({ faqs }: { faqs?: any[] }) => {
 
       <Image
         src="/assets/rightPaws.svg"
-        alt="right"
+        alt="" aria-hidden="true"
         className="absolute top-50 h-[1485px] -right-10 z-0 hidden lg:block"
         width={392}
         height={1484}
@@ -71,7 +71,7 @@ export const EuthanasiaContainer = ({ faqs }: { faqs?: any[] }) => {
             </p>
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%]">
               We believe that every pet deserves a peaceful, painless, and dignified farewell. Our{" "}
-              <Link href="/services/chronic-pain-management" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/chronic-pain-management" className="text-primary-green-dark hover:underline font-semibold">
                 chronic pain management
               </Link>{" "}
               services can help improve comfort during difficult health challenges, and our staff handles
@@ -80,9 +80,9 @@ export const EuthanasiaContainer = ({ faqs }: { faqs?: any[] }) => {
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
               <div className="flex-1 bg-[#FFFCF7] rounded-[16px] py-6 px-6 lg:py-5 lg:px-8 shadow-[0px_4px_30px_0px_rgba(87,87,87,0.06)] border border-[#F0EAF8] lg:border-none">
-                <h4 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
+                <h2 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
                   Our Supportive Services Include
-                </h4>
+                </h2>
                 <ul className="space-y-3 lg:space-y-2">
                   {points.map((point, index) => (
                      <li
@@ -107,7 +107,7 @@ export const EuthanasiaContainer = ({ faqs }: { faqs?: any[] }) => {
 
             <p className="text-[16px] lg:text-[20px] text-primary-black font-nunito font-medium leading-relaxed lg:leading-[140%] mt-4">
               We are here to support you at every stage of the decision-making process. Diagnostic tools like{" "}
-              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/bloodwork" className="text-primary-green-dark hover:underline font-semibold">
                 bloodwork
               </Link>{" "}
               can help assess your pet&apos;s current condition. Please do not hesitate to reach

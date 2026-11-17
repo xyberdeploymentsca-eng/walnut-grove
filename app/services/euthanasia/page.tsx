@@ -1,6 +1,7 @@
 /** @format */
 
-export const dynamic = "force-dynamic";
+// Rebuilt in the background at most every 5 minutes, so pages are served from cache and CMS edits still show quickly.
+export const revalidate = 300;
 
 import { getMetadata, getPageData } from "@/utils/seoBuilder";
 import { JsonLd } from "@/components/shared/jsonLd";

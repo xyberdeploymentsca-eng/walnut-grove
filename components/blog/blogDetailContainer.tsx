@@ -136,13 +136,13 @@ export const BlogDetailContainer = ({
                 <p className="text-[15px] font-bold text-primary-black font-nunito">
                   {blog.author?.name || "Dr. Walnut Grove Team"}
                 </p>
-                <p className="text-[13px] text-primary-black/60 font-nunito">
+                <p className="text-[13px] text-primary-black/80 font-nunito">
                   {blog.author?.role || "Veterinarian in Langley, BC"}
                 </p>
               </div>
             </div>
 
-            <div className="flex items-center gap-4 sm:gap-6 text-[13px] lg:text-[14px] text-primary-black/70 font-nunito font-medium">
+            <div className="flex items-center gap-4 sm:gap-6 text-[13px] lg:text-[14px] text-primary-black/80 font-nunito font-medium">
               <span className="flex items-center gap-1.5">
                 <Calendar size={16} className="text-primary-green" />
                 {new Date(blog.publishedAt).toLocaleDateString("en-US", {
@@ -163,7 +163,7 @@ export const BlogDetailContainer = ({
             <div className="flex items-center gap-2">
               <button
                 onClick={handleCopyLink}
-                className="p-2 rounded-full bg-white border border-gray-200 text-primary-black/70 hover:text-primary-green hover:border-primary-green transition-all shadow-sm cursor-pointer"
+                className="p-2 rounded-full bg-white border border-gray-200 text-primary-black/80 hover:text-primary-green hover:border-primary-green transition-all shadow-sm cursor-pointer"
                 title="Copy Article Link"
               >
                 {copied ? (
@@ -176,7 +176,7 @@ export const BlogDetailContainer = ({
                 href={`https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white border border-gray-200 text-primary-black/70 hover:text-primary-green hover:border-primary-green transition-all shadow-sm"
+                className="p-2 rounded-full bg-white border border-gray-200 text-primary-black/80 hover:text-primary-green hover:border-primary-green transition-all shadow-sm"
                 title="Share on Facebook"
               >
                 <Facebook size={16} />
@@ -185,14 +185,14 @@ export const BlogDetailContainer = ({
                 href={`https://twitter.com/intent/tweet?url=${shareUrl}&text=${shareTitle}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 rounded-full bg-white border border-gray-200 text-primary-black/70 hover:text-primary-green hover:border-primary-green transition-all shadow-sm"
+                className="p-2 rounded-full bg-white border border-gray-200 text-primary-black/80 hover:text-primary-green hover:border-primary-green transition-all shadow-sm"
                 title="Share on X"
               >
                 <Twitter size={16} />
               </a>
               <a
                 href={`mailto:?subject=${shareTitle}&body=Check out this article from Walnut Grove Animal Hospital: ${shareUrl}`}
-                className="p-2 rounded-full bg-white border border-gray-200 text-primary-black/70 hover:text-primary-green hover:border-primary-green transition-all shadow-sm"
+                className="p-2 rounded-full bg-white border border-gray-200 text-primary-black/80 hover:text-primary-green hover:border-primary-green transition-all shadow-sm"
                 title="Share via Email"
               >
                 <Mail size={16} />
@@ -237,7 +237,7 @@ export const BlogDetailContainer = ({
             {/* Tags Section */}
             {blog.tags && blog.tags.length > 0 && (
               <div className="mt-12 pt-6 border-t border-[#F0EAF8]">
-                <p className="text-[13px] font-bold uppercase tracking-wider text-primary-black/60 mb-3">
+                <p className="text-[13px] font-bold uppercase tracking-wider text-primary-black/80 mb-3">
                   Topic Tags:
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -264,13 +264,13 @@ export const BlogDetailContainer = ({
                 />
               </div>
               <div>
-                <div className="text-[12px] uppercase font-bold tracking-wider text-primary-black/60 mb-1">
+                <div className="text-[12px] uppercase font-bold tracking-wider text-primary-black/80 mb-1">
                   Written by
                 </div>
                 <h4 className="text-[18px] lg:text-[20px] font-otomanopee-one text-primary-black uppercase">
                   {blog.author?.name || "Dr. Walnut Grove Veterinary Team"}
                 </h4>
-                <p className="text-[13px] font-semibold text-primary-green mb-2 font-nunito">
+                <p className="text-[13px] font-semibold text-primary-green-dark mb-2 font-nunito">
                   {blog.author?.role || "Veterinarian in Langley, BC"}
                 </p>
                 <p className="text-[14px] text-primary-black/85 font-nunito leading-relaxed">
@@ -336,7 +336,7 @@ export const BlogDetailContainer = ({
                     (604) 888-2628
                   </a>
                 </div>
-                <div className="text-primary-black/70">
+                <div className="text-primary-black/80">
                   <span className="font-semibold text-primary-black">Address: </span>
                   101A-20995 88 Ave, Langley, BC
                 </div>
@@ -370,7 +370,7 @@ export const BlogDetailContainer = ({
                       />
                     </div>
                     {service.description && (
-                      <p className="text-[12px] text-primary-black/70 font-nunito mt-1 line-clamp-2">
+                      <p className="text-[12px] text-primary-black/80 font-nunito mt-1 line-clamp-2">
                         {service.description}
                       </p>
                     )}
@@ -379,7 +379,7 @@ export const BlogDetailContainer = ({
               </div>
               <Link
                 href="/services"
-                className="mt-4 block text-center text-[13px] font-bold text-primary-green hover:underline"
+                className="mt-4 block text-center text-[13px] font-bold text-primary-green-dark hover:underline"
               >
                 View All Clinic Services →
               </Link>
@@ -410,7 +410,7 @@ export const BlogDetailContainer = ({
                         <h4 className="text-[13px] font-bold text-primary-black font-nunito leading-snug group-hover:text-primary-green transition-colors line-clamp-2">
                           {item.title}
                         </h4>
-                        <div className="flex items-center gap-2 text-[11px] text-primary-black/50 font-nunito mt-1">
+                        <div className="flex items-center gap-2 text-[11px] text-primary-black/80 font-nunito mt-1">
                           <span>
                             {new Date(item.publishedAt).toLocaleDateString("en-US", {
                               month: "short",
@@ -436,11 +436,11 @@ export const BlogDetailContainer = ({
                 href={`/blog/${prevPost.slug}`}
                 className="group p-5 rounded-[18px] bg-[#FFFCF7] border border-[#F0EAF8] hover:border-primary-green/50 transition-all flex items-center gap-4"
               >
-                <div className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-colors">
+                <div className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-primary-black transition-colors">
                   ←
                 </div>
                 <div className="min-w-0">
-                  <div className="text-[12px] uppercase font-bold text-primary-black/50">
+                  <div className="text-[12px] uppercase font-bold text-primary-black/80">
                     Previous Article
                   </div>
                   <div className="text-[14px] font-bold text-primary-black font-nunito truncate group-hover:text-primary-green transition-colors">
@@ -458,14 +458,14 @@ export const BlogDetailContainer = ({
                 className="group p-5 rounded-[18px] bg-[#FFFCF7] border border-[#F0EAF8] hover:border-primary-green/50 transition-all flex items-center justify-end text-right gap-4 md:ml-auto w-full"
               >
                 <div className="min-w-0">
-                  <div className="text-[12px] uppercase font-bold text-primary-black/50">
+                  <div className="text-[12px] uppercase font-bold text-primary-black/80">
                     Next Article
                   </div>
                   <div className="text-[14px] font-bold text-primary-black font-nunito truncate group-hover:text-primary-green transition-colors">
                     {nextPost.title}
                   </div>
                 </div>
-                <div className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-white transition-colors">
+                <div className="w-9 h-9 rounded-full bg-white border border-gray-200 flex items-center justify-center shrink-0 group-hover:bg-primary-green group-hover:text-primary-black transition-colors">
                   →
                 </div>
               </Link>
@@ -488,7 +488,7 @@ export const BlogDetailContainer = ({
               </div>
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-1.5 text-primary-green font-bold text-[14px] hover:underline"
+                className="inline-flex items-center gap-1.5 text-primary-green-dark font-bold text-[14px] hover:underline"
               >
                 Browse All Articles <ArrowRight size={16} />
               </Link>
@@ -516,7 +516,7 @@ export const BlogDetailContainer = ({
                   </div>
                   <div className="p-5 flex-1 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center gap-3 text-[12px] text-primary-black/60 font-nunito mb-2">
+                      <div className="flex items-center gap-3 text-[12px] text-primary-black/80 font-nunito mb-2">
                         <span>
                           {new Date(item.publishedAt).toLocaleDateString("en-US", {
                             month: "short",
@@ -539,7 +539,7 @@ export const BlogDetailContainer = ({
                       <span className="font-semibold text-primary-black/80 font-nunito">
                         {item.author?.name || "Walnut Grove Team"}
                       </span>
-                      <span className="text-primary-green font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                      <span className="text-primary-green-dark font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
                         Read <ArrowRight size={14} />
                       </span>
                     </div>

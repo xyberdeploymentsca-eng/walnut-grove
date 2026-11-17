@@ -29,7 +29,13 @@ export const HowToVideosContainer = ({
   const [currentIndex, setCurrentIndex] = useState(0);
   const [windowWidth, setWindowWidth] = useState(0);
   const videoLinks: Video[] = videos || [];
-  const helpfulResources: Resource[] = resources || [];
+  // Addresses that no longer exist, mapped to the page that replaced them. The links live in the CMS; this keeps a
+  // dead one from reaching visitors until it is corrected there.
+  // CDC West Nile: old page returns 404 (audit of 11 Nov 2026); current page checked 17 Nov 2026.
+  const MOVED: Record<string, string> = {
+    "https://www.cdc.gov/ncidod/dvbid/westnile/index.htm": "https://www.cdc.gov/west-nile-virus/index.html",
+  };
+  const helpfulResources: Resource[] = (resources || []).map((r) => ({ ...r, href: MOVED[r.href] || r.href }));
 
   useEffect(() => {
     const handleResize = () => setWindowWidth(window.innerWidth);
@@ -52,7 +58,7 @@ export const HowToVideosContainer = ({
     <div className="max-w-[1920px] mx-auto overflow-hidden bg-white relative pb-20 lg:pb-40">
       <Image
         src="/assets/commonBanner.svg"
-        alt="banner"
+        alt="banner" priority
         width={1920}
         height={466}
         className="absolute top-0 left-0 w-full h-[300px] lg:h-auto object-cover z-0"
@@ -65,7 +71,7 @@ export const HowToVideosContainer = ({
             <div className="rounded-full shrink-0">
               <Image
                 src="/icons/pinkPaw.svg"
-                alt="paw"
+                alt="" aria-hidden="true"
                 width={79}
                 height={79}
                 className="w-[79px] lg:w-[79px]"
@@ -241,7 +247,7 @@ export const HowToVideosContainer = ({
 
       <Image
         src="/assets/leftPaws.svg"
-        alt="paws"
+        alt="" aria-hidden="true"
         width={392}
         height={1484}
         className="absolute bottom-0 left-[-10%] opacity-20 pointer-events-none -z-1"

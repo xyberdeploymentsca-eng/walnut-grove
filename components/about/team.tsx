@@ -13,7 +13,7 @@ export const Team = ({ team }: { team?: any[] }) => {
       <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 w-full">
         <Image
           src="/icons/pinkPaw.svg"
-          alt="pink-paw"
+          alt="" aria-hidden="true"
           height={87}
           width={87}
           className="hidden lg:block w-[56px] lg:w-[87px] h-auto"
@@ -67,9 +67,9 @@ export const Team = ({ team }: { team?: any[] }) => {
                         "linear-gradient(180deg, rgba(87, 87, 86, 0) 0%, rgba(87, 87, 86, 0.644231) 46.15%, #575756 100%)",
                     }}
                   >
-                    <h4 className="text-[18px] font-bold leading-tight text-center text-primary-blue">
+                    <h3 className="text-[18px] font-bold leading-tight text-center text-primary-blue">
                       {member.name}
-                    </h4>
+                    </h3>
                     <p className="text-text-white text-[16px] font-normal mt-0.5 leading-[18px]">
                       {member.role}
                     </p>
@@ -82,7 +82,7 @@ export const Team = ({ team }: { team?: any[] }) => {
                 <h3 className="text-[22px] lg:text-[28px] mb-1 font-nunito font-semibold text-primary-black border-b-2 border-primary-purple w-fit">
                   {member.name}
                 </h3>
-                <p className="text-[18px] lg:text-[20px] leading-tight font-nunito font-semibold text-primary-green">
+                <p className="text-[18px] lg:text-[20px] leading-tight font-nunito font-semibold text-primary-green-dark">
                   {member.role}
                 </p>
               </div>

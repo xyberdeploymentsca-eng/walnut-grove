@@ -54,7 +54,7 @@ export const RelatedServices = ({ services }: RelatedServicesProps) => {
               </span>
               <ArrowRight
                 size={20}
-                className="text-primary-black/50 group-hover:text-primary-green transition-all group-hover:translate-x-1 flex-shrink-0 ml-2"
+                className="text-primary-black/80 group-hover:text-primary-green transition-all group-hover:translate-x-1 flex-shrink-0 ml-2"
               />
             </div>
           </Link>

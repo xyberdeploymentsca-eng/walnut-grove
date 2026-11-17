@@ -13,6 +13,9 @@
    --color-primary-white: #FFF9EF;
    --color-primary-black: #3C3C3B;
    --color-primary-green: #83BF78;
+   /* darker shades of the brand green and blue, for TEXT only: the brand colours are too pale to read as text (WCAG AA) */
+   --color-primary-green-dark: #3E7B33;
+   --color-primary-blue-dark: #2F7FB8;
    --color-primary-blue: #AEDEFF;
    --color-primary-purple: #E7D2FF;
    --color-text-white: #FFF9EF;

@@ -183,7 +183,7 @@ export const PoisonousPlantsContainer = () => {
     <div className="max-w-[1920px] mx-auto overflow-x-hidden bg-primary-white relative">
       <Image
         src={"/assets/commonBanner.svg"}
-        alt="services-banner"
+        alt="services-banner" priority
         height={466}
         width={1920}
         className="absolute top-0 left-0 z-0 w-full h-[300px] lg:h-auto object-cover"
@@ -191,7 +191,7 @@ export const PoisonousPlantsContainer = () => {
 
       <Image
         src="/assets/rightPaws.svg"
-        alt="right"
+        alt="" aria-hidden="true"
         className="absolute top-50 h-[1485px] -right-10 z-0 hidden lg:block"
         width={392}
         height={1484}
@@ -203,7 +203,7 @@ export const PoisonousPlantsContainer = () => {
           <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 mb-6 lg:mb-4">
             <Image
               src="/icons/pinkPaw.svg"
-              alt="paw"
+              alt="" aria-hidden="true"
               height={60}
               width={60}
               className="w-[48px] lg:w-[60px] h-auto"

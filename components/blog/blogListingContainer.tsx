@@ -113,7 +113,7 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
 
             {/* Category Pills (Desktop & Mobile scrollable) */}
             <div className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 scrollbar-none">
-              <span className="hidden lg:flex items-center gap-1 text-[13px] font-bold uppercase tracking-wider text-primary-black/50 ml-2 mr-1">
+              <span className="hidden lg:flex items-center gap-1 text-[13px] font-bold uppercase tracking-wider text-primary-black/80 ml-2 mr-1">
                 <Filter size={14} /> Topics:
               </span>
               {categories.map((cat) => {
@@ -124,7 +124,7 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
                     onClick={() => setSelectedCategory(cat)}
                     className={`whitespace-nowrap px-4 py-2 rounded-[14px] text-[14px] font-nunito font-semibold transition-all duration-300 cursor-pointer ${
                       isActive
-                        ? "bg-primary-green text-text-white shadow-sm"
+                        ? "bg-primary-green text-primary-black shadow-sm"
                         : "bg-white text-primary-black/75 hover:bg-primary-purple/20 hover:text-primary-black border border-gray-100"
                     }`}
                   >
@@ -139,7 +139,7 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
         {/* Featured Blog Card */}
         {featuredBlog && (
           <section className="mb-14 lg:mb-20">
-            <div className="text-[13px] font-bold uppercase tracking-wider text-primary-black/60 mb-4 flex items-center gap-2">
+            <div className="text-[13px] font-bold uppercase tracking-wider text-primary-black/80 mb-4 flex items-center gap-2">
               <span className="w-2.5 h-2.5 rounded-full bg-primary-green animate-pulse" />
               Featured Article
             </div>
@@ -165,7 +165,7 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
                 {/* Content Details */}
                 <div className="w-full lg:w-[50%] p-6 sm:p-8 lg:p-12 flex flex-col justify-between">
                   <div>
-                    <div className="flex items-center gap-4 text-[13px] lg:text-[14px] text-primary-black/70 font-nunito font-medium mb-3">
+                    <div className="flex items-center gap-4 text-[13px] lg:text-[14px] text-primary-black/80 font-nunito font-medium mb-3">
                       <span className="flex items-center gap-1.5">
                         <Calendar size={15} className="text-primary-green" />
                         {new Date(featuredBlog.publishedAt).toLocaleDateString("en-US", {
@@ -205,13 +205,13 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
                         <p className="text-[14px] font-bold text-primary-black font-nunito">
                           {featuredBlog.author?.name || "Walnut Grove Team"}
                         </p>
-                        <p className="text-[12px] text-primary-black/60 font-nunito">
+                        <p className="text-[12px] text-primary-black/80 font-nunito">
                           {featuredBlog.author?.role || "Veterinary Care Specialist"}
                         </p>
                       </div>
                     </div>
 
-                    <span className="inline-flex items-center gap-2 text-primary-green font-bold text-[15px] group-hover:translate-x-1 transition-transform">
+                    <span className="inline-flex items-center gap-2 text-primary-green-dark font-bold text-[15px] group-hover:translate-x-1 transition-transform">
                       Read Article <ArrowRight size={18} />
                     </span>
                   </div>
@@ -230,7 +230,7 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
                   ? "Recent Articles & Guides"
                   : `${selectedCategory} Articles`}
               </h3>
-              <span className="text-[14px] font-nunito text-primary-black/60">
+              <span className="text-[14px] font-nunito text-primary-black/80">
                 Showing {filteredBlogs.length} articles
               </span>
             </div>
@@ -258,7 +258,7 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
                   {/* Card Body */}
                   <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
-                      <div className="flex items-center gap-3 text-[12px] text-primary-black/60 font-nunito font-medium mb-2.5">
+                      <div className="flex items-center gap-3 text-[12px] text-primary-black/80 font-nunito font-medium mb-2.5">
                         <span className="flex items-center gap-1">
                           <Calendar size={13} className="text-primary-green" />
                           {new Date(blog.publishedAt).toLocaleDateString("en-US", {
@@ -288,7 +288,7 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
                       <span className="font-semibold text-primary-black/80 font-nunito">
                         {blog.author?.name || "Walnut Grove Team"}
                       </span>
-                      <span className="inline-flex items-center gap-1 text-primary-green font-bold group-hover:translate-x-1 transition-transform">
+                      <span className="inline-flex items-center gap-1 text-primary-green-dark font-bold group-hover:translate-x-1 transition-transform">
                         Read <ArrowRight size={15} />
                       </span>
                     </div>
@@ -303,12 +303,12 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
         {filteredBlogs.length === 0 && (
           <div className="bg-[#FFFCF7] rounded-[24px] p-12 text-center border border-[#F0EAF8] my-12">
             <div className="w-16 h-16 rounded-full bg-primary-purple/20 flex items-center justify-center mx-auto mb-4">
-              <Search size={28} className="text-primary-black/50" />
+              <Search size={28} className="text-primary-black/80" />
             </div>
             <h3 className="text-[22px] font-otomanopee-one text-primary-black uppercase mb-2">
               No Articles Found
             </h3>
-            <p className="text-[16px] text-primary-black/70 font-nunito max-w-[480px] mx-auto mb-6">
+            <p className="text-[16px] text-primary-black/80 font-nunito max-w-[480px] mx-auto mb-6">
               We couldn&apos;t find any blog posts matching your search query &quot;{searchQuery}&quot;.
               Try adjusting your keywords or category filter.
             </p>
@@ -317,7 +317,7 @@ export const BlogListingContainer = ({ initialBlogs }: { initialBlogs: BlogPost[
                 setSearchQuery("");
                 setSelectedCategory("All");
               }}
-              className="px-6 py-2.5 bg-primary-green text-text-white rounded-[16px] font-semibold text-[15px] hover:shadow-md transition-all cursor-pointer"
+              className="px-6 py-2.5 bg-primary-green text-primary-black rounded-[16px] font-semibold text-[15px] hover:shadow-md transition-all cursor-pointer"
             >
               Reset Filters
             </button>

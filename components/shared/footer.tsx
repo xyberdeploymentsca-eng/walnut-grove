@@ -66,6 +66,7 @@ const Footer = () => {
           {/* Map Area */}
           <div className="flex-1 min-h-[131px] bg-white rounded-[18px] overflow-hidden shadow-sm relative border border-gray-100">
             <iframe
+              title="Street view of Walnut Grove Animal Hospital"
               src="https://www.google.com/maps/embed?pb=!4v1774700352646!6m8!1m7!1sKh4mWQXbT_BqNYb-C2ubMQ!2m2!1d49.16296129558101!2d-122.6392032980328!3f140.8!4f0!5f0.7820865974627469"
               width="100%"
               height="100%"
@@ -205,7 +206,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="flex items-center justify-between border-t-2 border-white/30 max-w-[1296px] mx-auto px-6 lg:px-4 pt-5">
-        <p className="text-white/70 text-[13px] font-medium">
+        <p className="text-primary-black/80 text-[13px] font-medium">
           © Copyright 2026, All Rights Reserved
         </p>
         <Image

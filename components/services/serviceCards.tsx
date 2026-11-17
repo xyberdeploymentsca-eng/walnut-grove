@@ -122,14 +122,14 @@ export const ServiceCards = () => {
       <div className="max-w-[1296px] mx-auto mt-20 lg:mt-32 relative px-4 lg:px-0">
         <Image
           src="/assets/leftPaws.svg"
-          alt="left"
+          alt="" aria-hidden="true"
           className="hidden lg:block absolute -top-40 h-[1485px] -left-[30%] z-0"
           width={392}
           height={1484}
         />
         <Image
           src="/assets/rightPaws.svg"
-          alt="right"
+          alt="" aria-hidden="true"
           className="hidden lg:block absolute top-120 h-[1485px] -right-[30%] z-0"
           width={392}
           height={1484}

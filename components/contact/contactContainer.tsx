@@ -94,7 +94,7 @@ export const ContactContainer = () => {
       {/* Banner */}
       <Image
         src="/assets/contactBanner.webp"
-        alt="Contact"
+        alt="Contact" priority
         width={1920}
         height={770}
         className="w-full h-auto md:scale-100 scale-165"
@@ -121,11 +121,11 @@ export const ContactContainer = () => {
               After hours, go to a 24-hour emergency hospital. The nearest to us
               is Animal Emergency Clinic of the Fraser Valley, 6325 204 St, Unit
               302, Langley (
-              <a href="https://www.animalemerg.com/" target="_blank" rel="noopener noreferrer" className="text-primary-green font-semibold hover:underline">
+              <a href="https://www.animalemerg.com/" target="_blank" rel="noopener noreferrer" className="text-primary-green-dark font-semibold hover:underline">
                 animalemerg.com
               </a>
               ), open 24 hours.{" "}
-              <Link href="/pet-emergency-langley" className="text-primary-green font-semibold hover:underline">
+              <Link href="/pet-emergency-langley" className="text-primary-green-dark font-semibold hover:underline">
                 What to do in a pet emergency
               </Link>
               .
@@ -135,6 +135,7 @@ export const ContactContainer = () => {
               {/* Map */}
               <div className="w-full sm:flex-1 rounded-[10px] overflow-hidden h-[180px] sm:h-[130px] relative">
                 <iframe
+                  title="Map showing Walnut Grove Animal Hospital"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10435.947027458502!2d-122.65553799218746!3d49.16285959999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5485d22c82a4bc57%3A0x6a99a60503a6347e!2sWalnut%20Grove%20Animal%20Hospital%20Langley!5e0!3m2!1sen!2sus!4v1729006985870!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
@@ -147,7 +148,7 @@ export const ContactContainer = () => {
                   href="https://www.google.com/maps/@49.1621211,-122.6416664,3a,75y,100h,90t/data=!3m6!1e1!3m4!1s-u8x4_P7E5D-O1_6Z3m6_A!2e0!7i16384!8i8192"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="absolute bottom-2 right-2 bg-white/90 px-2 py-1 rounded text-[10px] font-bold text-primary-black shadow-sm hover:bg-primary-green hover:text-white transition-colors z-10"
+                  className="absolute bottom-2 right-2 bg-white/90 px-2 py-1 rounded text-[10px] font-bold text-primary-black shadow-sm hover:bg-primary-green hover:text-primary-black transition-colors z-10"
                 >
                   3D Street View
                 </a>
@@ -189,6 +190,7 @@ export const ContactContainer = () => {
               {/* Telephone button directly displaying phone number without attached icon badge */}
               <button
                 type="button"
+                data-track="phone_click"
                 onClick={() => {
                   if (/Mobi|Android/i.test(navigator.userAgent)) {
                     window.location.href = `tel:${HOSPITAL_PHONE_TEL}`;
@@ -199,7 +201,7 @@ export const ContactContainer = () => {
                     });
                   }
                 }}
-                className="bg-primary-green text-white rounded-[18px] text-[16px] px-6 py-2.5 font-nunito font-semibold transition-all duration-500 hover:shadow-[inset_0px_0px_20px_0px_#FFF153] w-full sm:w-auto text-center"
+                className="bg-primary-green text-primary-black rounded-[18px] text-[16px] px-6 py-2.5 font-nunito font-semibold transition-all duration-500 hover:shadow-[inset_0px_0px_20px_0px_#FFF153] w-full sm:w-auto text-center"
               >
                 {hospitalCopied ? "Number Copied!" : HOSPITAL_PHONE}
               </button>
@@ -212,7 +214,7 @@ export const ContactContainer = () => {
             <p>
               <span className="font-bold">Need to be seen today?</span> Call
               us as early in the day as you can. Read{" "}
-              <Link href="/same-day-weekend-vet-langley" className="text-primary-green font-semibold hover:underline">
+              <Link href="/same-day-weekend-vet-langley" className="text-primary-green-dark font-semibold hover:underline">
                 how same-day and weekend visits work
               </Link>
               .
@@ -221,7 +223,7 @@ export const ContactContainer = () => {
               <span className="font-bold">New to our clinic?</span> Ask your
               previous clinic to send your pet&apos;s history before the first
               appointment.{" "}
-              <Link href="/blog/transfer-pet-medical-records-langley" className="text-primary-green font-semibold hover:underline">
+              <Link href="/blog/transfer-pet-medical-records-langley" className="text-primary-green-dark font-semibold hover:underline">
                 How to transfer your pet&apos;s records
               </Link>
               .
@@ -229,18 +231,18 @@ export const ContactContainer = () => {
             <p>
               <span className="font-bold">Picking up a prescription?</span>{" "}
               Request refills a few days before the last dose.{" "}
-              <Link href="/blog/pet-prescription-refills-pickup-langley" className="text-primary-green font-semibold hover:underline">
+              <Link href="/blog/pet-prescription-refills-pickup-langley" className="text-primary-green-dark font-semibold hover:underline">
                 How refills and pickups work
               </Link>
               .
             </p>
             <p>
               <span className="font-bold">Wondering about cost?</span> See{" "}
-              <Link href="/vet-prices-langley" className="text-primary-green font-semibold hover:underline">
+              <Link href="/vet-prices-langley" className="text-primary-green-dark font-semibold hover:underline">
                 vet prices in Langley
               </Link>{" "}
               and how estimates work, or browse our{" "}
-              <Link href="/faq" className="text-primary-green font-semibold hover:underline">
+              <Link href="/faq" className="text-primary-green-dark font-semibold hover:underline">
                 frequently asked questions
               </Link>
               .
@@ -253,7 +255,7 @@ export const ContactContainer = () => {
           <div className="flex flex-col lg:flex-row items-center gap-4 mb-6 lg:mb-2 text-center lg:text-left">
             <Image
               src="/assets/bluePaw.svg"
-              alt="paw"
+              alt="" aria-hidden="true"
               width={67}
               height={69}
               className="bg-primary-blue/30 rounded-full p-2 w-[54px] lg:w-[67px] h-auto"
@@ -334,7 +336,7 @@ export const ContactContainer = () => {
             </div>
 
             {formState === "success" && (
-              <p className="text-primary-green font-nunito font-semibold text-[15px] mb-4 text-center">
+              <p className="text-primary-green-dark font-nunito font-semibold text-[15px] mb-4 text-center">
                 ✓ Message sent! We'll get back to you within 24 hours.
               </p>
             )}
@@ -348,7 +350,7 @@ export const ContactContainer = () => {
               <button
                 type="submit"
                 disabled={formState === "loading"}
-                className="bg-primary-green text-white rounded-[18px] text-[18px] px-10 py-2.5 font-nunito font-medium leading-[26px] capitalize transition-all duration-500 hover:shadow-[inset_0px_0px_20px_0px_#FFF153] disabled:opacity-60 disabled:cursor-not-allowed"
+                className="bg-primary-green text-primary-black rounded-[18px] text-[18px] px-10 py-2.5 font-nunito font-medium leading-[26px] capitalize transition-all duration-500 hover:shadow-[inset_0px_0px_20px_0px_#FFF153] disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {formState === "loading" ? "Sending..." : "Submit"}
               </button>

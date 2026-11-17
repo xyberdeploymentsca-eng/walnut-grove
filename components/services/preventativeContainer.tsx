@@ -27,7 +27,7 @@ export const PreventativeContainer = ({ faqs }: { faqs?: any[] }) => {
     <div className="max-w-[1920px] mx-auto overflow-hidden bg-primary-white">
       <Image
         src={"/assets/commonBanner.svg"}
-        alt="services-banner"
+        alt="services-banner" priority
         height={466}
         width={1920}
         className="absolute top-0 left-0 z-0 w-full h-[250px] lg:h-auto object-cover"
@@ -35,7 +35,7 @@ export const PreventativeContainer = ({ faqs }: { faqs?: any[] }) => {
 
       <Image
         src="/assets/rightPaws.svg"
-        alt="right"
+        alt="" aria-hidden="true"
         className="absolute top-50 h-[1485px] -right-10 z-0 hidden lg:block"
         width={392}
         height={1484}
@@ -67,7 +67,7 @@ export const PreventativeContainer = ({ faqs }: { faqs?: any[] }) => {
               Our preventative care programs are designed to protect your
               pet&apos;s health before problems arise. Through regular wellness
               examinations, routine{" "}
-              <Link href="/services/bloodwork" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/bloodwork" className="text-primary-green-dark hover:underline font-semibold">
                 bloodwork screenings
               </Link>
               , and lifestyle-based care plans,
@@ -79,11 +79,11 @@ export const PreventativeContainer = ({ faqs }: { faqs?: any[] }) => {
               condition, our team can identify potential concerns early and
               recommend proactive treatment strategies tailored to your
               pet&apos;s individual needs. Keeping up with{" "}
-              <Link href="/services/vaccines" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/vaccines" className="text-primary-green-dark hover:underline font-semibold">
                 vaccinations
               </Link>{" "}
               and{" "}
-              <Link href="/services/parasite-prevention" className="text-primary-green hover:underline font-semibold">
+              <Link href="/services/parasite-prevention" className="text-primary-green-dark hover:underline font-semibold">
                 parasite prevention
               </Link>{" "}
               is a key part of any wellness plan.
@@ -91,9 +91,9 @@ export const PreventativeContainer = ({ faqs }: { faqs?: any[] }) => {
 
             <div className="flex flex-col lg:flex-row items-stretch gap-6 my-10">
               <div className="flex-1 bg-[#FFFCF7] rounded-[16px] py-6 px-6 lg:py-5 lg:px-8 shadow-[0px_4px_30px_0px_rgba(87,87,87,0.06)] border border-[#F0EAF8] lg:border-none">
-                <h4 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
+                <h2 className="text-[20px] lg:text-[24px] leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-bold font-nunito text-primary-black mb-6 lg:mb-4 w-fit">
                   Key Preventative Care Services Include
-                </h4>
+                </h2>
                 <ul className="space-y-3 lg:space-y-2">
                   {points.map((point, index) => (
                     <li

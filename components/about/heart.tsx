@@ -20,7 +20,7 @@ export const Heart = () => {
         <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6">
           <Image
             src="/icons/blueHeart.svg"
-            alt="heart-paw"
+            alt="" aria-hidden="true"
             height={87}
             width={87}
             className="hidden lg:block w-[56px] lg:w-[87px] h-auto"
@@ -47,14 +47,14 @@ export const Heart = () => {
             needs.
           </p>
         </div>
-        <h4 className="text-[20px] lg:text-[24px] my-6 lg:my-4 capitalize leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-semibold font-nunito text-primary-black mb-4 w-fit">
+        <h3 className="text-[20px] lg:text-[24px] my-6 lg:my-4 capitalize leading-tight lg:leading-[28px] border-b-2 border-primary-purple font-semibold font-nunito text-primary-black mb-4 w-fit">
           We believe exceptional care is built on three principles
-        </h4>
+        </h3>
 
         <div className="flex flex-col gap-3 lg:gap-2 items-center lg:items-start text-center lg:text-left">
           {points.map((point) => (
             <div key={point} className="flex items-center gap-3">
-              <span className="text-primary-green hidden lg:inline">
+              <span className="text-primary-green-dark hidden lg:inline">
                 &#9679;
               </span>
               <p className="text-primary-black text-[15px] lg:text-[20px] leading-relaxed lg:leading-[28px] font-normal">

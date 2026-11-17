@@ -7,6 +7,7 @@ import localFont from "next/font/local";
 import Footer from "@/components/shared/footer";
 import { FloatingIcons } from "@/components/shared/floatingIcons";
 import { Popup } from "@/components/shared/popup";
+import { AnalyticsEvents } from "@/components/shared/analyticsEvents";
 import { Metadata } from "next";
 import Script from "next/script";
 import { getPageData } from "@/utils/seoBuilder";
@@ -66,6 +67,7 @@ export default async function RootLayout({
         </Script>
         <Script src="/_vercel/insights/script.js" strategy="afterInteractive" />
         <Script src="/_vercel/speed-insights/script.js" strategy="afterInteractive" />
+        <AnalyticsEvents />
         <Header />
         <FloatingIcons />
         <Popup popup={popup} />

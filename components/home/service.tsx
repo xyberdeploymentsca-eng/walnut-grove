@@ -146,7 +146,7 @@ export const Service = () => {
             <div className="bg-primary-purple p-2 lg:p-3 rounded-full flex items-center justify-center flex-shrink-0">
               <Image
                 src="/icons/paw.svg"
-                alt="paw"
+                alt="" aria-hidden="true"
                 height="24"
                 width="24"
                 className="brightness-0 invert lg:w-[32px] lg:h-[32px]"
@@ -163,12 +163,13 @@ export const Service = () => {
         <div className="relative w-full px-1 lg:px-12">
           {/* Left Arrow */}
           <button
+            aria-label="Previous services"
             onClick={prevSlide}
             disabled={currentIndex === 0}
             className={`absolute -left-2 lg:left-0 top-1/2 -translate-y-1/2 z-10 transition-all p-2 rounded-full bg-white shadow-md ${
               currentIndex === 0
                 ? "opacity-30 cursor-not-allowed border-gray-300 text-gray-300"
-                : "opacity-100 hover:scale-110 border-primary-green text-primary-green hover:bg-primary-green hover:text-white border"
+                : "opacity-100 hover:scale-110 border-primary-green text-primary-green hover:bg-primary-green hover:text-primary-black border"
             }`}
           >
             <ChevronLeft size={24} />
@@ -212,12 +213,13 @@ export const Service = () => {
 
           {/* Right Arrow */}
           <button
+            aria-label="Next services"
             onClick={nextSlide}
             disabled={currentIndex >= cards.length - itemsVisible}
             className={`absolute -right-2 lg:right-0 top-1/2 -translate-y-1/2 z-10 transition-all p-2 rounded-full bg-white shadow-md ${
               currentIndex >= cards.length - itemsVisible
                 ? "opacity-30 cursor-not-allowed border-gray-300 text-gray-300"
-                : "opacity-100 hover:scale-110 border-primary-green text-primary-green hover:bg-primary-green hover:text-white border"
+                : "opacity-100 hover:scale-110 border-primary-green text-primary-green hover:bg-primary-green hover:text-primary-black border"
             }`}
           >
             <ChevronRight size={24} />

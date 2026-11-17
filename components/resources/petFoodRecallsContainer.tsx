@@ -11,7 +11,7 @@ export const PetFoodRecallsContainer = () => {
       {/* Banner */}
       <Image
         src="/assets/commonBanner.svg"
-        alt="banner"
+        alt="banner" priority
         width={1920}
         height={466}
         className="absolute top-0 left-0 w-full h-[300px] lg:h-auto object-cover z-0"
@@ -75,7 +75,7 @@ export const PetFoodRecallsContainer = () => {
             <li>Ask the store or manufacturer about a refund, following the instructions in the recall notice.</li>
             <li>
               If your pet is on a prescription diet, call us before switching foods so we can suggest a safe alternative. See{" "}
-              <Link href="/services/prescription-diets" className="text-primary-green font-semibold hover:underline">
+              <Link href="/services/prescription-diets" className="text-primary-green-dark font-semibold hover:underline">
                 prescription pet food
               </Link>
               .
@@ -83,7 +83,7 @@ export const PetFoodRecallsContainer = () => {
           </ul>
           <p>
             Signs like repeated vomiting, weakness or collapse need a vet right away. See{" "}
-            <Link href="/pet-emergency-langley" className="text-primary-green font-semibold hover:underline">
+            <Link href="/pet-emergency-langley" className="text-primary-green-dark font-semibold hover:underline">
               what to do in a pet emergency
             </Link>
             .
@@ -104,7 +104,7 @@ export const PetFoodRecallsContainer = () => {
       {/* Decorative Paws */}
       <Image
         src="/assets/leftPaws.svg"
-        alt="paws"
+        alt="" aria-hidden="true"
         width={392}
         height={1484}
         className="absolute bottom-0 left-[-10%] opacity-20 pointer-events-none -z-1"

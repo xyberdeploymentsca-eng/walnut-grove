@@ -27,7 +27,7 @@ export const Gallery = () => {
       <div className="flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-4 lg:gap-6 w-full">
         <Image
           src="/icons/pinkBow.svg"
-          alt="pink-paw"
+          alt="" aria-hidden="true"
           width={87}
           height={87}
           className="w-[56px] lg:w-[87px] h-auto"

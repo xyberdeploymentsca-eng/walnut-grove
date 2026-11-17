@@ -1,6 +1,7 @@
 /** @format */
 
-export const dynamic = "force-dynamic";
+// Rebuilt in the background at most every 5 minutes, so pages are served from cache and CMS edits still show quickly.
+export const revalidate = 300;
 
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
@@ -14,6 +15,11 @@ import { BlogDetailContainer } from "@/components/blog/blogDetailContainer";
 import { getMetadata } from "@/utils/seoBuilder";
 import { JsonLd } from "@/components/shared/jsonLd";
 import { getBlogPostingSchema } from "@/utils/schemaBuilder";
+
+// No posts are built ahead of time; each one is built on its first visit and then cached (with revalidate above).
+export async function generateStaticParams() {
+  return [];
+}
 
 interface PageProps {
   params: Promise<{ slug: string }>;

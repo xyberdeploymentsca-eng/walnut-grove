@@ -26,7 +26,7 @@ export default function NotFound() {
       <h1 className="text-[48px] lg:text-[72px] font-otomanopee-one text-primary-black uppercase leading-tight mb-4">
         404
       </h1>
-      <h2 className="text-[24px] lg:text-[32px] font-nunito font-bold text-primary-green mb-6">
+      <h2 className="text-[24px] lg:text-[32px] font-nunito font-bold text-primary-green-dark mb-6">
         Oops! This page has wandered off.
       </h2>
       <p className="text-[16px] lg:text-[18px] font-nunito text-[#3C3C3B] max-w-md mb-10 leading-relaxed">

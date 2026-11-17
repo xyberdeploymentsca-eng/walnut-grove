@@ -86,7 +86,7 @@ export const portableTextComponents: PortableTextComponents = {
           href={value?.href}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noopener noreferrer" : undefined}
-          className="text-primary-green hover:underline font-semibold inline-flex items-center gap-1 transition-colors"
+          className="text-primary-green-dark hover:underline font-semibold inline-flex items-center gap-1 transition-colors"
         >
           <span>{children}</span>
           {isExternal && <ExternalLink size={13} className="inline opacity-70" />}
@@ -100,7 +100,7 @@ export const portableTextComponents: PortableTextComponents = {
       return (
         <Link
           href={href}
-          className="text-primary-green hover:underline font-semibold transition-colors underline decoration-dotted decoration-primary-green"
+          className="text-primary-green-dark hover:underline font-semibold transition-colors underline decoration-dotted decoration-primary-green"
           title="Read related article"
         >
           {children}
@@ -113,7 +113,7 @@ export const portableTextComponents: PortableTextComponents = {
       return (
         <Link
           href={path}
-          className="text-primary-green hover:underline font-semibold transition-colors"
+          className="text-primary-green-dark hover:underline font-semibold transition-colors"
           title="View hospital service"
         >
           {children}
@@ -135,7 +135,7 @@ export const portableTextComponents: PortableTextComponents = {
             />
           </div>
           {value?.caption && (
-            <figcaption className="text-[14px] text-primary-black/70 font-nunito italic text-center mt-2.5">
+            <figcaption className="text-[14px] text-primary-black/80 font-nunito italic text-center mt-2.5">
               {value.caption}
             </figcaption>
           )}
